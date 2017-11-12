@@ -11,9 +11,14 @@ import java.io.File;
  */
 public class OriSHP {
 
+
+	//create empty shp files for orienteering map template
 	public static void createSHPRepository(String path) {
 		//ensure folders are there
 		new File(path).mkdirs();
+
+		
+		
 	}
 
 	public static void main(String[] args) {
