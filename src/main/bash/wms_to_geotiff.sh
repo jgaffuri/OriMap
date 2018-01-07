@@ -1,5 +1,7 @@
 #!/bin/bash
 #resolution=10cm - max image size is 2500px -> 250m*250m
+#http://wmts1.geoportail.lu/opendata/service?REQUEST=GetCapabilities
+
 
 #outdir="lux_city"
 #xmin_=76750
