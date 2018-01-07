@@ -23,12 +23,11 @@ outdirbase="/home/juju/orienteering"
 #nby=4
 
 #other part
-outdir=$outdirbase/"img_arboretum"
+outdir=$outdirbase/"omap_coque/img_arboretum"
 xmin_=79250
 ymin_=76750
 nbx=3
 nby=4
-echo $outdir
 
 #outdir="img_schetterhaard"
 #xmin_=85000
@@ -61,3 +60,33 @@ echo $outdir
 #nbx=1
 #nby=1
 
+
+crs=EPSG:2169
+
+mkdir $outdir
+
+for layer in ortho_latest topo_5k cadastre ortho_irc
+#for layer in ortho_irc
+do
+
+mkdir $outdir/$layer
+
+for (( x=0; x<$nbx; x++ ))
+do
+	for (( y=0; y<$nby; y++ ))
+	do
+		xmin=$(($xmin_+$x*250))
+		ymin=$(($ymin_+$y*250))
+		xmax=$(($xmin+250))
+		ymax=$(($ymin+250))
+		name=$layer"_"$xmin"_"$ymin
+		echo $name
+
+		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		curl -o $outdir/$layer/$name.png $url 
+		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
+		rm $outdir/$layer/$name.png
+	done
+done
+
+done
