@@ -16,18 +16,19 @@ outdirbase="/home/juju/orienteering"
 #nbx=3
 #nby=4
 
-#outdir="img_coque"
-#xmin_=78500
-#ymin_=76250
-#nbx=4
-#nby=4
-
-#other part
-outdir=$outdirbase/"omap_coque/img_arboretum"
-xmin_=79250
-ymin_=76750
-nbx=3
+#coque
+outdir=$outdirbase/"omap_coque/img_coque"
+xmin_=78500
+ymin_=76250
+nbx=4
 nby=4
+
+#coque arboretum part
+#outdir=$outdirbase/"omap_coque/img_arboretum"
+#xmin_=79250
+#ymin_=76750
+#nbx=3
+#nby=4
 
 #outdir="img_schetterhaard"
 #xmin_=85000
