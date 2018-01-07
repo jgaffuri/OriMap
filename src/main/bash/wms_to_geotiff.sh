@@ -2,6 +2,7 @@
 #resolution=10cm - max image size is 2500px -> 250m*250m
 #http://wmts1.geoportail.lu/opendata/service?REQUEST=GetCapabilities
 
+outdirbase="/home/juju/orienteering"
 
 #outdir="lux_city"
 #xmin_=76750
@@ -22,11 +23,12 @@
 #nby=4
 
 #other part
-#outdir="img_arboretum"
-#xmin_=79250
-#ymin_=76750
-#nbx=3
-#nby=4
+outdir=$outdirbase/"img_arboretum"
+xmin_=79250
+ymin_=76750
+nbx=3
+nby=4
+echo $outdir
 
 #outdir="img_schetterhaard"
 #xmin_=85000
@@ -40,11 +42,11 @@
 #nbx=10
 #nby=10
 
-outdir="img_grengewald_niederanven"
-xmin_=81500
-ymin_=78750
-nbx=17
-nby=13
+#outdir="img_grengewald_niederanven"
+#xmin_=81500
+#ymin_=78750
+#nbx=17
+#nby=13
 
 #outdir="img_parc_neuman"
 #xmin_=75250
@@ -59,33 +61,3 @@ nby=13
 #nbx=1
 #nby=1
 
-
-crs=EPSG:2169
-
-mkdir $outdir
-
-for layer in ortho_latest topo_5k cadastre ortho_irc
-#for layer in ortho_irc
-do
-
-mkdir $outdir/$layer
-
-for (( x=0; x<$nbx; x++ ))
-do
-	for (( y=0; y<$nby; y++ ))
-	do
-		xmin=$(($xmin_+$x*250))
-		ymin=$(($ymin_+$y*250))
-		xmax=$(($xmin+250))
-		ymax=$(($ymin+250))
-		name=$layer"_"$xmin"_"$ymin
-		echo $name
-
-		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
-		curl -o $outdir/$layer/$name.png $url 
-		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
-		rm $outdir/$layer/$name.png
-	done
-done
-
-done
