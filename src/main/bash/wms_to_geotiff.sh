@@ -17,11 +17,11 @@ outdirbase="/home/juju/orienteering"
 #nby=4
 
 #coque
-outdir=$outdirbase/"omap_coque/img_coque"
-xmin_=78500
-ymin_=76250
-nbx=4
-nby=4
+#outdir=$outdirbase/"omap_coque/img_coque"
+#xmin_=78500
+#ymin_=76250
+#nbx=4
+#nby=4
 
 #coque arboretum part
 #outdir=$outdirbase/"omap_coque/img_arboretum"
@@ -36,17 +36,17 @@ nby=4
 #nbx=7
 #nby=6
 
-#outdir="img_grengewald"
+#outdir=$outdirbase/"omap_grengewald/img_grengewald"
 #xmin_=78000
 #ymin_=79000
 #nbx=10
 #nby=10
 
-#outdir="img_grengewald_niederanven"
-#xmin_=81500
-#ymin_=78750
-#nbx=17
-#nby=13
+outdir=$outdirbase/"omap_grengewald_niederanven/img_grengewald_niederanven"
+xmin_=81500
+ymin_=78750
+nbx=17
+nby=13
 
 #outdir="img_parc_neuman"
 #xmin_=75250
