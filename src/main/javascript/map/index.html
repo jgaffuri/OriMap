@@ -9,9 +9,10 @@
 <meta name="keywords" content="Orienteering, Luxembourg, map, course d'orientation, orientierungslauf">
 <meta name="author" content="Julien Gaffuri">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
-	
+
 </head>
 <body>
 
@@ -30,7 +31,23 @@ and <a href='http://orienteering.org/resources/mapping/'>the orienteering map sp
 
 
 <script>
-	var map = L.map('mapdiv').setView([49.61, 6.131], 15);
+
+	//function to retrieve URL parameters
+	var getParameterByName = function(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+		return !results? null : decodeURIComponent(results[1].replace(/\+/g, " "));
+	};
+
+	var
+		latIni = getParameterByName("lat") || 49.61,
+		lonIni = getParameterByName("lon") || 6.131,
+		zoomIni = getParameterByName("z") || 15
+		;
+	
+	
+	var map = L.map('mapdiv').setView([1.0*latIni, 1.0*lonIni], 1.0*zoomIni);
 	L.tileLayer('luxocmap/{z}/{x}/{y}.png', {
 		minZoom: 9,
 		maxZoom: 15
