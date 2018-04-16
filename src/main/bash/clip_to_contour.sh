@@ -14,7 +14,7 @@ outdirbase="/home/juju/orienteering"
 #ymax=75750
 
 
-outdir=$outdirbase/"omap_kirchberg_hospital_park/dtm"
+outdir=$outdirbase/"omap_kirchberg_hospital_park/dtm/"
 xmin=80500
 ymin=77000
 xmax=81500
@@ -29,24 +29,24 @@ ymax=78250
 
 mkdir $outdir
 
-mkdir $outdir"img"
-#clip
-gdal_translate -projwin $xmin $ymax $xmax $ymin -of GTiff dtm_input/dtm.tif $outdir"img/dtm.tif"
-#create contour
-gdal_contour -a ELEV_DM -i 500.0 $outdir"img/dtm.tif" $outdir"img/contour_5m.shp"
-gdal_contour -a ELEV_DM -i 1000.0 $outdir"img/dtm.tif" $outdir"img/contour_10m.shp"
-#contour as dxf
-ogr2ogr -overwrite -f "DXF" $outdir"img/contour_5m.dxf" $outdir"img/contour_5m.shp"
-ogr2ogr -overwrite -f "DXF" $outdir"img/contour_10m.dxf" $outdir"img/contour_10m.shp"
+#clip contry wide dtm
+gdal_translate -projwin $xmin $ymax $xmax $ymin -of GTiff $outdirbase/"omap_luxembourg_shp/dtm/dtm.tif" $outdir"dtm.tif"
+#create contour as shp
+gdal_contour -a ELEV_DM -i 500.0 $outdir"dtm.tif" $outdir"contour_5m.shp"
+gdal_contour -a ELEV_DM -i 1000.0 $outdir"dtm.tif" $outdir"contour_10m.shp"
+#shp to dxf
+ogr2ogr -overwrite -f "DXF" $outdir"contour_5m.dxf" $outdir"contour_5m.shp"
+ogr2ogr -overwrite -f "DXF" $outdir"contour_10m.dxf" $outdir"contour_10m.shp"
 
 
-mkdir $outdir"vect"
-
+#extract
 for layer in COURBE_NORM COURBE_MAITR COURBE_INTER COURBE_CUV BAS_TALUS TALUS LEVEE
 do
+#clip
 ogr2ogr -overwrite -f "ESRI Shapefile" \
-   $outdir"vect/"$layer".shp" \
-   "dtm_input/dtm_bdtopo/"$layer".shp" \
+   $outdir$layer".shp" \
+   "omap_luxembourg_shp/BD-L-TC2008/"$layer".shp" \
    -clipsrc $xmin $ymin $xmax $ymax
-ogr2ogr -overwrite -f "DXF" "dtm_input/dtm_bdtopo/"$layer".dxf" "dtm_input/dtm_bdtopo/"$layer".shp"
+#shp to dxf
+ogr2ogr -overwrite -f "DXF" $outdir$layer".dxf" $outdir$layer".shp"
 done
