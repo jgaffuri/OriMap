@@ -1,22 +1,24 @@
 #!/bin/bash
 #-projwin ulx uly lrx lry:
 
+outdirbase="/home/juju/orienteering"
+
 #coque
 #clipsrc -179 -89 179 89
 #77290 75579 80721 78138
 
-outdir="dtm_lux_city/"
-xmin=76750
-ymin=74250
-xmax=78000
-ymax=75750
+#outdir="dtm_lux_city/"
+#xmin=76750
+#ymin=74250
+#xmax=78000
+#ymax=75750
 
 
-#outdir="dtm_kirchberg_hospital_park/"
-#xmin=80500
-#ymin=77000
-#xmax=81500
-#ymax=78250
+outdir=$outdirbase/"omap_kirchberg_hospital_park/dtm"
+xmin=80500
+ymin=77000
+xmax=81500
+ymax=78250
 
 #outdir="dtm_parc_neuman/"
 #xmin=75250
