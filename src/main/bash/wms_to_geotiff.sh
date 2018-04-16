@@ -10,11 +10,11 @@ outdirbase="/home/juju/orienteering"
 #nbx=5
 #nby=6
 
-#outdir="img_kirchberg_hospital_park"
-#xmin_=80500
-#ymin_=77000
-#nbx=3
-#nby=4
+outdir=$outdirbase/"omap_kirchberg_hospital_park/img"
+xmin_=80500
+ymin_=77000
+nbx=3
+nby=4
 
 #coque
 #outdir=$outdirbase/"omap_coque/img_coque"
@@ -42,11 +42,11 @@ outdirbase="/home/juju/orienteering"
 #nbx=10
 #nby=10
 
-outdir=$outdirbase/"omap_grengewald_niederanven/img_grengewald_niederanven"
-xmin_=81500
-ymin_=78750
-nbx=17
-nby=13
+#outdir=$outdirbase/"omap_grengewald_niederanven/img_grengewald_niederanven"
+#xmin_=81500
+#ymin_=78750
+#nbx=17
+#nby=13
 
 #outdir="img_parc_neuman"
 #xmin_=75250
