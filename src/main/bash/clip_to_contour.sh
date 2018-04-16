@@ -45,8 +45,8 @@ do
 #clip
 ogr2ogr -overwrite -f "ESRI Shapefile" \
    $outdir$layer".shp" \
-   "omap_luxembourg_shp/BD-L-TC2008/"$layer".shp" \
+   $outdirbase/"omap_luxembourg_shp/BD-L-TC2008/"$layer".shp" \
    -clipsrc $xmin $ymin $xmax $ymax
 #shp to dxf
-ogr2ogr -overwrite -f "DXF" $outdir$layer".dxf" $outdir$layer".shp"
+#ogr2ogr -overwrite -f "DXF" $outdir$layer".dxf" $outdir$layer".shp"
 done
