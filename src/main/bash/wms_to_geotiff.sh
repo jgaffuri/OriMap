@@ -10,8 +10,8 @@ outdirbase="/home/juju/orienteering"
 #nbx=5
 #nby=6
 
-outdir=$outdirbase/"omap_kirchberg_hospital_park/img"
-xmin_=80500
+outdir=$outdirbase/"omap_klose_groendchen_park/img"
+xmin_=79750
 ymin_=77000
 nbx=3
 nby=4
