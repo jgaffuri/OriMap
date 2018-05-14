@@ -11,7 +11,7 @@ outdirbase="/home/juju/orienteering"
 #nby=6
 
 outdir=$outdirbase/"omap_klose_groendchen_park/img"
-xmin_=79750
+xmin_=80500
 ymin_=77000
 nbx=3
 nby=4
@@ -66,8 +66,8 @@ crs=EPSG:2169
 
 mkdir $outdir
 
-for layer in ortho_latest topo_5k cadastre ortho_irc
-#for layer in ortho_latest
+#for layer in ortho_latest topo_5k ortho_irc cadastre
+for layer in cadastre
 do
 
 mkdir $outdir/$layer
