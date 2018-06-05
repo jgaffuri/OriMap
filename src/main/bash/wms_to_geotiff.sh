@@ -4,17 +4,23 @@
 
 outdirbase="/home/juju/orienteering"
 
+outdir=$outdirbase/"omap_niederanven/img"
+xmin_=83000
+ymin_=78000
+nbx=17
+nby=18
+
 #outdir="lux_city"
 #xmin_=76750
 #ymin_=74250
 #nbx=5
 #nby=6
 
-outdir=$outdirbase/"omap_klose_groendchen_park/img"
-xmin_=79750
-ymin_=77000
-nbx=6
-nby=4
+#outdir=$outdirbase/"omap_klose_groendchen_park/img"
+#xmin_=79750
+#ymin_=77000
+#nbx=6
+#nby=4
 
 #coque
 #outdir=$outdirbase/"omap_coque/img_coque"
