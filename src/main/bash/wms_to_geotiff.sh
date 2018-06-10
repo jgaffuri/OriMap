@@ -72,8 +72,8 @@ crs=EPSG:2169
 
 mkdir $outdir
 
-for layer in ortho_latest topo_5k ortho_irc cadastre
-#for layer in cadastre
+#for layer in ortho_latest topo_5k ortho_irc cadastre
+for layer in topo_5k ortho_latest
 do
 
 mkdir $outdir/$layer
