@@ -13,18 +13,18 @@ outdirbase="/home/juju/orienteering"
 
 
 #kirchberg coque
-outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
-xmin_=78500
-ymin_=76250
-nbx=4
-nby=4
-
-#kirchberg arboretum
-#outdir=$outdirbase/"omap_kirchberg_merge/img_arboretum"
-#xmin_=79250
-#ymin_=76750
-#nbx=3
+#outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
+#xmin_=78500
+#ymin_=76250
+#nbx=4
 #nby=4
+
+kirchberg arboretum
+outdir=$outdirbase/"omap_kirchberg_merge/img_arboretum"
+xmin_=79250
+ymin_=76750
+nbx=3
+nby=4
 
 #kirchberg klose groendchen
 #outdir=$outdirbase/"omap_klose_groendchen_park/img"
