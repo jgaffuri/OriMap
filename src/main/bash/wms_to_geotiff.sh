@@ -4,11 +4,11 @@
 
 outdirbase="/home/juju/orienteering"
 
-outdir=$outdirbase/"omap_niederanven/img"
-xmin_=83000
-ymin_=78000
-nbx=17
-nby=18
+#outdir=$outdirbase/"omap_niederanven/img"
+#xmin_=83000
+#ymin_=78000
+#nbx=17
+#nby=18
 
 #outdir="lux_city"
 #xmin_=76750
@@ -23,13 +23,13 @@ nby=18
 #nby=4
 
 #coque
-#outdir=$outdirbase/"omap_coque/img_coque"
-#xmin_=78500
-#ymin_=76250
-#nbx=4
-#nby=4
+outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
+xmin_=78500
+ymin_=76250
+nbx=4
+nby=4
 
-#coque arboretum part
+#kirchberg arboretum
 #outdir=$outdirbase/"omap_coque/img_arboretum"
 #xmin_=79250
 #ymin_=76750
@@ -72,8 +72,8 @@ crs=EPSG:2169
 
 mkdir $outdir
 
-#for layer in ortho_latest topo_5k ortho_irc cadastre
-for layer in topo_5k ortho_latest
+for layer in ortho_latest topo_5k ortho_irc cadastre
+#for layer in topo_5k ortho_latest
 do
 
 mkdir $outdir/$layer
