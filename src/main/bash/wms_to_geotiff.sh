@@ -4,25 +4,15 @@
 
 outdirbase="/home/juju/orienteering"
 
+
 #outdir=$outdirbase/"omap_niederanven/img"
 #xmin_=83000
 #ymin_=78000
 #nbx=17
 #nby=18
 
-#outdir="lux_city"
-#xmin_=76750
-#ymin_=74250
-#nbx=5
-#nby=6
 
-#outdir=$outdirbase/"omap_klose_groendchen_park/img"
-#xmin_=79750
-#ymin_=77000
-#nbx=6
-#nby=4
-
-#coque
+#kirchberg coque
 outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
 xmin_=78500
 ymin_=76250
@@ -30,11 +20,19 @@ nbx=4
 nby=4
 
 #kirchberg arboretum
-#outdir=$outdirbase/"omap_coque/img_arboretum"
+#outdir=$outdirbase/"omap_kirchberg_merge/img_arboretum"
 #xmin_=79250
 #ymin_=76750
 #nbx=3
 #nby=4
+
+#kirchberg klose groendchen
+#outdir=$outdirbase/"omap_klose_groendchen_park/img"
+#xmin_=79750
+#ymin_=77000
+#nbx=6
+#nby=4
+
 
 #outdir="img_schetterhaard"
 #xmin_=85000
@@ -60,12 +58,12 @@ nby=4
 #nbx=5
 #nby=4
 
-#senningerberg
-#outdir="senningerberg"
-#xmin_=83950
-#ymin_=79000
-#nbx=1
-#nby=1
+#outdir="lux_city"
+#xmin_=76750
+#ymin_=74250
+#nbx=5
+#nby=6
+
 
 
 crs=EPSG:2169
