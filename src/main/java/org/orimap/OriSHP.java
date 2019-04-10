@@ -38,7 +38,12 @@ public class OriSHP {
 
 	public static void main(String[] args) {
 		System.out.println("Start");
-		createSHPRepository("/home/juju/Bureau/orienteering/omap_luxembourg_shp/shpDev/");
+
+		//TODO define window
+		//TODO do clipping file by file
+
+		//createSHPRepository("/home/juju/Bureau/orienteering/omap_luxembourg_shp/shpDev/");
+
 		System.out.println("end");
 	}
 
