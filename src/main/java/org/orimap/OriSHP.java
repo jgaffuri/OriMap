@@ -106,7 +106,7 @@ public class OriSHP {
 		//510,L,power_line_cableway_skilift
 		clipSHP(inBasePath + "VFTE/TRANS_CABL.shp", outBasePath+"510_power_line_cableway_skilift.shp", envClip);
 		//511,L,major_power_line
-		clipSHP(inBasePath + "VFTE/PYLONE.shp", outBasePath+"511_major_power_line.shp", envClip);
+		clipSHP(inBasePath + "VFTE/LIGNE_ELEC.shp", outBasePath+"511_major_power_line.shp", envClip);
 
 		//512,L,bridge_tunnel
 
@@ -123,9 +123,12 @@ public class OriSHP {
 		//522,S,canopy
 		//523,S,ruin
 		//524,P,high_tower
+		clipSHP(inBasePath + "VFTE/PYLONE.shp.shp", outBasePath+"524_high_tower.shp", envClip);
 		//525,P,small_tower
 		//526,P,cairn
 		clipSHP(inBasePath + "GEO/POINT_GEOD.shp", outBasePath+"526_cairn.shp", envClip);
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ADM/BORN_FRONT.shp
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ADM/POINT_FRON.shp
 		//527,P,fodder_rack
 		//528,L,prominent_line_feature
 		//529,L,prominent_impassable_line_feature
