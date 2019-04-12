@@ -20,7 +20,8 @@ public class OriLuxSHP {
 		Envelope envClip = new Envelope(77000, 80000, 75800, 78200);
 		String inBasePath = "/home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/";
 		String outBasePath = "/home/juju/Bureau/out/";
-		double equidistance = 10;
+
+		//add other sources - check OSM
 
 		/*
 		 *ADM
@@ -31,8 +32,8 @@ public class OriLuxSHP {
 		 *NYM
 		 *ORO
 		VCR
-		VEGE
-		VFTE
+		 *VEGE
+		 *VFTE
 		 */
 
 
@@ -132,7 +133,7 @@ public class OriLuxSHP {
 		//507,L,less_distinct_small_footpath
 		//508,L,narrow_ride_or_linear_trace
 		//509,L,railway
-		clipSHP(inBasePath + "VFTE/VOIE_FER.shp", outBasePath+"509_railway.shp", envClip);
+		//clipSHP(inBasePath + "VFTE/VOIE_FER.shp", outBasePath+"509_railway.shp", envClip); POSITION_S >= 0
 
 		//510,L,power_line_cableway_skilift
 		clipSHP(inBasePath + "VFTE/TRANS_CABL.shp", outBasePath+"510_power_line_cableway_skilift.shp", envClip);
