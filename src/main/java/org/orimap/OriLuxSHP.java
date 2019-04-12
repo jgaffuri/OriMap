@@ -21,8 +21,6 @@ public class OriLuxSHP {
 		String inBasePath = "/home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/";
 		String outBasePath = "/home/juju/Bureau/out/";
 
-		//add other sources - check OSM
-
 		/*
 		 *ADM
 		 *ALTI
