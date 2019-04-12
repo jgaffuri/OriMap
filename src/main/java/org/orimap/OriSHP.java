@@ -123,7 +123,7 @@ public class OriSHP {
 		//522,S,canopy
 		//523,S,ruin
 		//524,P,high_tower
-		clipSHP(inBasePath + "VFTE/PYLONE.shp.shp", outBasePath+"524_high_tower.shp", envClip);
+		clipSHP(inBasePath + "VFTE/PYLONE.shp", outBasePath+"524_high_tower.shp", envClip);
 		//525,P,small_tower
 		//526,P,cairn
 		clipSHP(inBasePath + "GEO/POINT_GEOD.shp", outBasePath+"526_cairn.shp", envClip);
