@@ -7,6 +7,7 @@ import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
 import org.opencarto.util.FeatureUtil;
+import org.opengis.filter.Filter;
 
 /**
  * @author julien Gaffuri
@@ -36,6 +37,8 @@ public class OriLuxSHP {
 
 
 		//101,L,contour
+		clipSHP(inBasePath + "VFTE/TRANS_CABL.shp", outBasePath+"510_power_line_cableway_skilift.shp", envClip);
+
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=0
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=3
 		//102,L,index_contour
@@ -184,8 +187,9 @@ public class OriLuxSHP {
 		System.out.println("end");
 	}
 
-	public static void clipSHP(String in, String out, Envelope env) {
-		SHPData fsd = SHPUtil.loadSHP(in);
+	public static void clipSHP(String in, String out, Envelope env) { clipSHP(in, out, null); }
+	public static void clipSHP(String in, String out, Envelope env, Filter f) {
+		SHPData fsd = SHPUtil.loadSHP(in, f);
 		fsd.fs = FeatureUtil.clip(fsd.fs, env);
 		SHPUtil.saveSHP(fsd.fs, out, fsd.ft.getCoordinateReferenceSystem());
 	}
