@@ -24,6 +24,8 @@ public class OriLuxSHP {
 		String inBasePath = "/home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/";
 		String outBasePath = "/home/juju/Bureau/out/";
 
+		//TODO open terrain
+		//TODO add stuff from OSM (private areas)
 
 		//101_L_contour
 		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"101_L_contour.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 3" ));
@@ -152,7 +154,7 @@ public class OriLuxSHP {
 		//514_L_ruined_wall
 		//515_L_impassable_wall
 		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"515_L_impassable_wall.shp", envClip, CQL.toFilter( "NATURE = 4 OR NATURE = 5" ));
-		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/PARAPET.shp
+		clipSHP(inBasePath + "VCR/PARAPET.shp", outBasePath+"515_L_impassable_wall2.shp", envClip);
 		//516_L_fence
 		//517_L_ruined_fence
 		//518_L_impassable_fence
