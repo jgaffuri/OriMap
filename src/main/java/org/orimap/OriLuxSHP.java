@@ -3,6 +3,8 @@
  */
 package org.orimap;
 
+import org.geotools.filter.text.cql2.CQL;
+import org.geotools.filter.text.cql2.CQLException;
 import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
@@ -15,7 +17,7 @@ import org.opengis.filter.Filter;
  */
 public class OriLuxSHP {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
 		Envelope envClip = new Envelope(77000, 80000, 75800, 78200);
@@ -37,14 +39,11 @@ public class OriLuxSHP {
 
 
 		//101,L,contour
-		clipSHP(inBasePath + "VFTE/TRANS_CABL.shp", outBasePath+"510_power_line_cableway_skilift.shp", envClip);
-
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=0
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=3
+		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"101_contour.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 3" ));
 		//102,L,index_contour
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=1
+		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"102_index_contour.shp", envClip, CQL.toFilter( "NATURE = 1" ));
 		//103,L,form_line
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/COURBE.shp NATURE=2
+		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"103_form_line.shp", envClip, CQL.toFilter( "NATURE = 2" ));
 		//104,L,earth_bank
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ORO/LIGNE_ORO.shp NATURE=0 2
 		//105,L,earth_wall
