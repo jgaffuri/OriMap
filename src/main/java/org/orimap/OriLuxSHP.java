@@ -4,7 +4,7 @@
 package org.orimap;
 
 import org.geotools.filter.text.cql2.CQL;
-import org.geotools.filter.text.cql2.CQLException;
+import org.geotools.geometry.jts.JTS;
 import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
@@ -90,11 +90,12 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"313_prominent_water_feature.shp", envClip, CQL.toFilter( "NATURE = 12" ));
 
 		//401,S,open_land
+		//SHPUtil.saveGeomsSHP(JTS.toGeometry(envClip), outBasePath+"401_open_land.shp"); //TODO complement of VEGE + others?
 		//402,S,open_land_scattered_trees
 		//402.1,S,open_land_scattered_trees
 		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"402.1_open_land_scattered_trees.shp", envClip, CQL.toFilter( "NATURE = 5" ));
 		//403,S,rough_open_land
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/TERR_SPORT.shp
+		clipSHP(inBasePath + "BATI/TERR_SPORT.shp", outBasePath+"403_rough_open_land.shp", envClip);
 		//404,S,rough_open_land_scattered_trees
 		//405,S,forest
 		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"405_forest.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 1 OR NATURE = 2" ));
@@ -106,24 +107,24 @@ public class OriLuxSHP {
 		//410,S,vegetation_fight
 		//411,S,vegetation_impassable
 		//411.2,L,vegetation_impassable_minw
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_LIN.shp NATURE=1 2
+		clipSHP(inBasePath + "VEGE/VEGETATION_LIN.shp", outBasePath+"411.2_vegetation_impassable_minw.shp", envClip, CQL.toFilter( "NATURE = 1 OR NATURE = 2" ));
 		//412,S,cultivated_land
 		//413,S,orchard
 		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"413_orchard.shp", envClip, CQL.toFilter( "NATURE = 4" ));
 		//414,S,vineyard_similar
 		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"414_vineyard_similar.shp", envClip, CQL.toFilter( "NATURE = 6" ));
 		//415,L,distinct_cultivation_boundary
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_LIN.shp NATURE=0
+		clipSHP(inBasePath + "VEGE/VEGETATION_LIN.shp", outBasePath+"415_distinct_cultivation_boundary.shp", envClip, CQL.toFilter( "NATURE = 0" ));
 		//416,L,distinct_vegetation_boundary
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_LIN.shp NATURE=3 4
+		clipSHP(inBasePath + "VEGE/VEGETATION_LIN.shp", outBasePath+"416_distinct_vegetation_boundary.shp", envClip, CQL.toFilter( "NATURE = 3 OR NATURE = 4" ));
 
 		//417,P,prominent_large_tree
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/ARB_ISOLE.shp
 		//418,P,prominent_bush_or_tree
+		clipSHP(inBasePath + "VEGE/ARB_ISOLE.shp", outBasePath+"418_prominent_bush_or_tree.shp", envClip);
 		//419,P,prominent_vegetation_feature
 
 		//501,S,paved_area_with_bn
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/PISTE_AERO.shp
+		clipSHP(inBasePath + "BATI/PISTE_AERO.shp", outBasePath+"501_paved_area_with_bn.shp", envClip);
 		//501.1,S,paved_area
 		//502,L,wide_road
 		//503,L,road
@@ -145,43 +146,42 @@ public class OriLuxSHP {
 		//513,L,wall
 		//514,L,ruined_wall
 		//515,L,impassable_wall
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_LINE.shp NATURE=4 5
+		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"515_impassable_wall.shp", envClip, CQL.toFilter( "NATURE = 4 OR NATURE = 5" ));
 		//516,L,fence
 		//517,L,ruined_fence
 		//518,L,impassable_fence
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_LINE.shp NATURE=6
+		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"518_impassable_fence.shp", envClip, CQL.toFilter( "NATURE = 6" ));
 		//519,PO,crossing_point
 		//520,S,area_shall_not_entered
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CIMETIERE.shp
+		clipSHP(inBasePath + "BATI/CIMETIERE.shp", outBasePath+"520_area_shall_not_entered.shp", envClip);
 		//521,S,building
 		clipSHP(inBasePath + "BATI/BATIMENT.shp", outBasePath+"521_building.shp", envClip);
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_SURF.shp
+		clipSHP(inBasePath + "BATI/CONSTRUC_SURF.shp", outBasePath+"521_building2.shp", envClip); //TODO merge
 		//521.1,P,building_min
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_PONCT.shp NATURE= 9 10 11 13
+		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"521.1_building_min.shp", envClip, CQL.toFilter( "NATURE = 9 OR NATURE = 10 OR NATURE = 11 OR NATURE = 13" ));
 		//521.4,L,building_outline
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/LIM_TOIT.shp
+		clipSHP(inBasePath + "BATI/LIM_TOIT.shp", outBasePath+"521.4_building_outline.shp", envClip);
 		//522,S,canopy
 		//523,L,ruin
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_LINE.shp NATURE=3
+		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"523_ruin.shp", envClip, CQL.toFilter( "NATURE = 3" ));
 		//524,P,high_tower
 		clipSHP(inBasePath + "VFTE/PYLONE.shp", outBasePath+"524_high_tower.shp", envClip);
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_PONCT.shp NATURE=1
+		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"524_high_tower.shp", envClip, CQL.toFilter( "NATURE = 1" )); //TODO merge
 		//525,P,small_tower
 		//526,P,cairn
 		clipSHP(inBasePath + "GEO/POINT_GEOD.shp", outBasePath+"526_cairn.shp", envClip);
-		///add home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ADM/BORN_FRONT.shp
-		///add home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ADM/POINT_FRON.shp
+		clipSHP(inBasePath + "ADM/BORN_FRONT.shp", outBasePath+"526_cairn2.shp", envClip); //TODO merge
 		//527,P,fodder_rack
 		//528,L,prominent_line_feature
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_LINE.shp NATURE=1 2
+		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"528_prominent_line_feature.shp", envClip, CQL.toFilter( "NATURE = 1 OR NATURE = 2" ));
 		//529,L,prominent_impassable_line_feature
 		//530,P,prominent_man_made_feature_ring
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_PONCT.shp NATURE= 2 to 8
+		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"530_prominent_man_made_feature_ring.shp", envClip, CQL.toFilter( "NATURE = 2 OR NATURE = 3 OR NATURE = 4 OR NATURE = 5 OR NATURE = 6 OR NATURE = 7 OR NATURE = 8" ));
 		//531,P,prominent_man_made_feature_x
 
 		//601,L,magnetic_north_line
 		//603.0,P,spot_height
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ALTI/POINT_COTE.shp ECHELLE=1
+		clipSHP(inBasePath + "ALTI/POINT_COTE.shp", outBasePath+"603.0_spot_height.shp", envClip, CQL.toFilter( "ECHELLE = 1" ));
 
 		System.out.println("end");
 	}
