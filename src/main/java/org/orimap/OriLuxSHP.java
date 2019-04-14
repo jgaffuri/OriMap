@@ -128,14 +128,14 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "VCR/HYDR/ECLUSE.shp", outBasePath+"501.1_S_paved_area2.shp", envClip);
 
 		//502_L_wide_road
-		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 0
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"502_L_wide_road.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 0" ));
 		//503_L_road
 		//504_L_vehicle_track
-		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 1
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"504_L_vehicle_track.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 1" ));
 		//505_L_footpath
-		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 2
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"505_L_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 2" ));
 		//506_L_small_footpath
-		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 3 4
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"506_L_small_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 (TYPE = 3 OR TYPE = 4)" ));
 		//507_L_less_distinct_small_footpath
 		//508_L_narrow_ride_or_linear_trace
 
