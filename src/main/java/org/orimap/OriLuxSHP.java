@@ -4,7 +4,6 @@
 package org.orimap;
 
 import org.geotools.filter.text.cql2.CQL;
-import org.geotools.geometry.jts.JTS;
 import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
@@ -21,11 +20,12 @@ public class OriLuxSHP {
 		System.out.println("Start");
 
 		Envelope envClip = new Envelope(77000, 80000, 75800, 78200);
-		String inBasePath = "/home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/";
+		String inBasePath = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
+		String inBaseOSMPath = "/home/juju/Bureau/orienteering/data/osm/luxembourg-latest-free.shp/";
 		String outBasePath = "/home/juju/Bureau/out/";
 
 		//TODO open terrain
-		//TODO add stuff from OSM (private areas)
+		//TODO BU: make diffs with OSM/BDT/CAD
 
 		//101_L_contour
 		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"101_L_contour.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 3" ));
@@ -87,6 +87,7 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "HYDR/POINT_EAU.shp", outBasePath+"313_P_prominent_water_feature.shp", envClip, CQL.toFilter( "NATURE = 0" ));
 
 		//401_S_open_land
+		clipSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", envClip, CQL.toFilter( "fclass = 'grass'" ));
 		//SHPUtil.saveGeomsSHP(JTS.toGeometry(envClip), outBasePath+"401_S_open_land.shp"); //TODO complement of VEGE + others?
 		//402_S_open_land_scattered_trees
 		//402.1_S_open_land_scattered_trees
@@ -106,6 +107,7 @@ public class OriLuxSHP {
 		//411.2_L_vegetation_impassable_minw
 		clipSHP(inBasePath + "VEGE/VEGETATION_LIN.shp", outBasePath+"411.2_L_vegetation_impassable_minw.shp", envClip, CQL.toFilter( "NATURE = 1 OR NATURE = 2" ));
 		//412_S_cultivated_land
+		clipSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"412_S_cultivated_land.shp", envClip, CQL.toFilter( "fclass = 'farm'" ));
 		//413_S_orchard
 		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"413_S_orchard.shp", envClip, CQL.toFilter( "NATURE = 4" ));
 		//414_S_vineyard_similar
@@ -125,17 +127,17 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "BATI/PISTE_AERO.shp", outBasePath+"501_S_paved_area_with_bn.shp", envClip);
 		//501.1_S_paved_area
 		clipSHP(inBasePath + "VCR/SURFACE_ROUTE.shp", outBasePath+"501.1_S_paved_area.shp", envClip);
-		clipSHP(inBasePath + "VCR/HYDR/ECLUSE.shp", outBasePath+"501.1_S_paved_area2.shp", envClip);
+		clipSHP(inBasePath + "HYDR/ECLUSE.shp", outBasePath+"501.1_S_paved_area2.shp", envClip);
 
 		//502_L_wide_road
-		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"502_L_wide_road.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 0" ));
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"502_L_wide_road.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 AND TYPE = 0" ));
 		//503_L_road
 		//504_L_vehicle_track
-		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"504_L_vehicle_track.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 1" ));
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"504_L_vehicle_track.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 AND TYPE = 1" ));
 		//505_L_footpath
-		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"505_L_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 TYPE = 2" ));
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"505_L_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 AND TYPE = 2" ));
 		//506_L_small_footpath
-		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"506_L_small_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 (TYPE = 3 OR TYPE = 4)" ));
+		clipSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"506_L_small_footpath.shp", envClip, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 AND (TYPE = 3 OR TYPE = 4)" ));
 		//507_L_less_distinct_small_footpath
 		//508_L_narrow_ride_or_linear_trace
 
@@ -162,6 +164,7 @@ public class OriLuxSHP {
 		//519,PO,crossing_point
 		//520_S_area_shall_not_entered
 		clipSHP(inBasePath + "BATI/CIMETIERE.shp", outBasePath+"520_S_area_shall_not_entered.shp", envClip);
+		clipSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered2.shp", envClip, CQL.toFilter( "fclass = 'residential'" ));
 		//521_S_building
 		clipSHP(inBasePath + "BATI/BATIMENT.shp", outBasePath+"521_S_building.shp", envClip);
 		clipSHP(inBasePath + "BATI/CONSTRUC_SURF.shp", outBasePath+"521_S_building2.shp", envClip);
