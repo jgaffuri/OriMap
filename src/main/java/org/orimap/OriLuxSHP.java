@@ -126,6 +126,7 @@ public class OriLuxSHP {
 		//501,S,paved_area_with_bn
 		clipSHP(inBasePath + "BATI/PISTE_AERO.shp", outBasePath+"501_paved_area_with_bn.shp", envClip);
 		//501.1,S,paved_area
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/ECLUSE.shp
 		//502,L,wide_road
 		//503,L,road
 		//504,L,vehicle_track
