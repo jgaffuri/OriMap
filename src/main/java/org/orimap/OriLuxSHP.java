@@ -45,9 +45,9 @@ public class OriLuxSHP {
 		//103,L,form_line
 		clipSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"103_form_line.shp", envClip, CQL.toFilter( "NATURE = 2" ));
 		//104,L,earth_bank
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ORO/LIGNE_ORO.shp NATURE=0 2
+		clipSHP(inBasePath + "ORO/LIGNE_ORO.shp", outBasePath+"104_earth_bank.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 2" ));
 		//105,L,earth_wall
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/ORO/LIGNE_ORO.shp NATURE=1
+		clipSHP(inBasePath + "ORO/LIGNE_ORO.shp", outBasePath+"105_earth_wall.shp", envClip, CQL.toFilter( "NATURE = 1" ));
 		//106,L,ruined_earth_wall
 		//107,L,erosion_gully
 		//108,L,small_erosion_gully
@@ -87,21 +87,21 @@ public class OriLuxSHP {
 		//311,P,well_fountain_water_tank
 		//312,P,spring
 		//313,P,prominent_water_feature
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/CONSTRUC_PONCT.shp NATURE= 12
+		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"313_prominent_water_feature.shp", envClip, CQL.toFilter( "NATURE = 12" ));
 
 		//401,S,open_land
 		//402,S,open_land_scattered_trees
 		//402.1,S,open_land_scattered_trees
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_SURF.shp NATURE=5
+		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"402.1_open_land_scattered_trees.shp", envClip, CQL.toFilter( "NATURE = 5" ));
 		//403,S,rough_open_land
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/BATI/TERR_SPORT.shp
 		//404,S,rough_open_land_scattered_trees
 		//405,S,forest
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_SURF.shp NATURE=0 1 2
+		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"405_forest.shp", envClip, CQL.toFilter( "NATURE = 0 OR NATURE = 1 OR NATURE = 2" ));
 		//406,S,Vegetation_slow
 		//407,S,vegetation_slow_good_visibility
 		//408,S,vegetation_walk
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_SURF.shp NATURE=3
+		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"408_vegetation_walk.shp", envClip, CQL.toFilter( "NATURE = 3" ));
 		//409,S,vegetation_walk_good_visibility
 		//410,S,vegetation_fight
 		//411,S,vegetation_impassable
@@ -109,9 +109,9 @@ public class OriLuxSHP {
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_LIN.shp NATURE=1 2
 		//412,S,cultivated_land
 		//413,S,orchard
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_SURF.shp NATURE=4
+		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"413_orchard.shp", envClip, CQL.toFilter( "NATURE = 4" ));
 		//414,S,vineyard_similar
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_SURF.shp NATURE=6
+		clipSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"414_vineyard_similar.shp", envClip, CQL.toFilter( "NATURE = 6" ));
 		//415,L,distinct_cultivation_boundary
 		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VEGE/VEGETATION_LIN.shp NATURE=0
 		//416,L,distinct_vegetation_boundary
