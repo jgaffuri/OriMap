@@ -186,7 +186,7 @@ public class OriLuxSHP {
 		System.out.println("end");
 	}
 
-	public static void clipSHP(String in, String out, Envelope env) { clipSHP(in, out, null); }
+	public static void clipSHP(String in, String out, Envelope env) { clipSHP(in, out, env, null); }
 	public static void clipSHP(String in, String out, Envelope env, Filter f) {
 		SHPData fsd = SHPUtil.loadSHP(in, f);
 		fsd.fs = FeatureUtil.clip(fsd.fs, env);
