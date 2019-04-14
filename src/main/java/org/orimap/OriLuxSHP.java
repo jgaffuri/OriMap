@@ -29,7 +29,7 @@ public class OriLuxSHP {
 		 *ALTI
 		 *BATI
 		 *GEO
-		HYDR
+		 *HYDR
 		 *NYM
 		 *ORO
 		VCR
@@ -75,19 +75,27 @@ public class OriLuxSHP {
 		//215,L,trench
 
 		//301,S,uncrossable_body_of_water
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/SURFACE_EAU.shp NATURE = 0 3 4 5 6
 		//302,S,shallow_body_of_water
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/SURFACE_EAU.shp NATURE = 1
 		//303,P,waterhole
 		//304,L,crossable_watercourse
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/TRONCON_EAU.shp NATURE = 0 POSITION_S >= 0 TYPE = 0
 		//305,L,small_crossable_watercourse
 		//306,L,minor_seasonal_water_channel
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/TRONCON_EAU.shp NATURE = 0 POSITION_S >= 0 TYPE = 1
 		//307,S,uncrossable_marsh
 		//308,S,marsh
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/SURFACE_EAU.shp NATURE = 2
 		//309,L,narrow_marsh
 		//310,S,indistinct_marsh
 		//311,P,well_fountain_water_tank
-		//312,P,spring
-		//313,P,prominent_water_feature
 		clipSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"313_prominent_water_feature.shp", envClip, CQL.toFilter( "NATURE = 12" ));
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/POINT_EAU.shp NATURE = 1 4
+		//312,P,spring
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/POINT_EAU.shp NATURE = 2 3
+		//313,P,prominent_water_feature
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/POINT_EAU.shp NATURE = 0
 
 		//401,S,open_land
 		//SHPUtil.saveGeomsSHP(JTS.toGeometry(envClip), outBasePath+"401_open_land.shp"); //TODO complement of VEGE + others?
@@ -123,17 +131,25 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "VEGE/ARB_ISOLE.shp", outBasePath+"418_prominent_bush_or_tree.shp", envClip);
 		//419,P,prominent_vegetation_feature
 
+		
 		//501,S,paved_area_with_bn
 		clipSHP(inBasePath + "BATI/PISTE_AERO.shp", outBasePath+"501_paved_area_with_bn.shp", envClip);
 		//501.1,S,paved_area
-		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/ECLUSE.shp
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/SURFACE_ROUTE.shp
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/HYDR/ECLUSE.shp
+
 		//502,L,wide_road
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 0
 		//503,L,road
 		//504,L,vehicle_track
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 1
 		//505,L,footpath
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 2
 		//506,L,small_footpath
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TRONCON_ROUTE.shp ETAT = 0 1 POSITION_S >= 0 TYPE = 3 4
 		//507,L,less_distinct_small_footpath
 		//508,L,narrow_ride_or_linear_trace
+
 		//509,L,railway
 		clipSHP(inBasePath + "VFTE/VOIE_FER.shp", outBasePath+"509_railway.shp", envClip, CQL.toFilter( "POSITION_S >= 0" ));
 
@@ -143,11 +159,13 @@ public class OriLuxSHP {
 		clipSHP(inBasePath + "VFTE/LIGNE_ELEC.shp", outBasePath+"511_major_power_line.shp", envClip);
 
 		//512,L,bridge_tunnel
+		///home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/TUNNEL.shp
 
 		//513,L,wall
 		//514,L,ruined_wall
 		//515,L,impassable_wall
 		clipSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"515_impassable_wall.shp", envClip, CQL.toFilter( "NATURE = 4 OR NATURE = 5" ));
+		//home/juju/Bureau/orienteering/omap_luxembourg_shp/BDLTC_SHP/VCR/PARAPET.shp
 		//516,L,fence
 		//517,L,ruined_fence
 		//518,L,impassable_fence
