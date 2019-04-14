@@ -133,7 +133,7 @@ public class OriLuxSHP {
 		//507,L,less_distinct_small_footpath
 		//508,L,narrow_ride_or_linear_trace
 		//509,L,railway
-		//clipSHP(inBasePath + "VFTE/VOIE_FER.shp", outBasePath+"509_railway.shp", envClip); POSITION_S >= 0
+		clipSHP(inBasePath + "VFTE/VOIE_FER.shp", outBasePath+"509_railway.shp", envClip, CQL.toFilter( "POSITION_S >= 0" ));
 
 		//510,L,power_line_cableway_skilift
 		clipSHP(inBasePath + "VFTE/TRANS_CABL.shp", outBasePath+"510_power_line_cableway_skilift.shp", envClip);
