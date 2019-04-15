@@ -34,14 +34,18 @@ public class OriLuxSHP {
 		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
 
 
-
+		System.out.println("BDT to ori");
+		extractBDTToOri(basePathBDT, basePathOriBDT);
+		System.out.println("OSM to ori");
+		extractOSMToOri(basePathOSM, basePathOriOSM);
+		System.out.println("cadastre to ori");
+		extractCadastreToOri(basePathCadastre, basePathOriCadastre);
 
 
 		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 
 		System.out.println("end");
 	}
-
 
 	public static void extractBDTToOri(String inBasePath, String outBasePath) throws Exception {
 
@@ -326,6 +330,13 @@ public class OriLuxSHP {
 		//601_L_magnetic_north_line
 		//603.0_P_spot_height
 	}
+
+	public static void extractCadastreToOri(String inBasePath, String outBasePath) throws Exception {
+		//TODO
+	}
+
+
+
 
 
 	//clip and filter SHP
