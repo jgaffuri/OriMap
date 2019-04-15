@@ -25,6 +25,8 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
+		//TODO finalise OSM to ori
+		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
@@ -38,11 +40,10 @@ public class OriLuxSHP {
 
 		//System.out.println("BDT to ori");
 		//extractBDTToOri(basePathBDT, basePathOriBDT);
-		//System.out.println("OSM to ori");
-		//extractOSMToOri(basePathOSM, basePathOriOSM);
-		System.out.println("cadastre to ori");
-		extractCadastreToOri(basePathCadastre, basePathOriCadastre);
-
+		System.out.println("OSM to ori");
+		extractOSMToOri(basePathOSM, basePathOriOSM);
+		//System.out.println("cadastre to ori");
+		//extractCadastreToOri(basePathCadastre, basePathOriCadastre);
 
 		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 
