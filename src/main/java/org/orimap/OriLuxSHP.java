@@ -46,7 +46,7 @@ public class OriLuxSHP {
 
 		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 
-		System.out.println("end");
+		System.out.println("End");
 	}
 
 	public static void extractBDTToOri(String inBasePath, String outBasePath) throws Exception {
@@ -460,7 +460,7 @@ public class OriLuxSHP {
 		5032	piste d'essai
 		5043	place voirie //TODO ?
 		 */
-		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"501.1_S_paved_area.shp", null, CQL.toFilter( "CODE_NATUR = 5035 OR CODE_NATUR = 5036 OR CODE_NATUR = 5041 OR CODE_NATUR = 5039 OR CODE_NATUR = 5024 OR CODE_NATUR = 5025 OR CODE_NATUR = 5032 OR CODE_NATUR = 5043" ) );
+		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"501.1_S_paved_area.shp", null, CQL.toFilter( "CODE_NATUR = 5035 OR CODE_NATUR = 5036 OR CODE_NATUR = 5041 OR CODE_NATUR = 5039 OR CODE_NATUR = 5032 OR CODE_NATUR = 5043" ) );
 		//502_L_wide_road
 		//503_L_road
 		//504_L_vehicle_track
@@ -494,7 +494,7 @@ public class OriLuxSHP {
 		5046	écluse
 		5047	port
 		 */
-		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "CODE_NATUR = 5023 OR CODE_NATUR = 5026 OR CODE_NATUR = 5034 OR CODE_NATUR = 5031 OR CODE_NATUR = 5044 OR CODE_NATUR = 5029 OR CODE_NATUR = 5045 OR CODE_NATUR = 5046 OR CODE_NATUR = 5047" ) );
+		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "CODE_NATUR = 5023 OR CODE_NATUR = 5024 OR CODE_NATUR = 5025 OR CODE_NATUR = 5026 OR CODE_NATUR = 5034 OR CODE_NATUR = 5031 OR CODE_NATUR = 5044 OR CODE_NATUR = 5029 OR CODE_NATUR = 5045 OR CODE_NATUR = 5046 OR CODE_NATUR = 5047" ) );
 		//521_S_building
 		extractSHP(inBasePath + "BATIMENTS.shp", outBasePath+"521_S_building.shp");
 		//521.1_P_building_min
