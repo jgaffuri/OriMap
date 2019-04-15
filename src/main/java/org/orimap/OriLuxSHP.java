@@ -25,10 +25,19 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
-		Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
-		String inBasePath = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
-		String inBaseOSMPath = "/home/juju/Bureau/orienteering/data/osm/luxembourg-latest-free.shp/";
-		String outBasePath = "/home/juju/Bureau/out/";
+		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
+		String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
+		String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
+
+		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
+		String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
+		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
+
+
+
+
+
+		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 
 		System.out.println("end");
 	}
@@ -201,7 +210,7 @@ public class OriLuxSHP {
 
 	}
 
-	public static void extractOSMToOri(String inBaseOSMPath, String outBasePath) throws Exception {
+	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 
 		//101_L_contour
 		//102_L_index_contour
@@ -249,7 +258,7 @@ public class OriLuxSHP {
 		//313_P_prominent_water_feature
 
 		//401_S_open_land
-		extractSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass'" ));
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass'" ));
 		//402_S_open_land_scattered_trees
 		//402.1_S_open_land_scattered_trees
 		//403_S_rough_open_land
@@ -263,7 +272,7 @@ public class OriLuxSHP {
 		//411_S_vegetation_impassable
 		//411.2_L_vegetation_impassable_minw
 		//412_S_cultivated_land
-		extractSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"412_S_cultivated_land.shp", null, CQL.toFilter( "fclass = 'farm'" ));
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"412_S_cultivated_land.shp", null, CQL.toFilter( "fclass = 'farm'" ));
 		//413_S_orchard
 		//414_S_vineyard_similar
 		//415_L_distinct_cultivation_boundary
@@ -299,7 +308,7 @@ public class OriLuxSHP {
 		//518_L_impassable_fence
 		//519,PO,crossing_point
 		//520_S_area_shall_not_entered
-		extractSHP(inBaseOSMPath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered2.shp", null, CQL.toFilter( "fclass = 'residential'" ));
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered2.shp", null, CQL.toFilter( "fclass = 'residential'" ));
 		//521_S_building
 		//521.1_P_building_min
 		//521.4_L_building_outline
