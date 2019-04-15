@@ -335,7 +335,7 @@ public class OriLuxSHP {
 	}
 
 	public static void extractCadastreToOri(String inBasePath, String outBasePath) throws Exception {
-		//5048	point géodésique
+		//ignored for parcelles: 5048	point géodésique
 
 		//101_L_contour
 		//102_L_index_contour
@@ -450,14 +450,15 @@ public class OriLuxSHP {
 
 		//501_S_paved_area_with_bn
 		//501.1_S_paved_area
+		//TODO no - too many
 		/*5035	autoroute
 		5036	route nationale
 		5041	rue
 		5039	piste cyclable
-		5024	place
-		5025	place (occupée)
+		5024	place //TODO ?
+		5025	place (occupée) //TODO ?
 		5032	piste d'essai
-		5043	place voirie
+		5043	place voirie //TODO ?
 		 */
 		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"501.1_S_paved_area.shp", null, CQL.toFilter( "CODE_NATUR = 5035 OR CODE_NATUR = 5036 OR CODE_NATUR = 5041 OR CODE_NATUR = 5039 OR CODE_NATUR = 5024 OR CODE_NATUR = 5025 OR CODE_NATUR = 5032 OR CODE_NATUR = 5043" ) );
 		//502_L_wide_road
@@ -512,6 +513,7 @@ public class OriLuxSHP {
 		//601_L_magnetic_north_line
 		//603.0_P_spot_height
 	}
+
 
 
 
