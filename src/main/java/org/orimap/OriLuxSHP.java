@@ -3,6 +3,8 @@
  */
 package org.orimap;
 
+import java.io.IOException;
+
 import org.geotools.filter.text.cql2.CQL;
 import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
@@ -25,7 +27,6 @@ public class OriLuxSHP {
 		String outBasePath = "/home/juju/Bureau/out/";
 
 		//TODO decompose: fun BDT to ori, fun OSM to ori, fun cadastre to ori. comparison, fusion
-		//TODO function ori clip
 
 		//101_L_contour
 		extractSHP(inBasePath + "ALTI/COURBE.shp", outBasePath+"101_L_contour.shp", kirchbergEnv, CQL.toFilter( "NATURE = 0 OR NATURE = 3" ));
@@ -205,6 +206,21 @@ public class OriLuxSHP {
 		SHPUtil.saveSHP(fsd.fs, out, fsd.ft.getCoordinateReferenceSystem());
 	}
 
+
+	public void clipOri(String inPath, String outPath, Envelope clipEnv) {
+
+		String[] files = null;
+		//TODO check file
+		//TODO load file
+
+		for(String file : files) {
+			//TODO check if input file exists
+			//if(!file.exists()) throw new IOException("File "+shpFilePath+" does not exist.");
+			//clip
+			extractSHP(inPath + file, outPath + file, clipEnv);
+		}
+
+	}
 
 
 
