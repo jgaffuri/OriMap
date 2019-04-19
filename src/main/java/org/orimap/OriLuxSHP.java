@@ -29,9 +29,7 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
-		//TODO merge SHPs
 		//TODO finalise OSM to ori - roads
-		//TODO clip ori
 		//TODO integrate: analyse differences, etc.
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
@@ -56,9 +54,9 @@ public class OriLuxSHP {
 		System.out.println("Clip");
 		Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 		String outMap = "/home/juju/orienteering/omap_kirchberg_village/";
-		clipOri(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
-		clipOri(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
-		clipOri(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
+		clipSHP(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
+		clipSHP(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
+		clipSHP(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
 
 		System.out.println("End");
 	}
@@ -613,17 +611,14 @@ att: bridge - tunnel
 	}
 
 
-
-	//clip ori data
-	//TODO not tested
-	public static void clipOri(String inPath, String outPath, Envelope clipEnv) {
+	//clip all SHP files of a folder
+	public static void clipSHP(String inPath, String outPath, Envelope clipEnv) {
 		for(File f : FileUtil.getFiles(inPath)) {
 			if( !".shp".equals( FileUtil.getFileExtension(f).toLowerCase() ) ) continue;
 			extractSHP(f.getAbsolutePath(), outPath + f.getName(), clipEnv);
 		}
 	}
 
-	//TODO merge SHP
 
 	/*
 	public static ArrayList<String> loadOriSchema() {
