@@ -3,10 +3,7 @@
  */
 package org.orimap;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,6 +16,7 @@ import org.opencarto.datamodel.Feature;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
 import org.opencarto.util.FeatureUtil;
+import org.opencarto.util.FileUtil;
 import org.opengis.filter.Filter;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
@@ -39,22 +37,28 @@ public class OriLuxSHP {
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
 
-		//System.out.println("BDT to ori");
+		System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
 		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
 		extractBDTToOri(basePathBDT, basePathOriBDT);
 
-		//System.out.println("OSM to ori");
-		//String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
-		//String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
-		//extractOSMToOri(basePathOSM, basePathOriOSM);
+		System.out.println("OSM to ori");
+		String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
+		String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
+		extractOSMToOri(basePathOSM, basePathOriOSM);
 
-		//System.out.println("cadastre to ori");
-		//String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
-		//String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
-		//extractCadastreToOri(basePathCadastre, basePathOriCadastre);
+		System.out.println("cadastre to ori");
+		String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
+		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
+		extractCadastreToOri(basePathCadastre, basePathOriCadastre);
 
-		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
+
+		System.out.println("Clip");
+		Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
+		String outMap = "/home/juju/orienteering/omap_kirchberg_village/";
+		clipOri(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
+		clipOri(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
+		clipOri(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
 
 		System.out.println("End");
 	}
@@ -266,8 +270,9 @@ att: bridge - tunnel
 		extractSHP(inBasePath + "gis_osm_natural_a_free_1_LUXPROJ.shp", outBasePath+"201.2_S_impassable_cliff.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//202_L_cliff
 		//203_P_rocky_pit_cave
-		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"203_P_rocky_pit_cave.shp", null, CQL.toFilter( "fclass = 'cave_entrance'" ));
-		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"203_P_rocky_pit_cave2.shp", null, CQL.toFilter( "fclass = 'peak'" ));
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"1.shp", null, CQL.toFilter( "fclass = 'cave_entrance'" ));
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"2.shp", null, CQL.toFilter( "fclass = 'peak'" ));
+		mergeSHPGeoms(outBasePath+"203_P_rocky_pit_cave.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//204_P_boulder
 		//205_P_large_boulder
 		//206_S_gigantic_boulder
@@ -582,7 +587,7 @@ att: bridge - tunnel
 	}
 
 
-	private static void deleteSHP(String... shpFiles) throws MalformedURLException {
+	public static void deleteSHP(String... shpFiles) throws MalformedURLException {
 		for(String shpFile : shpFiles) {
 			ShpFiles sf = new ShpFiles(new File(shpFile));
 			sf.delete();
@@ -590,7 +595,7 @@ att: bridge - tunnel
 	}
 
 	//NB: all input files are assumed to have the same geometrical types and the same CRS
-	private static void mergeSHPGeoms(String outSHP, boolean delete, String... inSHPs) throws MalformedURLException {
+	public static void mergeSHPGeoms(String outSHP, boolean delete, String... inSHPs) throws MalformedURLException {
 		Collection<Geometry> geoms = new ArrayList<Geometry>();
 		CoordinateReferenceSystem crs = null;
 		for(String inSHP : inSHPs) {
@@ -611,17 +616,16 @@ att: bridge - tunnel
 
 	//clip ori data
 	//TODO not tested
-	public void clipOri(String inPath, String outPath, Envelope clipEnv) {
-		for(String file : loadOriSchema()) {
-			if(new File(inPath + file).exists())
-				extractSHP(inPath + file, outPath + file, clipEnv);
+	public static void clipOri(String inPath, String outPath, Envelope clipEnv) {
+		for(File f : FileUtil.getFiles(inPath)) {
+			if( !".shp".equals( FileUtil.getFileExtension(f).toLowerCase() ) ) continue;
+			extractSHP(f.getAbsolutePath(), outPath + f.getName(), clipEnv);
 		}
-
 	}
 
 	//TODO merge SHP
 
-
+	/*
 	public static ArrayList<String> loadOriSchema() {
 		ArrayList<String> out = new ArrayList<String>();
 		try {
@@ -635,5 +639,6 @@ att: bridge - tunnel
 		} catch (IOException e) { e.printStackTrace(); }
 		return out;
 	}
+	 */
 
 }
