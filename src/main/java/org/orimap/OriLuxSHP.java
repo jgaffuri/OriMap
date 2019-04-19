@@ -219,8 +219,86 @@ public class OriLuxSHP {
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 		//TODO complete
-		//TODO check in website
 
+		/*
+gis_osm_landuse_a_free_1_LUXPROJ
+
+private:
+residential
+allotments
+cemetery
+commercial
+health
+industrial
+military
+quarry
+
+open:
+grass
+meadow
+recreation_ground
+(park)
+
+clutivated:farm
+forest:forest
+orchard:orchard
+scrub:scrub
+vineyard:vineyard
+
+
+gis_osm_natural_a_free_1_LUXPROJ
+beach
+cliff
+spring
+tree
+
+
+gis_osm_water_a_free_1_LUXPROJ
+dock
+reservoir
+river
+water
+wetland
+
+gis_osm_buildings_a_free_1_LUXPROJ
+att: type.
+ruins
+
+
+
+gis_osm_waterways_free_1_LUXPROJ
+canal
+drain
+river
+stream
+
+
+gis_osm_roads_free_1_LUXPROJ
+att: bridge - tunnel
+*** revers ing
+
+
+gis_osm_railways_free_1_LUXPROJ
+rail
+tram
+funicular
+miniature_railway
+narrow_gauge
+
+
+gis_osm_natural_free_1_LUXPROJ
+beach
+cave_entrance
+cliff
+peak
+spring
+tree
+
+
+
+		
+		*/
+		
 		//101_L_contour
 		//102_L_index_contour
 		//103_L_form_line
