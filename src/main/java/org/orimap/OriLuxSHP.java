@@ -221,10 +221,6 @@ public class OriLuxSHP {
 		//TODO complete
 
 		/*
-extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
-att: type.
-ruins
-
 extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: bridge - tunnel
 *** revers ing
@@ -353,11 +349,13 @@ att: bridge - tunnel
 		//private: residential,allotments,cemetery,commercial,health,industrial,military,quarry
 		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'allotments' OR fclass = 'cemetery' OR fclass = 'commercial' OR fclass = 'health' OR fclass = 'industrial' OR fclass = 'military' OR fclass = 'quarry'" ));
 		//521_S_building
-		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"521_S_building.shp");
+		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"521_S_building.shp", null, CQL.toFilter( "NOT(type = 'roof' OR type = 'carport' OR type = 'tent') AND NOT (type = 'ruins' OR type = 'collapsed')" ));
 		//521.1_P_building_min
 		//521.4_L_building_outline
 		//522_S_canopy
+		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"522_S_canopy.shp", null, CQL.toFilter( "type = 'roof' OR type = 'carport' OR type = 'tent'" ));
 		//523_L_ruin
+		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"523_L_ruin.shp", null, CQL.toFilter( "type = 'ruins' OR type = 'collapsed'" ));
 		//524_P_high_tower
 		//525_P_small_tower
 		//526_P_cairn
