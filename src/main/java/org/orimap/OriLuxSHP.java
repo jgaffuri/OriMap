@@ -7,14 +7,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Collection;
 
+import org.geotools.data.shapefile.files.ShpFiles;
 import org.geotools.filter.text.cql2.CQL;
 import org.locationtech.jts.geom.Envelope;
+import org.locationtech.jts.geom.Geometry;
+import org.opencarto.datamodel.Feature;
 import org.opencarto.io.SHPUtil;
 import org.opencarto.io.SHPUtil.SHPData;
 import org.opencarto.util.FeatureUtil;
 import org.opengis.filter.Filter;
+import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
  * @author julien Gaffuri
@@ -25,24 +31,27 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
-		//TODO finalise OSM to ori
+		//TODO merge SHPs
+		//TODO finalise OSM to ori - roads
+		//TODO clip ori
+		//TODO integrate: analyse differences, etc.
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
-		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
-		String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
-		String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
-
-		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
-		String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
-		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
-
 
 		//System.out.println("BDT to ori");
-		//extractBDTToOri(basePathBDT, basePathOriBDT);
-		System.out.println("OSM to ori");
-		extractOSMToOri(basePathOSM, basePathOriOSM);
+		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
+		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
+		extractBDTToOri(basePathBDT, basePathOriBDT);
+
+		//System.out.println("OSM to ori");
+		//String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
+		//String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
+		//extractOSMToOri(basePathOSM, basePathOriOSM);
+
 		//System.out.println("cadastre to ori");
+		//String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
+		//String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
 		//extractCadastreToOri(basePathCadastre, basePathOriCadastre);
 
 		//Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
@@ -104,8 +113,9 @@ public class OriLuxSHP {
 		//309_L_narrow_marsh
 		//310_S_indistinct_marsh
 		//311_P_well_fountain_water_tank
-		extractSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"311_P_well_fountain_water_tank.shp", null, CQL.toFilter( "NATURE = 12" ));
-		extractSHP(inBasePath + "HYDR/POINT_EAU.shp", outBasePath+"311_P_well_fountain_water_tank2.shp", null, CQL.toFilter( "NATURE = 1 OR NATURE = 4" ));
+		extractSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"1.shp", null, CQL.toFilter( "NATURE = 12" ));
+		extractSHP(inBasePath + "HYDR/POINT_EAU.shp", outBasePath+"2.shp", null, CQL.toFilter( "NATURE = 1 OR NATURE = 4" ));
+		mergeSHPGeoms(outBasePath+"311_P_well_fountain_water_tank.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//312_P_spring
 		extractSHP(inBasePath + "HYDR/POINT_EAU.shp", outBasePath+"312_P_spring.shp", null, CQL.toFilter( "NATURE = 2 OR NATURE = 3" ));
 		//313_P_prominent_water_feature
@@ -148,8 +158,9 @@ public class OriLuxSHP {
 		//501_S_paved_area_with_bn
 		extractSHP(inBasePath + "BATI/PISTE_AERO.shp", outBasePath+"501_S_paved_area_with_bn.shp");
 		//501.1_S_paved_area
-		extractSHP(inBasePath + "VCR/SURFACE_ROUTE.shp", outBasePath+"501.1_S_paved_area.shp");
-		extractSHP(inBasePath + "HYDR/ECLUSE.shp", outBasePath+"501.1_S_paved_area2.shp");
+		extractSHP(inBasePath + "VCR/SURFACE_ROUTE.shp", outBasePath+"1.shp");
+		extractSHP(inBasePath + "HYDR/ECLUSE.shp", outBasePath+"2.shp");
+		mergeSHPGeoms(outBasePath+"501.1_S_paved_area.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 
 		//502_L_wide_road
 		extractSHP(inBasePath + "VCR/TRONCON_ROUTE.shp", outBasePath+"502_L_wide_road.shp", null, CQL.toFilter( "(ETAT=0 OR ETAT=1) AND POSITION_S >= 0 AND TYPE = 0" ));
@@ -177,8 +188,9 @@ public class OriLuxSHP {
 		//513_L_wall
 		//514_L_ruined_wall
 		//515_L_impassable_wall
-		extractSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"515_L_impassable_wall.shp", null, CQL.toFilter( "NATURE = 4 OR NATURE = 5" ));
-		extractSHP(inBasePath + "VCR/PARAPET.shp", outBasePath+"515_L_impassable_wall2.shp");
+		extractSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"1.shp", null, CQL.toFilter( "NATURE = 4 OR NATURE = 5" ));
+		extractSHP(inBasePath + "VCR/PARAPET.shp", outBasePath+"2.shp");
+		mergeSHPGeoms(outBasePath+"515_L_impassable_wall.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//516_L_fence
 		//517_L_ruined_fence
 		//518_L_impassable_fence
@@ -187,8 +199,9 @@ public class OriLuxSHP {
 		//520_S_area_shall_not_entered
 		extractSHP(inBasePath + "BATI/CIMETIERE.shp", outBasePath+"520_S_area_shall_not_entered.shp");
 		//521_S_building
-		extractSHP(inBasePath + "BATI/BATIMENT.shp", outBasePath+"521_S_building.shp");
-		extractSHP(inBasePath + "BATI/CONSTRUC_SURF.shp", outBasePath+"521_S_building2.shp");
+		extractSHP(inBasePath + "BATI/BATIMENT.shp", outBasePath+"1.shp");
+		extractSHP(inBasePath + "BATI/CONSTRUC_SURF.shp", outBasePath+"2.shp");
+		mergeSHPGeoms(outBasePath+"521_S_building.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//521.1_P_building_min
 		extractSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"521.1_P_building_min.shp", null, CQL.toFilter( "NATURE = 9 OR NATURE = 10 OR NATURE = 11 OR NATURE = 13" ));
 		//521.4_L_building_outline
@@ -197,12 +210,14 @@ public class OriLuxSHP {
 		//523_L_ruin
 		extractSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"523_L_ruin.shp", null, CQL.toFilter( "NATURE = 3" ));
 		//524_P_high_tower
-		extractSHP(inBasePath + "VFTE/PYLONE.shp", outBasePath+"524_P_high_tower.shp");
-		extractSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"524_P_high_tower2.shp", null, CQL.toFilter( "NATURE = 1" ));
+		extractSHP(inBasePath + "VFTE/PYLONE.shp", outBasePath+"1.shp");
+		extractSHP(inBasePath + "BATI/CONSTRUC_PONCT.shp", outBasePath+"2.shp", null, CQL.toFilter( "NATURE = 1" ));
+		mergeSHPGeoms(outBasePath+"524_P_high_tower.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//525_P_small_tower
 		//526_P_cairn
-		extractSHP(inBasePath + "ADM/BORN_FRONT.shp", outBasePath+"526_P_cairn.shp");
-		extractSHP(inBasePath + "GEO/POINT_GEOD.shp", outBasePath+"526_P_cairn2.shp");
+		extractSHP(inBasePath + "ADM/BORN_FRONT.shp", outBasePath+"1.shp");
+		extractSHP(inBasePath + "GEO/POINT_GEOD.shp", outBasePath+"2.shp");
+		mergeSHPGeoms(outBasePath+"526_P_cairn.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//527_P_fodder_rack
 		//528_L_prominent_line_feature
 		extractSHP(inBasePath + "BATI/CONSTRUC_LINE.shp", outBasePath+"528_L_prominent_line_feature.shp", null, CQL.toFilter( "NATURE = 1 OR NATURE = 2" ));
@@ -217,14 +232,17 @@ public class OriLuxSHP {
 
 	}
 
+
+
+
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 		//TODO complete
 
 		/*
 extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: bridge - tunnel
-*** revers ing
-		*/
+		 *** revers ing
+		 */
 
 		//101_L_contour
 		//102_L_index_contour
@@ -242,8 +260,8 @@ att: bridge - tunnel
 		//114_S_very_broken_ground
 		//115_P_prominent_landform_feature
 		//201_L_impassable_cliff
-		//201.1_P_impassable_cliff_ms
-		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"201.1_P_impassable_cliff_ms.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
+		//201.1_P_impassable_cliff
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"201.1_P_impassable_cliff.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//201.2_S_impassable_cliff
 		extractSHP(inBasePath + "gis_osm_natural_a_free_1_LUXPROJ.shp", outBasePath+"201.2_S_impassable_cliff.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//202_L_cliff
@@ -564,6 +582,33 @@ att: bridge - tunnel
 	}
 
 
+	private static void deleteSHP(String... shpFiles) throws MalformedURLException {
+		for(String shpFile : shpFiles) {
+			ShpFiles sf = new ShpFiles(new File(shpFile));
+			sf.delete();
+		}
+	}
+
+	//NB: all input files are assumed to have the same geometrical types and the same CRS
+	private static void mergeSHPGeoms(String outSHP, boolean delete, String... inSHPs) throws MalformedURLException {
+		Collection<Geometry> geoms = new ArrayList<Geometry>();
+		CoordinateReferenceSystem crs = null;
+		for(String inSHP : inSHPs) {
+			SHPData dt = SHPUtil.loadSHP(inSHP);
+			if(crs == null) crs = dt.ft.getCoordinateReferenceSystem();
+			ArrayList<Feature> fs = dt.fs;
+			for(Feature f : fs) {
+				geoms.add(f.getGeom());
+			}
+			if(delete) {
+				new ShpFiles(new File(inSHP)).delete();
+			}
+		}
+		SHPUtil.saveGeomsSHP(geoms, outSHP, crs);
+	}
+
+
+
 	//clip ori data
 	//TODO not tested
 	public void clipOri(String inPath, String outPath, Envelope clipEnv) {
@@ -573,6 +618,8 @@ att: bridge - tunnel
 		}
 
 	}
+
+	//TODO merge SHP
 
 
 	public static ArrayList<String> loadOriSchema() {

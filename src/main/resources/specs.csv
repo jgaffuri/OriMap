@@ -2,8 +2,9 @@
 102_L_index_contour
 103_L_form_line
 104_L_earth_bank
+104.1_P_earth_bank
 105_L_earth_wall
-106_L_ruined_earth_wall
+106_L_small_earth_wall
 107_L_erosion_gully
 108_L_small_erosion_gully
 109_P_small_knoll
@@ -14,6 +15,8 @@
 114_S_very_broken_ground
 115_P_prominent_landform_feature
 201_L_impassable_cliff
+201.1_P_impassable_cliff
+201.2_S_impassable_cliff
 202_L_cliff
 203_P_rocky_pit_cave
 204_P_boulder
