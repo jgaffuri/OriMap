@@ -319,6 +319,7 @@ public class OriLuxSHP {
 		//520_S_area_shall_not_entered
 		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential'" ));
 		//521_S_building
+		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"521_S_building.shp");
 		//521.1_P_building_min
 		//521.4_L_building_outline
 		//522_S_canopy
