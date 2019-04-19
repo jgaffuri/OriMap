@@ -30,6 +30,7 @@ public class OriLuxSHP {
 		System.out.println("Start");
 
 		//TODO finalise OSM to ori - roads
+
 		//TODO integrate: analyse differences, etc.
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
