@@ -222,35 +222,20 @@ public class OriLuxSHP {
 
 		/*
 
-gis_osm_buildings_a_free_1_LUXPROJ
+extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: type.
 ruins
 
-gis_osm_waterways_free_1_LUXPROJ
+extractSHP(inBasePath + "gis_osm_waterways_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 canal
 drain
 river
 stream
 
-gis_osm_roads_free_1_LUXPROJ
+extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: bridge - tunnel
 *** revers ing
 
-gis_osm_railways_free_1_LUXPROJ
-rail
-tram
-funicular
-miniature_railway
-narrow_gauge
-
-gis_osm_natural_free_1_LUXPROJ
-beach
-cave_entrance
-cliff
-peak
-spring
-tree
-		
 		*/
 
 		//101_L_contour
@@ -269,10 +254,14 @@ tree
 		//114_S_very_broken_ground
 		//115_P_prominent_landform_feature
 		//201_L_impassable_cliff
+		//201.1_P_impassable_cliff_ms
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"201.1_P_impassable_cliff_ms.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//201.2_S_impassable_cliff
 		extractSHP(inBasePath + "gis_osm_natural_a_free_1_LUXPROJ.shp", outBasePath+"201.2_S_impassable_cliff.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//202_L_cliff
 		//203_P_rocky_pit_cave
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"203_P_rocky_pit_cave.shp", null, CQL.toFilter( "fclass = 'cave_entrance'" ));
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"203_P_rocky_pit_cave2.shp", null, CQL.toFilter( "fclass = 'peak'" ));
 		//204_P_boulder
 		//205_P_large_boulder
 		//206_S_gigantic_boulder
@@ -301,6 +290,7 @@ tree
 		//310_S_indistinct_marsh
 		//311_P_well_fountain_water_tank
 		//312_P_spring
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"312_P_spring.shp", null, CQL.toFilter( "fclass = 'spring'" ));
 		//313_P_prominent_water_feature
 
 		//401_S_open_land
@@ -336,6 +326,7 @@ tree
 
 		//417_P_prominent_large_tree
 		//418_P_prominent_bush_or_tree
+		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"418_P_prominent_bush_or_tree.shp", null, CQL.toFilter( "fclass = 'tree'" ));
 		//419_P_prominent_vegetation_feature
 
 		//501_S_paved_area_with_bn
@@ -350,6 +341,7 @@ tree
 		//508_L_narrow_ride_or_linear_trace
 
 		//509_L_railway
+		extractSHP(inBasePath + "gis_osm_railways_free_1_LUXPROJ.shp", outBasePath+"509_L_railway.shp", null, CQL.toFilter( "fclass = 'rail' OR fclass = 'tram' OR fclass = 'funicular' OR fclass = 'miniature_railway' OR fclass = 'narrow_gauge'" ));
 
 		//510_L_power_line_cableway_skilift
 		//511_L_major_power_line
