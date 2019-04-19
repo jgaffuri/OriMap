@@ -219,6 +219,7 @@ public class OriLuxSHP {
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 		//TODO complete
+		//TODO check in website
 
 		//101_L_contour
 		//102_L_index_contour
