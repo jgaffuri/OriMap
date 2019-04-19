@@ -221,21 +221,13 @@ public class OriLuxSHP {
 		//TODO complete
 
 		/*
-
 extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: type.
 ruins
 
-extractSHP(inBasePath + "gis_osm_waterways_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
-canal
-drain
-river
-stream
-
 extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
 att: bridge - tunnel
 *** revers ing
-
 		*/
 
 		//101_L_contour
@@ -281,7 +273,9 @@ att: bridge - tunnel
 		//302_S_shallow_body_of_water
 		//303_P_waterhole
 		//304_L_crossable_watercourse
+		extractSHP(inBasePath + "gis_osm_waterways_free_1_LUXPROJ.shp", outBasePath+"304_L_crossable_watercourse.shp", null, CQL.toFilter( "fclass = 'river' OR fclass = 'canal'" ));
 		//305_L_small_crossable_watercourse
+		extractSHP(inBasePath + "gis_osm_waterways_free_1_LUXPROJ.shp", outBasePath+"305_L_small_crossable_watercourse.shp", null, CQL.toFilter( "fclass = 'stream'" ));
 		//306_L_minor_seasonal_water_channel
 		//307_S_uncrossable_marsh
 		//308_S_marsh
