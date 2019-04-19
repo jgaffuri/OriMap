@@ -222,25 +222,9 @@ public class OriLuxSHP {
 
 		/*
 
-gis_osm_natural_a_free_1_LUXPROJ
-beach
-cliff
-spring
-tree
-
-
-gis_osm_water_a_free_1_LUXPROJ
-dock
-reservoir
-river
-water
-wetland
-
 gis_osm_buildings_a_free_1_LUXPROJ
 att: type.
 ruins
-
-
 
 gis_osm_waterways_free_1_LUXPROJ
 canal
@@ -248,11 +232,9 @@ drain
 river
 stream
 
-
 gis_osm_roads_free_1_LUXPROJ
 att: bridge - tunnel
 *** revers ing
-
 
 gis_osm_railways_free_1_LUXPROJ
 rail
@@ -261,7 +243,6 @@ funicular
 miniature_railway
 narrow_gauge
 
-
 gis_osm_natural_free_1_LUXPROJ
 beach
 cave_entrance
@@ -269,12 +250,9 @@ cliff
 peak
 spring
 tree
-
-
-
 		
 		*/
-		
+
 		//101_L_contour
 		//102_L_index_contour
 		//103_L_form_line
@@ -291,6 +269,8 @@ tree
 		//114_S_very_broken_ground
 		//115_P_prominent_landform_feature
 		//201_L_impassable_cliff
+		//201.2_S_impassable_cliff
+		extractSHP(inBasePath + "gis_osm_natural_a_free_1_LUXPROJ.shp", outBasePath+"201.2_S_impassable_cliff.shp", null, CQL.toFilter( "fclass = 'cliff'" ));
 		//202_L_cliff
 		//203_P_rocky_pit_cave
 		//204_P_boulder
@@ -303,10 +283,12 @@ tree
 		//211_S_stony_ground_walk
 		//212_S_stony_ground_fight
 		//213_S_sandy_ground
+		extractSHP(inBasePath + "gis_osm_natural_a_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = 'beach'" ));
 		//214_S_bare_rock
 		//215_L_trench
 
 		//301_S_uncrossable_body_of_water
+		extractSHP(inBasePath + "gis_osm_water_a_free_1_LUXPROJ.shp", outBasePath+"301_S_uncrossable_body_of_water.shp", null, CQL.toFilter( "fclass = 'water' OR fclass = 'river' OR fclass = 'reservoir'" ));
 		//302_S_shallow_body_of_water
 		//303_P_waterhole
 		//304_L_crossable_watercourse
@@ -314,6 +296,7 @@ tree
 		//306_L_minor_seasonal_water_channel
 		//307_S_uncrossable_marsh
 		//308_S_marsh
+		extractSHP(inBasePath + "gis_osm_water_a_free_1_LUXPROJ.shp", outBasePath+"308_S_marsh.shp", null, CQL.toFilter( "fclass = 'wetland'" ));
 		//309_L_narrow_marsh
 		//310_S_indistinct_marsh
 		//311_P_well_fountain_water_tank
