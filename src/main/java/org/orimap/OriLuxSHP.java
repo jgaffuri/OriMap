@@ -120,7 +120,7 @@ public class OriLuxSHP {
 		//404_S_rough_open_land_scattered_trees
 		//405_S_forest
 		extractSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"405_S_forest.shp", null, CQL.toFilter( "NATURE = 0 OR NATURE = 1 OR NATURE = 2" ));
-		//406_S_Vegetation_slow
+		//406_S_vegetation_slow
 		//407_S_vegetation_slow_good_visibility
 		//408_S_vegetation_walk
 		extractSHP(inBasePath + "VEGE/VEGETATION_SURF.shp", outBasePath+"408_vegetation_walk.shp", null, CQL.toFilter( "NATURE = 3" ));
@@ -221,30 +221,6 @@ public class OriLuxSHP {
 		//TODO complete
 
 		/*
-gis_osm_landuse_a_free_1_LUXPROJ
-
-private:
-residential
-allotments
-cemetery
-commercial
-health
-industrial
-military
-quarry
-
-open:
-grass
-meadow
-recreation_ground
-(park)
-
-clutivated:farm
-forest:forest
-orchard:orchard
-scrub:scrub
-vineyard:vineyard
-
 
 gis_osm_natural_a_free_1_LUXPROJ
 beach
@@ -345,23 +321,33 @@ tree
 		//313_P_prominent_water_feature
 
 		//401_S_open_land
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass'" ));
+		//grass,meadow,recreation_ground,(park)
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass' OR fclass = 'meadow' OR fclass = 'recreation_ground'" ));
 		//402_S_open_land_scattered_trees
 		//402.1_S_open_land_scattered_trees
 		//403_S_rough_open_land
 		//404_S_rough_open_land_scattered_trees
 		//405_S_forest
-		//406_S_Vegetation_slow
+		//406_S_vegetation_slow
+		//forest
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"406_S_vegetation_slow.shp", null, CQL.toFilter( "fclass = 'forest'" ));
 		//407_S_vegetation_slow_good_visibility
+		//scrub
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"407_S_vegetation_slow_good_visibility.shp", null, CQL.toFilter( "fclass = 'scrub'" ));
 		//408_S_vegetation_walk
 		//409_S_vegetation_walk_good_visibility
 		//410_S_vegetation_fight
 		//411_S_vegetation_impassable
 		//411.2_L_vegetation_impassable_minw
 		//412_S_cultivated_land
+		//farm
 		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"412_S_cultivated_land.shp", null, CQL.toFilter( "fclass = 'farm'" ));
 		//413_S_orchard
+		//orchard
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"413_S_orchard.shp", null, CQL.toFilter( "fclass = 'orchard'" ));
 		//414_S_vineyard_similar
+		//vineyard
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"414_S_vineyard_similar.shp", null, CQL.toFilter( "fclass = 'vineyard'" ));
 		//415_L_distinct_cultivation_boundary
 		//416_L_distinct_vegetation_boundary
 
@@ -395,7 +381,8 @@ tree
 		//518_L_impassable_fence
 		//519,PO,crossing_point
 		//520_S_area_shall_not_entered
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential'" ));
+		//private: residential,allotments,cemetery,commercial,health,industrial,military,quarry
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'allotments' OR fclass = 'cemetery' OR fclass = 'commercial' OR fclass = 'health' OR fclass = 'industrial' OR fclass = 'military' OR fclass = 'quarry'" ));
 		//521_S_building
 		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"521_S_building.shp");
 		//521.1_P_building_min
@@ -499,7 +486,7 @@ tree
 		//405_S_forest
 		//5017	bois
 		extractSHP(inBasePath + "PARCELLES.shp", outBasePath+"405_S_forest.shp", null, CQL.toFilter( "CODE_NATUR = 5017" ) );
-		//406_S_Vegetation_slow
+		//406_S_vegetation_slow
 		//407_S_vegetation_slow_good_visibility
 		//408_S_vegetation_walk
 		/*5052	bande écologique
