@@ -240,12 +240,18 @@ public class OriLuxSHP {
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 		//TODO complete
+		//TODO bridge/tunnel
 		//https://wiki.openstreetmap.org/wiki/Map_Features
 
 		/*
+
+502.1 primary primary_link secondary secondary_link tertiary tertiary_link motorway
+extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = ''" ));
+
+504 cycleway track track_grade1 track_grade2 track_grade3 track_grade4 track_grade5
 extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
-att: bridge - tunnel
-		 *** revers ing
+
+
 		 */
 
 		//101_L_contour
@@ -346,9 +352,15 @@ att: bridge - tunnel
 		//501.1_S_paved_area
 
 		//502_L_wide_road
+		//502 residential motorway_link
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"502_L_wide_road.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'motorway_link'" ));
 		//503_L_road
+		//503 service living_street unclassified
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"503_L_road.shp", null, CQL.toFilter( "fclass = 'service' OR fclass = 'living_street' OR fclass = 'unclassified'" ));
 		//504_L_vehicle_track
 		//505_L_footpath
+		//505 steps footway path pedestrian bridleway
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"505_L_footpath.shp", null, CQL.toFilter( "fclass = 'steps' OR fclass = 'footway' OR fclass = 'path' OR fclass = 'pedestrian' OR fclass = 'bridleway'" ));
 		//506_L_small_footpath
 		//507_L_less_distinct_small_footpath
 		//508_L_narrow_ride_or_linear_trace
