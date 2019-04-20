@@ -35,6 +35,8 @@ public class OriLuxSHP {
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
+		reprojectOSMLux();
+		
 
 		System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
@@ -61,6 +63,14 @@ public class OriLuxSHP {
 
 		System.out.println("End");
 	}
+
+	private static void reprojectOSMLux() {
+		for(String file : new String[] {} ) {
+			System.out.println("Reproject "+file);
+			//TODO
+		}
+	}
+
 
 	public static void extractBDTToOri(String inBasePath, String outBasePath) throws Exception {
 
