@@ -35,7 +35,6 @@ public class OriLuxSHP {
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
-		/*
 		System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
 		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
@@ -58,7 +57,6 @@ public class OriLuxSHP {
 		clipSHP(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
 		clipSHP(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
 		clipSHP(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
-		 */
 
 		System.out.println("End");
 	}
@@ -619,6 +617,7 @@ public class OriLuxSHP {
 		Collection<Geometry> geoms = new ArrayList<Geometry>();
 		CoordinateReferenceSystem crs = null;
 		for(String inSHP : inSHPs) {
+			if(!new File(inSHP).exists()) continue;
 			SHPData dt = SHPUtil.loadSHP(inSHP);
 			if(crs == null) crs = dt.ft.getCoordinateReferenceSystem();
 			ArrayList<Feature> fs = dt.fs;
