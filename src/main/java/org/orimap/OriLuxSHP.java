@@ -239,8 +239,11 @@ public class OriLuxSHP {
 
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
+		//TODO fix proj issue for waterways, pois, transport, traffic, natural
+		//TODO add features from pois, transport, traffic
 		//TODO bridge/tunnel
 		//TODO get more from: https://wiki.openstreetmap.org/wiki/Map_Features with overpath API?
+		//cliff wall fence construction_site sport_terrain parking
 
 		//101_L_contour
 		//102_L_index_contour
@@ -301,8 +304,8 @@ public class OriLuxSHP {
 		//313_P_prominent_water_feature
 
 		//401_S_open_land
-		//grass,meadow,recreation_ground,(park)
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass' OR fclass = 'meadow' OR fclass = 'recreation_ground'" ));
+		//grass,meadow,recreation_ground,park,cemetery
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass' OR fclass = 'meadow' OR fclass = 'recreation_ground' OR fclass = 'park' OR fclass = 'cemetery'" ));
 		//402_S_open_land_scattered_trees
 		//402.1_S_open_land_scattered_trees
 		//403_S_rough_open_land
@@ -374,8 +377,8 @@ public class OriLuxSHP {
 		//518_L_impassable_fence
 		//519,PO,crossing_point
 		//520_S_area_shall_not_entered
-		//private: residential,allotments,cemetery,commercial,health,industrial,military,quarry
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'allotments' OR fclass = 'cemetery' OR fclass = 'commercial' OR fclass = 'health' OR fclass = 'industrial' OR fclass = 'military' OR fclass = 'quarry'" ));
+		//private: residential,allotments,commercial,health,industrial,military,quarry
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'allotments' OR fclass = 'commercial' OR fclass = 'health' OR fclass = 'industrial' OR fclass = 'military' OR fclass = 'quarry'" ));
 		//521_S_building
 		extractSHP(inBasePath + "gis_osm_buildings_a_free_1_LUXPROJ.shp", outBasePath+"521_S_building.shp", null, CQL.toFilter( "NOT(type = 'roof' OR type = 'carport' OR type = 'tent') AND NOT (type = 'ruins' OR type = 'collapsed')" ));
 		//521.1_P_building_min
