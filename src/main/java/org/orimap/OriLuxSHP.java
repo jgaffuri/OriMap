@@ -35,28 +35,28 @@ public class OriLuxSHP {
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
-		System.out.println("BDT to ori");
+		/*System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
 		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
-		extractBDTToOri(basePathBDT, basePathOriBDT);
+		extractBDTToOri(basePathBDT, basePathOriBDT);*/
 
 		System.out.println("OSM to ori");
 		String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
 		String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
 		extractOSMToOri(basePathOSM, basePathOriOSM);
 
-		System.out.println("cadastre to ori");
+		/*System.out.println("cadastre to ori");
 		String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
 		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
-		extractCadastreToOri(basePathCadastre, basePathOriCadastre);
+		extractCadastreToOri(basePathCadastre, basePathOriCadastre);*/
 
 
 		System.out.println("Clip");
 		Envelope kirchbergEnv = new Envelope(77000, 80000, 75800, 78200);
 		String outMap = "/home/juju/orienteering/omap_kirchberg_village/";
-		clipSHP(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
+		//clipSHP(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
 		clipSHP(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
-		clipSHP(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
+		//clipSHP(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
 
 		System.out.println("End");
 	}
