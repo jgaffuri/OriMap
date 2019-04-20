@@ -242,7 +242,6 @@ public class OriLuxSHP {
 
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
-		//TODO add features from pois
 		//TODO bridge/tunnel
 		//TODO get more from: https://wiki.openstreetmap.org/wiki/Map_Features with overpath API?
 		//cliff wall fence construction_site sport_terrain parking
@@ -305,17 +304,25 @@ public class OriLuxSHP {
 		extractSHP(inBasePath + "gis_osm_natural_free_1_LUXPROJ.shp", outBasePath+"312_P_spring.shp", null, CQL.toFilter( "fclass = 'spring'" ));
 		//313_P_prominent_water_feature
 
+
 		//401_S_open_land
 		//grass,meadow,recreation_ground,park,cemetery
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"401_S_open_land.shp", null, CQL.toFilter( "fclass = 'grass' OR fclass = 'meadow' OR fclass = 'recreation_ground' OR fclass = 'park' OR fclass = 'cemetery'" ));
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"1.shp", null, CQL.toFilter( "fclass = 'recreation_ground' OR fclass = 'park' OR fclass = 'cemetery'" ));
+		extractSHP(inBasePath + "gis_osm_pois_a_free_1_LUXPROJ.shp", outBasePath+"2.shp", null, CQL.toFilter( "fclass = 'playground' OR fclass = 'pitch' OR fclass = 'stadium' OR fclass = 'graveyard'" ));
+		mergeSHPGeoms(outBasePath+"401_S_open_land.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//402_S_open_land_scattered_trees
 		//402.1_S_open_land_scattered_trees
 		//403_S_rough_open_land
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"1.shp", null, CQL.toFilter( "fclass = 'grass' OR fclass = 'meadow'" ));
+		extractSHP(inBasePath + "gis_osm_pois_a_free_1_LUXPROJ.shp", outBasePath+"2.shp", null, CQL.toFilter( "fclass = 'camp_site'" ));
+		mergeSHPGeoms(outBasePath+"403_S_rough_open_land.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//404_S_rough_open_land_scattered_trees
 		//405_S_forest
 		//406_S_vegetation_slow
 		//forest
-		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"406_S_vegetation_slow.shp", null, CQL.toFilter( "fclass = 'forest'" ));
+		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"1.shp", null, CQL.toFilter( "fclass = 'forest'" ));
+		extractSHP(inBasePath + "gis_osm_pois_a_free_1_LUXPROJ.shp", outBasePath+"2.shp", null, CQL.toFilter( "fclass = 'parc'" ));
+		mergeSHPGeoms(outBasePath+"406_S_vegetation_slow.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 		//407_S_vegetation_slow_good_visibility
 		//scrub
 		extractSHP(inBasePath + "gis_osm_landuse_a_free_1_LUXPROJ.shp", outBasePath+"407_S_vegetation_slow_good_visibility.shp", null, CQL.toFilter( "fclass = 'scrub'" ));
