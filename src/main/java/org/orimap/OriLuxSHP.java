@@ -242,8 +242,7 @@ public class OriLuxSHP {
 
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
-		//TODO fix proj issue for waterways, pois, transport, traffic, natural
-		//TODO add features from pois, transport, traffic
+		//TODO add features from pois
 		//TODO bridge/tunnel
 		//TODO get more from: https://wiki.openstreetmap.org/wiki/Map_Features with overpath API?
 		//cliff wall fence construction_site sport_terrain parking
@@ -344,7 +343,9 @@ public class OriLuxSHP {
 
 		//501_S_paved_area_with_bn
 		//501.1_S_paved_area
-		extractSHP(inBasePath + "gis_osm_transport_a_free_1_LUXPROJ.shp", outBasePath+"501.1_S_paved_area.shp");
+		extractSHP(inBasePath + "gis_osm_transport_a_free_1_LUXPROJ.shp", outBasePath+"1.shp");
+		extractSHP(inBasePath + "gis_osm_traffic_a_free_1_LUXPROJ.shp", outBasePath+"2.shp");
+		mergeSHPGeoms(outBasePath+"501.1_S_paved_area.shp", true, outBasePath+"1.shp", outBasePath+"2.shp");
 
 		//502_L_wide_road
 		//502 residential motorway_link
