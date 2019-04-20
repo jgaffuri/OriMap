@@ -239,20 +239,8 @@ public class OriLuxSHP {
 
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
-		//TODO complete
 		//TODO bridge/tunnel
-		//https://wiki.openstreetmap.org/wiki/Map_Features
-
-		/*
-
-502.1 primary primary_link secondary secondary_link tertiary tertiary_link motorway
-extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = '' OR fclass = ''" ));
-
-504 cycleway track track_grade1 track_grade2 track_grade3 track_grade4 track_grade5
-extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
-
-
-		 */
+		//TODO get more from: https://wiki.openstreetmap.org/wiki/Map_Features with overpath API?
 
 		//101_L_contour
 		//102_L_index_contour
@@ -354,10 +342,15 @@ extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", 
 		//502_L_wide_road
 		//502 residential motorway_link
 		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"502_L_wide_road.shp", null, CQL.toFilter( "fclass = 'residential' OR fclass = 'motorway_link'" ));
+		//502.1_L_wide_road_w
+		//502.1 primary primary_link secondary secondary_link tertiary tertiary_link motorway
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"502.1_L_wide_road_w.shp", null, CQL.toFilter( "fclass = 'primary' OR fclass = 'primary_link' OR fclass = 'secondary' OR fclass = 'secondary_link' OR fclass = 'tertiary' OR fclass = 'tertiary_link' OR fclass = 'motorway'" ));
 		//503_L_road
 		//503 service living_street unclassified
 		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"503_L_road.shp", null, CQL.toFilter( "fclass = 'service' OR fclass = 'living_street' OR fclass = 'unclassified'" ));
 		//504_L_vehicle_track
+		//504 cycleway track track_grade1 track_grade2 track_grade3 track_grade4 track_grade5
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"504_L_vehicle_track.shp", null, CQL.toFilter( "fclass = 'cycleway' OR fclass = 'track' OR fclass = 'track_grade1' OR fclass = 'track_grade2' OR fclass = 'track_grade3' OR fclass = 'track_grade4' OR fclass = 'track_grade5'" ));
 		//505_L_footpath
 		//505 steps footway path pedestrian bridleway
 		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"505_L_footpath.shp", null, CQL.toFilter( "fclass = 'steps' OR fclass = 'footway' OR fclass = 'path' OR fclass = 'pedestrian' OR fclass = 'bridleway'" ));
