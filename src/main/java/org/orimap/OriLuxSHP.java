@@ -68,6 +68,7 @@ public class OriLuxSHP {
 		for(String file : new String[] {} ) {
 			System.out.println("Reproject "+file);
 			//TODO
+			//TODO call ogr?
 		}
 	}
 
