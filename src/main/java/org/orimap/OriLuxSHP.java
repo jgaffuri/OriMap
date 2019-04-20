@@ -29,15 +29,13 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
-		//TODO finalise OSM to ori - roads
+		//TODO finalise OSM to ori
 
 		//TODO integrate: analyse differences, etc.
 		//TODO make qgis style for ori schema (...)
 		//TODO get /home/juju/Bureau/orienteering/omap_luxembourg_shp/shp/ into ori comp
 
-		reprojectOSMLux();
-		
-
+		/*
 		System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
 		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
@@ -60,17 +58,11 @@ public class OriLuxSHP {
 		clipSHP(basePathOriBDT, outMap+"ori_BDT/", kirchbergEnv);
 		clipSHP(basePathOriOSM, outMap+"ori_OSM/", kirchbergEnv);
 		clipSHP(basePathOriCadastre, outMap+"ori_cadastre/", kirchbergEnv);
+		 */
 
 		System.out.println("End");
 	}
 
-	private static void reprojectOSMLux() {
-		for(String file : new String[] {} ) {
-			System.out.println("Reproject "+file);
-			//TODO
-			//TODO call ogr?
-		}
-	}
 
 
 	public static void extractBDTToOri(String inBasePath, String outBasePath) throws Exception {
@@ -352,6 +344,7 @@ public class OriLuxSHP {
 
 		//501_S_paved_area_with_bn
 		//501.1_S_paved_area
+		extractSHP(inBasePath + "gis_osm_transport_a_free_1_LUXPROJ.shp", outBasePath+"501.1_S_paved_area.shp");
 
 		//502_L_wide_road
 		//502 residential motorway_link
@@ -657,4 +650,50 @@ public class OriLuxSHP {
 	}
 	 */
 
+
+
+
+
+	/*private static void reprojectOSMLux() throws IOException, InterruptedException {
+		String basePath = "/home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/";
+		String[] files = new String[] {
+				"gis_osm_buildings_a_free_1",
+				"gis_osm_landuse_a_free_1",
+				"gis_osm_natural_a_free_1",
+				"gis_osm_natural_free_1",
+				"gis_osm_places_a_free_1",
+				"gis_osm_places_free_1",
+				"gis_osm_pofw_a_free_1",
+				"gis_osm_pofw_free_1",
+				"gis_osm_pois_a_free_1",
+				"gis_osm_pois_free_1",
+				"gis_osm_railways_free_1",
+				"gis_osm_roads_free_1",
+				"gis_osm_traffic_a_free_1",
+				"gis_osm_traffic_free_1",
+				"gis_osm_transport_a_free_1",
+				"gis_osm_transport_free_1",
+				"gis_osm_water_a_free_1",
+				"gis_osm_waterways_free_1"
+		};
+		for(String file : files ) {
+			//System.out.println("Reproject " + file);
+			String cmd = "ogr2ogr -f \"ESRI Shapefile\" "+basePath+file+"_LUXPROJ.shp "+basePath+file+".shp -t_srs EPSG:2169 -s_srs EPSG:4326";
+			System.out.println(cmd);
+
+			String s;
+			Process p;
+			try {
+				p = Runtime.getRuntime().exec(cmd);
+				p.waitFor();
+				//BufferedReader br = new BufferedReader(
+				//		new InputStreamReader(p.getInputStream()));
+				//while ((s = br.readLine()) != null)
+				//	System.out.println("line: " + s);
+				//p.waitFor();
+				//System.out.println ("exit: " + p.exitValue());
+				//p.destroy();
+			} catch (Exception e) {}
+		}
+	}*/
 }

@@ -1,9 +1,19 @@
 
-for layer in AIRE_AMEN ALLEE ARB_ISOLE AXE_CHEMIN AXE_ROUTE AXE_SENTIER BARRAGE
-do
-echo "------ "$layer
-
-#ogr2ogr -f "ESRI Shapefile" gis_osm_buildings_a_free_1_LUXPROJ.shp gis_osm_buildings_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
-#ogr2ogr -overwrite -f "DXF" $outdir$layer".dxf" $outdir$layer".shp"
-
-done
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_buildings_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_buildings_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_landuse_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_landuse_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_natural_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_natural_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_natural_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_natural_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_places_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_places_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_places_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_places_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pofw_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pofw_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pofw_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pofw_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pois_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pois_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pois_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_pois_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_railways_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_railways_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_roads_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_roads_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_traffic_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_traffic_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_traffic_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_traffic_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_transport_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_transport_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_transport_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_transport_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_water_a_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_water_a_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
+ogr2ogr -f "ESRI Shapefile" /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_waterways_free_1_LUXPROJ.shp /home/juju/orienteering/data/OSM/luxembourg-latest-free.shp/gis_osm_waterways_free_1.shp -t_srs EPSG:2169 -s_srs EPSG:4326
