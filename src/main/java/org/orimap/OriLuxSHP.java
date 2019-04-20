@@ -240,6 +240,7 @@ public class OriLuxSHP {
 
 	public static void extractOSMToOri(String inBasePath, String outBasePath) throws Exception {
 		//TODO complete
+		//https://wiki.openstreetmap.org/wiki/Map_Features
 
 		/*
 extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+".shp", null, CQL.toFilter( "fclass = ''" ));
