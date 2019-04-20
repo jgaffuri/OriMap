@@ -365,9 +365,8 @@ public class OriLuxSHP {
 		//504 cycleway track track_grade1 track_grade2 track_grade3 track_grade4 track_grade5
 		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"504_L_vehicle_track.shp", null, CQL.toFilter( "fclass = 'cycleway' OR fclass = 'track' OR fclass = 'track_grade1' OR fclass = 'track_grade2' OR fclass = 'track_grade3' OR fclass = 'track_grade4' OR fclass = 'track_grade5'" ));
 		//505_L_footpath
-		//505 steps footway path pedestrian bridleway
-		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"505_L_footpath.shp", null, CQL.toFilter( "fclass = 'steps' OR fclass = 'footway' OR fclass = 'path' OR fclass = 'pedestrian' OR fclass = 'bridleway'" ));
 		//506_L_small_footpath
+		extractSHP(inBasePath + "gis_osm_roads_free_1_LUXPROJ.shp", outBasePath+"506_L_small_footpath.shp", null, CQL.toFilter( "fclass = 'steps' OR fclass = 'footway' OR fclass = 'path' OR fclass = 'pedestrian' OR fclass = 'bridleway'" ));
 		//507_L_less_distinct_small_footpath
 		//508_L_narrow_ride_or_linear_trace
 
