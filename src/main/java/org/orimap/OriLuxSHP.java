@@ -3,8 +3,6 @@
  */
 package org.orimap;
 
-import java.util.ArrayList;
-
 import org.geotools.filter.text.cql2.CQL;
 import org.locationtech.jts.geom.Envelope;
 import org.opencarto.io.SHPUtil;
