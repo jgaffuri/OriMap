@@ -25,24 +25,23 @@ public class OriLuxSHP {
 		System.out.println("BDT to ori");
 		String basePathBDT = "/home/juju/Bureau/orienteering/data/BDLTC_SHP/";
 		String basePathOriBDT = "/home/juju/Bureau/orienteering/data/ori_BDT/";
-		extractBDTToOri(basePathBDT, basePathOriBDT);
+		//extractBDTToOri(basePathBDT, basePathOriBDT);
 
 		System.out.println("OSM to ori");
 		String basePathOSM = "/home/juju/Bureau/orienteering/data/OSM/luxembourg-latest-free.shp/";
 		String basePathOriOSM = "/home/juju/Bureau/orienteering/data/ori_OSM/";
-		extractOSMToOri(basePathOSM, basePathOriOSM);
+		//extractOSMToOri(basePathOSM, basePathOriOSM);
 
 		System.out.println("cadastre to ori");
 		String basePathCadastre = "/home/juju/Bureau/orienteering/data/pcn-cadastre/";
 		String basePathOriCadastre = "/home/juju/Bureau/orienteering/data/ori_cadastre/";
-		extractCadastreToOri(basePathCadastre, basePathOriCadastre);
-
+		//extractCadastreToOri(basePathCadastre, basePathOriCadastre);
 
 		System.out.println("Extract and clip");
 
 		OMap[] omaps = new OMap[] {
-				new OMap("kirchberg village", new Envelope(77000, 80000, 75800, 78200), "/home/juju/orienteering/omap_kirchberg_village/"),
-				new OMap("niederanven", new Envelope(79000, 88000, 78000, 85000), "/home/juju/orienteering/omap_niederanven/"),
+				//new OMap("kirchberg village", new Envelope(77000, 80000, 75800, 78200), "/home/juju/orienteering/omap_kirchberg_village/"),
+				//new OMap("niederanven", new Envelope(79000, 88000, 78000, 85000), "/home/juju/orienteering/omap_niederanven/"),
 				new OMap("sandweiler", new Envelope(81000, 86000, 74000, 78000), "/home/juju/orienteering/omap_sandweiler/")
 		};
 
