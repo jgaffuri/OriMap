@@ -11,10 +11,12 @@ import org.locationtech.jts.geom.Envelope;
  */
 public class OMap {
 
+	public String name;
 	public Envelope env;
 	public String outPath;
 
-	public OMap(Envelope env, String outPath) {
+	public OMap(String name, Envelope env, String outPath) {
+		this.name = name;
 		this.env = env;
 		this.outPath = outPath;
 	}
