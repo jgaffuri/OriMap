@@ -47,8 +47,11 @@ public class OriLuxSHP {
 
 		for(OMap omap : omaps) {
 			System.out.println(" "+omap.name);
+			System.out.println("BDT");
 			SHPUtil.clip(basePathOriBDT, omap.outPath+"ori_BDT/", omap.env);
+			System.out.println("OSM");
 			SHPUtil.clip(basePathOriOSM, omap.outPath+"ori_OSM/", omap.env);
+			System.out.println("Cadastre");
 			SHPUtil.clip(basePathOriCadastre, omap.outPath+"ori_cadastre/", omap.env);
 		}
 
