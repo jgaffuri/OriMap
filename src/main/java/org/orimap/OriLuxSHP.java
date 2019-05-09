@@ -16,6 +16,7 @@ public class OriLuxSHP {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start");
 
+		//TODO see: https://wiki.openstreetmap.org/wiki/IOF_mapping
 		//TODO sandweiler - niederanven - womerldange
 		//TODO integrate: analyse differences, etc.
 		//TODO make automatic ori final
