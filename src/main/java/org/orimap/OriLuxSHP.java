@@ -5,7 +5,8 @@ package org.orimap;
 
 import org.geotools.filter.text.cql2.CQL;
 import org.locationtech.jts.geom.Envelope;
-import org.opencarto.io.SHPUtil;
+
+import eu.europa.ec.eurostat.jgiscotools.io.SHPUtil;
 
 /**
  * @author julien Gaffuri
