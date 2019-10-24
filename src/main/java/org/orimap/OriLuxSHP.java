@@ -43,9 +43,9 @@ public class OriLuxSHP {
 
 		OMap[] omaps = new OMap[] {
 				//new OMap("kirchberg village", new Envelope(77000, 80000, 75800, 78200), "/home/juju/orienteering/omap_kirchberg_village/"),
-				//new OMap("niederanven", new Envelope(79000, 88000, 78000, 85000), "/home/juju/orienteering/omap_niederanven/"),
-				new OMap("sandweiler", new Envelope(81000, 86000, 74000, 78000), "/home/juju/orienteering/omap_sandweiler/"),
-				new OMap("howald", new Envelope(77000, 80000, 70000, 73500), "/home/juju/orienteering/omap_howald/")
+				new OMap("niederanven", new Envelope(79000, 88000, 78000, 85000), "/home/juju/orienteering/omap_niederanven/"),
+				//new OMap("sandweiler", new Envelope(81000, 86000, 74000, 78000), "/home/juju/orienteering/omap_sandweiler/"),
+				//new OMap("howald", new Envelope(77000, 80000, 70000, 73500), "/home/juju/orienteering/omap_howald/")
 		};
 
 		for(OMap omap : omaps) {
