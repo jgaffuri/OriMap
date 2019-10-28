@@ -4,12 +4,20 @@
 
 outdirbase="/home/juju/orienteering"
 
+#each tile is 250m large
+#new OMap("sandweiler", new Envelope(81000, 86000, 73990, 78010), "/home/juju/orienteering/omap_sandweiler/"),
 
-outdir=$outdirbase/"omap_niederanven/img"
-xmin_=83000
-ymin_=78000
-nbx=17
-nby=18
+outdir=$outdirbase/"omap_sandweiler/img"
+xmin_=82500
+ymin_=74750
+nbx=9
+nby=8
+
+#outdir=$outdirbase/"omap_niederanven/img"
+#xmin_=83000
+#ymin_=78000
+#nbx=17
+#nby=18
 
 #kirchberg coque
 #outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
