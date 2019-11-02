@@ -77,7 +77,7 @@ crs=EPSG:2169
 mkdir $outdir
 
 #for layer in ortho_latest topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-for layer in cadastre
+for layer in ortho_latest
 do
 
 mkdir $outdir/$layer
@@ -94,7 +94,7 @@ do
 		echo $name
 
 		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
-		curl -o $outdir/$layer/$name.png $url 
+		curl -o $outdir/$layer/$name.png $url
 		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
 		rm $outdir/$layer/$name.png
 	done
