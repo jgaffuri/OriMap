@@ -102,11 +102,13 @@ pullauta pngmergedepr 1
 pullauta pngmergevege
 pullauta dxfmerge
 ```
-- Double click on this *merge.bat* file to execute all the commands listed here, which merge the outputs.
+- Double click on this *merge.bat* file to execute all the commands listed here, which merge the outputs. As a result, several **merged_XXXX.YYY** files are produced in the *.../workspace/karttapullautin_standalone/* folder. There are *\*.png* and *\*.jpg* image files, which can be viewed as a normal image, and also *\*.dxf* files, which can be imported in other mapping software such as OCAD or [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/).
 
-(output)
+TODO: show image of the output
 
 ## After...
 
+TODO: explain how to include it in qgis
 
-Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit or comment.
+
+Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit the file or create an issue [here](https://github.com/jgaffuri/OriMap/issues).
