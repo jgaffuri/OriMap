@@ -91,18 +91,18 @@ batchoutfolder=../out/noumerleen/
 lazfolder=../in/noumerleen/
 ```
 - If you know how many processors your PC has, you can specify it in the `processes=XXX` parameter. This will allow a parallel and thus faster computation.
-- Save and launch the program by doulbe clicking on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder where the output is progressively produced, tile after tile.
+- Save and launch the program by double clicking on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the computation power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder, where the output is progressively produced, tile after tile.
 
-Once the process is complete, we are not done yet: This has produced 1 result for each tile, and we need to merge all these tiles into a single output. For that:
+Once the process is complete, we are not done yet: This has produced 1 result for each tile, and we need to merge all these tiles into a single output. An easy way to proceed for that is:
 
-- create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder with the following content:
+- Create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder. Edit it as a text file and add the following content:
 ```
 pullauta pngmerge 1
 pullauta pngmergedepr 1
 pullauta pngmergevege
 pullauta dxfmerge
 ```
-- Double click on this *merge.bat* file to execute all the commands to merge the outputs.
+- Double click on this *merge.bat* file to execute all the commands listed here, which merge the outputs.
 
 (output)
 
