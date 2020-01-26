@@ -7,7 +7,7 @@ This is a short tutorial for [Luxembourg Orienteering Club](https://orienteering
 - A PC with windows
 - A bit of time !
 
-## Download Karttapullatin
+## Download Karttapullatin software
 
 See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
 
