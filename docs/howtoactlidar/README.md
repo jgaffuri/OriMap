@@ -54,8 +54,8 @@ Each zip file size is around 300/500Mo.
 
 ## Setup the program
 
-The program parameter are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
-- Open the file and find the place with:
+The program parameters are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
+- Edit the *pullauta.ini* file and find the place with:
 
 ```
 \# batch process mode, process all laz ans las files of this directory
@@ -74,7 +74,7 @@ t file folder
 lazfolder=./in
 ```
 
-And replace it with:
+Replace it with:
 
 ```
 \# batch process mode, process all laz ans las files of this directory
@@ -90,7 +90,7 @@ batchoutfolder=../out/noumerleen/
 \# batch process input file folder
 lazfolder=../in/noumerleen/
 ```
-(If you know how many processors your PC has, you can specify it in the `processes=3` parameter. This will allow a parallel and thus faster computation)
+(If you know how many processors your PC has, you can specify it in the `processes=XXX` parameter. This will allow a parallel and thus faster computation)
 
 - Save and launch the program by doulbe clicking on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder where the output is progressively produced, tile after tile.
 
