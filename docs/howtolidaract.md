@@ -20,19 +20,15 @@ See [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Downl
 
 ## Download the LIDAR data
 
-- Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page]().
+- Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French...
 
 (describe)
 
 ## Prepare the workspace
 
-
 ## Setup the program
 
-
 ## After...
-
-
 
 
 Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit or comment.
