@@ -21,8 +21,8 @@ See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Do
 
 - Note the minimum and maximum coordinates of you map bounding box.
 - For our example, the map bounding box is:
-   - Xmin: 79100   Xmax: 81300
-   - Ymin: 93400   Ymax: 94300
+   - Xmin: 79100  -->  Xmax: 81300
+   - Ymin: 93400  -->  Ymax: 94300
 
 ## Download the LIDAR data
 
