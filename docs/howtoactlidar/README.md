@@ -4,7 +4,7 @@ This is a tutorial for [Luxembourg Orienteering Club](https://orienteering.lu/) 
 
 ## Requirements
 
-- A PC with windows
+- A PC with Windows.
 - A bit of time !
 
 ## Download Karttapullatin software
