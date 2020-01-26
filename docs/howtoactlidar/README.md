@@ -1,6 +1,6 @@
 # How to produce an orienteering map from ACT LIDAR data with Karttapullatin?
 
-This is a short tutorial for [Luxembourg Orienteering Club](https://orienteering.lu/) members. But not only.
+This is a tutorial for [Luxembourg Orienteering Club](https://orienteering.lu/) members. But not only !
 
 ## Requirements
 
