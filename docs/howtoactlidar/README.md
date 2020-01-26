@@ -26,7 +26,7 @@ See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Do
    - Xmin: 79100  -->  Xmax: 81300
    - Ymin: 93400  -->  Ymax: 94300
 
-## Download the LIDAR data
+## Download the ACT LIDAR data
 
 - Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French... but no need for strong French grammar knowledge here.
 
@@ -47,12 +47,65 @@ Each zip file size is around 300/500Mo.
 ## Prepare the workspace
 
 - Create a working folder were we are going to put all files. For example: *E:myfolder/myfolder2/workspace/*.
-- Create here a folder with the input data: *.../workspace/input/noumerleen/*
+- Create here a folder with the input data: *.../workspace/in/noumerleen/*
 - Move the 36 downloaded *\*.laz* files in the input data folder.
 - Move the software executable files here: *.../workspace/karttapullautin_standalone/*
-- Prepare a folder for the output data: *.../workspace/output/noumerleen/*
+- Prepare a folder for the output data: *.../workspace/out/noumerleen/*
 
 ## Setup the program
+
+The program parameter are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
+- Open the file and find the place with:
+
+```
+\# batch process mode, process all laz ans las files of this directory
+\# off=0, on=1  
+batch=0
+
+\# processes
+processes=2
+
+\# batch process output folder
+batchoutfolder=./out
+
+\# batch process 
+
+t file folder
+lazfolder=./in
+```
+
+And replace it with:
+
+```
+\# batch process mode, process all laz ans las files of this directory
+\# off=0, on=1  
+batch=1
+
+\# processes
+processes=1
+
+\# batch process output folder
+batchoutfolder=../out/noumerleen/
+
+\# batch process input file folder
+lazfolder=../in/noumerleen/
+```
+(If you know how many processors your PC has, you can specify it in the `processes=3` parameter. This will allow a parallel and thus faster computation)
+
+- Save and launch the program by doulbe clicking on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder where the output is progressively produced, tile after tile.
+
+Once the process is complete, we are not done yet: This has produced 1 result for each tile, and we need to merge all these tiles into a single output. For that:
+
+- create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder with the following content:
+```
+pullauta pngmerge 1
+pullauta pngmergedepr 1
+pullauta pngmergevege
+pullauta dxfmerge
+```
+- Double click on this *merge.bat* file to execute all the commands to merge the outputs.
+
+(output)
 
 ## After...
 
