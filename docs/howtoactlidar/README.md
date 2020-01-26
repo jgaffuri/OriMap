@@ -28,7 +28,7 @@ See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Do
 
 ## Download the ACT LIDAR data
 
-- Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French... but no need for strong French grammar knowledge here.
+- Search for "LIDAR" on [Luxembourg open data portal](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French... but no need for strong French grammar knowledge here.
 
 The LIDAR data for the entire Luxembourgish territory is decomposed into around 11000 tiles of 500mx500m. These tiles are grouped into zip files of 3x3 tiles (that is covering 1500mx1500m) which are proposed for download. Each zip file is named after **the coordinates of its lower left corner point**. For example, the file *lidar2019-ndp-c14-r44-ll69500-122500-epsg2169.zip* covers an area of 1500x1500m whose lower left corner position is *X=ll69500 Y=122500*.
 
