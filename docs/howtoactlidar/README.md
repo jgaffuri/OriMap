@@ -26,7 +26,7 @@ See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Do
 
 ## Download the LIDAR data
 
-- Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French...
+- Search for "LIDAR" on [Luxembourg open data portel](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French... but no need for strong French grammar knowledge here.
 
 (describe)
 
