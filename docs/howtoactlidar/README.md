@@ -42,12 +42,15 @@ To select the right files corresponding to the map bounding box:
 
 Each zip file size is around 300/500Mo.
 
+- Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. For our example, we have 9x4=36 *\*.laz* files.
+
 ## Prepare the workspace
 
 - Create a working folder were we are going to put all files. For example: *E:myfolder/myfolder2/workspace/*.
 - Create here a folder with the input data: *.../workspace/input/noumerleen/*
+- Move the 36 downloaded *\*.laz* files in the input data folder.
 - Move the software executable files here: *.../workspace/karttapullautin_standalone/*
-- Create a folder for the output data: *.../workspace/output/noumerleen/*
+- Prepare a folder for the output data: *.../workspace/output/noumerleen/*
 
 ## Setup the program
 
