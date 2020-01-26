@@ -11,7 +11,7 @@ This is a short tutorial for [Luxembourg Orienteering Club](https://orienteering
 
 See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
 
-## Select the extent of your map area
+## Select the extent of your map
 
 - From [geoportail.lu](https://map.geoportail.lu/theme/main?version=3&zoom=14&X=684902&Y=6379262&lang=en&layers=&opacities=&bgLayer=topogr_global), go to the area of interest. As an example, we are going to make a map of *Noumerléen* area:
 
