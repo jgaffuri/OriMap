@@ -106,9 +106,12 @@ pullauta dxfmerge
 
 TODO: show image of the output
 
+- If the output is not satisfying and do not show properly natural features that you know are present on the field, it is possible to fine-tune some parameters in the *pullauta.ini* file. Most of them are explained directly in the file. You can also check the documentation on the [Karttapullatin website](http://www.routegadget.net/karttapullautin/) or ask some advice on the [RouteGadget Facebook page](https://www.facebook.com/RouteGadget-177518995597572/).
+
 ## After...
 
 TODO: explain how to include it in qgis
+TODO: other parameters in dfjhh
 
 
 Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit the file or create an issue [here](https://github.com/jgaffuri/OriMap/issues).
