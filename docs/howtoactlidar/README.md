@@ -58,36 +58,36 @@ The program parameters are defined in the *workspace/karttapullautin_standalone/
 - Edit the *pullauta.ini* file and find the place with:
 
 ```
-\# batch process mode, process all laz ans las files of this directory
-\# off=0, on=1  
+# batch process mode, process all laz ans las files of this directory
+# off=0, on=1  
 batch=0
 
-\# processes
+# processes
 processes=2
 
-\# batch process output folder
+# batch process output folder
 batchoutfolder=./out
 
-\# batch process 
+# batch process 
 
-t file folder
+# batch process input file folder
 lazfolder=./in
 ```
 
 Modify this section with:
 
 ```
-\# batch process mode, process all laz ans las files of this directory
-\# off=0, on=1  
+# batch process mode, process all laz ans las files of this directory
+# off=0, on=1  
 batch=1
 
-\# processes
+# processes
 processes=1
 
-\# batch process output folder
+# batch process output folder
 batchoutfolder=../out/noumerleen/
 
-\# batch process input file folder
+# batch process input file folder
 lazfolder=../in/noumerleen/
 ```
 - If you know how many processors your PC has, you can specify it in the `processes=XXX` parameter. This will allow a parallel and thus faster computation.
