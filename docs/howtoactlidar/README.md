@@ -7,10 +7,6 @@ This is a tutorial for anyone interested in mapping natural areas of Luxembourg 
 - A PC with Windows.
 - A bit of time and maybe resilience !
 
-## Download Karttapullatin software
-
-See on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
-
 ## Select the map extent
 
 - From [geoportail.lu](https://map.geoportail.lu/theme/main?version=3&zoom=14&X=684902&Y=6379262&lang=en&layers=&opacities=&bgLayer=topogr_global), go to the area of interest. As an example, we are going to make a map of *Noumerléen*, here:
@@ -43,14 +39,16 @@ Each zip file size is around 300/500Mo.
 
 - Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files.
 
-## Prepare the workspace
+## Get Karttapullatin software and prepare the workspace
 
 - Decide on a working folder on your PC, for example: *E:myfolder/myfolder2/workspace/*. This could be a folder on your desktop or anywhere else. No matter.
 - Create some folders for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
-- Move the software executable files here: *.../workspace/karttapullautin_standalone/*
+- Download Karttapullatin software on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
+- No need for any installation: Just move the software executable files here: *.../workspace/karttapullautin_standalone/*
+- TODO: add info on las2txt.exe https://liblas.org/utilities/las2txt.html https://liblas.org/download.html#download
 - Prepare a folder for the outputs: *.../workspace/out/noumerleen/*
 
-## Setup the program
+## Setup Karttapullatin
 
 The program parameters are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
 - Edit the *pullauta.ini* file and find the place with:
