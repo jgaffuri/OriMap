@@ -1,3 +1,3 @@
-# Few outputs of LIDAR/BT_T based maps
+# Few outputs of LIDAR/BD_T based orienteering maps
 
 (include links)
