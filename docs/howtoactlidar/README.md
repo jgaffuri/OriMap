@@ -44,7 +44,7 @@ Each zip file size is around 300/500Mo.
 ## Get Karttapullatin software and prepare the workspace
 
 - Decide on a working folder on your PC, for example: *E:myfolder/myfolder2/workspace/*. This could be a folder on your desktop or anywhere else. No matter.
-- Create some folders for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
+- Create a folder for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
 - Download Karttapullatin software on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
 - No need for any installation: Just move the software executable files here: *.../workspace/karttapullautin_standalone/*
 - Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
@@ -53,7 +53,7 @@ Each zip file size is around 300/500Mo.
 ## Setup Karttapullatin
 
 The program parameters are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
-- Edit the *pullauta.ini* file and find the place with:
+- Edit this *pullauta.ini* file and find the place with:
 
 ```
 # batch process mode, process all laz ans las files of this directory
@@ -80,12 +80,14 @@ processes=1
 batchoutfolder=../out/noumerleen/
 lazfolder=../in/noumerleen/
 ```
+
 - If you know the number of processors available on your PC, you can specify how many will be used by karttapullautin with `processes=XXX` parameter. This will allow a parallel and thus faster computation.
-- **Launch the program** by double clicking on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the computation power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder, where the output is progressively produced, tile after tile. Some images can be viewed there, step after step.
+- **Launch the program** with e double click on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the computation power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder, where the output is progressively produced, tile after tile. Some images can be viewed there, step after step.
 
-Once the process is complete, we are not done yet: This has produced 1 output for each tile, and we need to merge all these outputs into a single one. An easy way to proceed the following:
+Once the process is complete, we are not done yet: The process produces 1 output for each tile, and we need to merge all these outputs into a single one. An easy way to proceed the following:
 
-- Create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder. Edit it as a text file and add the following content:
+- Create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder (right click, then *new file*). Edit it as a text file and add the following content:
+
 ```
 pullauta pngmerge 1
 pullauta pngmergedepr 1
