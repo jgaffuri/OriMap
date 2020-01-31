@@ -115,4 +115,6 @@ This additional vector data can be displayed together or on top of the karttapul
 
 This could be seen as a 'good enough' map for some trainings or simply to detect some interesting areas to be then better mapped with unavoidable field surveys.
 
+See some other examples of maps [**here**](../lidaroutputs).
+
 ## Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit the file or create an issue [here](https://github.com/jgaffuri/OriMap/issues).
