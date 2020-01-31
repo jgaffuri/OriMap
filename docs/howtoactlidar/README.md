@@ -94,7 +94,7 @@ pullauta dxfmerge
 
 Here is the output obtained for our Noumerléen map:
 
-![orienteering map noumerleen lidar karttapullautin][img/noumer_out.png]
+![orienteering map noumerleen lidar karttapullautin][./img/noumer_out.png]
 
 - If the output is not satisfying and do not show properly natural features that you know are present on the field, it is possible to fine-tune some parameters in the *pullauta.ini* file. Most of them are explained directly in the file. You can also check the documentation on [Karttapullatin website](http://www.routegadget.net/karttapullautin/) or ask some advice on the [RouteGadget Facebook page](https://www.facebook.com/RouteGadget-177518995597572/).
 
