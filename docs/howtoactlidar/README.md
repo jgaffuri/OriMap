@@ -45,7 +45,7 @@ Each zip file size is around 300/500Mo.
 - Create some folders for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
 - Download Karttapullatin software on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
 - No need for any installation: Just move the software executable files here: *.../workspace/karttapullautin_standalone/*
-- Install libLAS following [these instructions](https://liblas.org/osgeo4w.html). You can alternatively (TODO descirbe there)
+- Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
 - Prepare a folder for the outputs: *.../workspace/out/noumerleen/*
 
 ## Setup Karttapullatin
