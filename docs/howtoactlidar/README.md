@@ -2,6 +2,8 @@
 
 This is a tutorial for anyone interested in mapping natural areas of Luxembourg using the [ACT LIDAR data](https://act.public.lu/fr/cartographie/lidar.html). This is provided by the [Luxembourg Orienteering Club](https://orienteering.lu/) (feel free to [join us](https://orienteering.lu/en/join/)!).
 
+[![Luxembourg orienteering club](img/LOC-logo-rgb-web.jpg =150x)](https://orienteering.lu)
+
 ## Requirements
 
 - A PC with Windows.
