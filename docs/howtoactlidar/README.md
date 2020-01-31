@@ -94,7 +94,7 @@ pullauta dxfmerge
 
 Here is the output obtained for our Noumerléen map:
 
-![orienteering map noumerleen lidar karttapullautin][https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/img/noumer_out.png]
+![orienteering map noumerleen lidar karttapullautin](img/noumer_out.png)
 
 - If the output is not satisfying and do not show properly natural features that you know are present on the field, it is possible to fine-tune some parameters in the *pullauta.ini* file. Most of them are explained directly in the file. You can also check the documentation on [Karttapullatin website](http://www.routegadget.net/karttapullautin/) or ask some advice on the [RouteGadget Facebook page](https://www.facebook.com/RouteGadget-177518995597572/).
 
@@ -107,7 +107,7 @@ Here is the output obtained for our Noumerléen map:
 
 This additional vector data can be displayed together or on top of the karttapullautin image to offer some better overview. Here is the output obtained for our Noumerléen map:
 
-![orienteering map noumerleen lidar karttapullautin][https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/img/noumer_out_gis.png]
+![orienteering map noumerleen lidar karttapullautin](img/noumer_out_gis.png)
 
 This could be seen as a 'good enough' map for some trainings or simply to detect some interesting areas to be then better mapped with unavoidable field surveys.
 
