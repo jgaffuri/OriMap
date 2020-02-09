@@ -40,9 +40,9 @@ To select the right files corresponding to the map bounding box:
 Each zip file size is around 300/500Mo.
 
 - Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files.
-- You can easily visualise the *\*.laz* files with https://plas.io/. This provides some overview of the input data.
+- You can easily visualise the *\*.laz* files with [plas.io](https://plas.io/). This provides some overview of the input data.
 
-![position](img/plasio.png)
+[![plas.io](img/plasio.png)](https://plas.io/)
 
 ## Get Karttapullatin software and prepare the workspace
 
