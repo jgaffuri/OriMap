@@ -23,7 +23,7 @@ For our case, we need those 4 downloads:
   - [lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-093636/lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip)
   - [lidar2019-ndp-c21-r25-ll80000-94000-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-093959/lidar2019-ndp-c21-r25-ll80000-94000-epsg2169.zip)
 
-Each zip file size is around 300/500Mo.
+Each zip file size is around 300/500 Mo.
 
 - Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files.
 - You can easily visualise the *\*.laz* files with [plas.io](https://plas.io/). This provides some overview of the input data.
