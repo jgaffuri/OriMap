@@ -25,7 +25,7 @@ For our case, we need those 4 downloads:
 
 Each zip file size is around 300/500 Mo.
 
-- Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files.
+- Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files. Each of these *\*.laz* files correspond to a 500m x 500m square.
 - You can easily visualise the *\*.laz* files with [plas.io](https://plas.io/). This provides some overview of the input data.
 
 [![plas.io](img/plasio.png)](https://plas.io/)
