@@ -9,29 +9,15 @@ This is a tutorial for anyone interested in mapping natural areas of Luxembourg 
 - A PC with Windows.
 - A bit of time and maybe resilience !
 
-## Select the map extent
+## Download the ACT LIDAR data
 
-- From [geoportail.lu](https://map.geoportail.lu/theme/main?version=3&zoom=14&X=684902&Y=6379262&lang=en&layers=&opacities=&bgLayer=topogr_global), go to the area of interest. As an example, we are going to make a map of *Noumerléen*, here:
+From [this page](https://gist.github.com/grischard/0a2b5ade272a3ed351e5c269c3e30a89), download the data tiles corresponding to the extent of your map.
+
+As an example, we are going to make a map of Noumerléen:
 
 ![Noumerléen](img/1_area.png)
 
-- Display the coordinates: Click on the **i** icon on the bottom right corner. You should then see a new panel at the bottom with some information such as the scale bar, the geographical position and elevation of the mouse pointer. Ensure the selected coordinate system is **LUREF** (which should be the case by default).
-
-![position](img/2_pos.png)
-
-- Note the minimum and maximum coordinates of you map bounding box. For our map, the bounding box is:
-   - Xmin: 79100  -->  Xmax: 81300
-   - Ymin: 93400  -->  Ymax: 94300
-
-## Download the ACT LIDAR data
-
-- Search for "LIDAR" on [Luxembourg open data portal](https://data.public.lu/fr/). You should find [this page](https://data.public.lu/en/datasets/lidar-2019-releve-3d-du-territoire-luxembourgeois/). Yes: it is in French... but no need for strong French grammar knowledge here.
-
-The LIDAR data for the entire Luxembourgish territory is decomposed into around 11000 tiles of 500m x 500m. These tiles are grouped into zip files of 3x3 tiles (thus, covering 1500m x 1500m) which are proposed for download. Each zip file is named after **the coordinates of its lower left corner**. For example, the file *lidar2019-ndp-c14-r44-ll69500-122500-epsg2169.zip* covers an area of 1500x1500m whose lower left corner position is *X=69500 Y=122500*.
-
-To select the right files corresponding to the map bounding box:
-- Click on the button *"See the 1793 resources of type Main file"* at the bottom of the list to show all available zip files.
-- Search the files corresponding to your bounding map, considering that the coordinates are multiple of 500. You may require a single one, or several, depending on the map size and location. For our case, we need those 4 downloads:
+For our case, we need those 4 downloads:
   - [lidar2019-ndp-c20-r24-ll78500-92500-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-075037/lidar2019-ndp-c20-r24-ll78500-92500-epsg2169.zip)
   - [lidar2019-ndp-c20-r25-ll78500-94000-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-075309/lidar2019-ndp-c20-r25-ll78500-94000-epsg2169.zip)
   - [lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-093636/lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip)
