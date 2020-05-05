@@ -11,7 +11,7 @@ This is a tutorial for anyone interested in mapping natural areas of Luxembourg 
 
 ## Download the ACT LIDAR data
 
-From [this page](https://gist.github.com/grischard/0a2b5ade272a3ed351e5c269c3e30a89), download the data tiles corresponding to the extent of your map. Click on each of the tiles corresponding to the map extent. A popup window will then open and show the download URL of the corresponding file. To download the file, simply copy this URL and paste it in your web browser URL field.
+Download the data tiles corresponding to the extent of your map from the [Luxembourgish Geoportal website](https://map.geoportail.lu/theme/main?version=3&zoom=14&X=691005&Y=6387292&lang=en&layers=1788&opacities=0.75&bgLayer=orthogr_2013_global&crosshair=false) or [this page](https://gist.github.com/grischard/0a2b5ade272a3ed351e5c269c3e30a89). Click on each of the tiles corresponding to the map extent. A popup window will then open and show the download URL of the corresponding file. To download the file, simply copy this URL and paste it in your web browser URL field.
 
 As an example, we are going to make a map of Noumerléen:
 
