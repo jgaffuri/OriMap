@@ -23,9 +23,11 @@ def download(path, xmin, ymin, xmax, ymax):
                if not Path(path+f).exists(): urllib.request.urlretrieve(baseURL+f, path+f)
          y += 500
       x += 500
+      y = ymin
 
 
 
+
+#define here where to download the data, and the geographical extent of the area
 out = "/home/juju/Bureau/niederanven/"
-download(out, 83000, 78000, 85000, 80000)
-
+download(out, 83000, 78000, 87000, 82500)
