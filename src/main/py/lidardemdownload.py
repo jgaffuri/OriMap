@@ -2,7 +2,7 @@ from pathlib import Path
 import urllib.request
 
 
-
+# download files into a folder 'path'
 def download(path, xmin, ymin, xmax, ymax):
    print("Download")
 
@@ -23,6 +23,7 @@ def download(path, xmin, ymin, xmax, ymax):
                if not Path(path+f).exists(): urllib.request.urlretrieve(baseURL+f, path+f)
          y += 500
       x += 500
+
 
 
 out = "/home/juju/Bureau/niederanven/"
