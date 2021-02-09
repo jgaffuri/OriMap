@@ -2,15 +2,8 @@ from pathlib import Path
 import urllib.request
 
 
-#https://stereo.dev.openstreetmap.org/mappers-delight/dem-classy/
-#https://stereo.dev.openstreetmap.org/mappers-delight/dem/
 
-#https://stereo.dev.openstreetmap.org/mappers-delight/dem/LIDAR2019_NdP_49000_108000_EPSG2169.tif
-#https://stereo.dev.openstreetmap.org/mappers-delight/dem/LIDAR2019_NdP_49000_108000_EPSG2169.tfw
-
-
-
-def download(path, xMin, yMin, xMax, yMax):
+def download(path, xmin, ymin, xmax, ymax):
    print("Download")
 
    baseURL = "https://stereo.dev.openstreetmap.org/mappers-delight/"
@@ -18,13 +11,20 @@ def download(path, xMin, yMin, xMax, yMax):
    Path(path + "/dem-classy/").mkdir(parents=True, exist_ok=True)
    Path(path + "/dem/").mkdir(parents=True, exist_ok=True)
 
-   x = 49000
-   y = 108000
+   x = xmin
+   y = ymin
 
-   f = "/dem-classy/LIDAR2019_NdP_" + str(x) + "_" + str(y) + "_EPSG2169.tif"
-   print("Download " + f)
-   if not Path(path+f).exists(): urllib.request.urlretrieve(baseURL+f, path+f)
+   while x < xmax:
+      while y < ymax:
+         for t in ["dem","dem-classy"]:
+            for ext in ["tif","tfw"]:
+               f = "/" + t + "/LIDAR2019_NdP_" + str(x) + "_" + str(y) + "_EPSG2169." + ext
+               print("Download " + f)
+               if not Path(path+f).exists(): urllib.request.urlretrieve(baseURL+f, path+f)
+         y += 500
+      x += 500
 
 
-out = "/home/juju/Bureau/test/"
-download(out, 0,0,0,0)
+out = "/home/juju/Bureau/niederanven/"
+download(out, 83000, 78000, 85000, 80000)
+
