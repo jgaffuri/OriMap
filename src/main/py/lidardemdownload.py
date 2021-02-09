@@ -21,8 +21,10 @@ def download(path, xMin, yMin, xMax, yMax):
    x = 49000
    y = 108000
 
-   f = "/dem-classy/LIDAR2019_NdP_"+x+"_"+y+"_EPSG2169.tif"
+   f = "/dem-classy/LIDAR2019_NdP_" + str(x) + "_" + str(y) + "_EPSG2169.tif"
+   print("Download " + f)
    if not Path(path+f).exists(): urllib.request.urlretrieve(baseURL+f, path+f)
 
 
-#download("")
+out = "/home/juju/Bureau/test/"
+download(out, 0,0,0,0)
