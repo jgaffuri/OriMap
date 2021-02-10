@@ -29,5 +29,5 @@ def download(path, xmin, ymin, xmax, ymax):
 
 
 #define here where to download the data, and the geographical extent of the area
-out = "/home/juju/Bureau/niederanven/"
-download(out, 83000, 78000, 87000, 82500)
+out = "/home/juju/Bureau/orienteering/omap_niederanven/lidar_dem/"
+download(out, 83000, 78000, 87000, 83000)
