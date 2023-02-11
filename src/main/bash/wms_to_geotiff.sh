@@ -21,9 +21,9 @@ outdirbase="/home/juju/orienteering"
 #nby=8
 
 outdir=$outdirbase/"omap_niederanven/img"
-xmin_=83000
+xmin_=82000
 ymin_=78000
-nbx=14
+nbx=18
 nby=17
 
 #kirchberg coque
@@ -82,10 +82,10 @@ nby=17
 
 crs=EPSG:2169
 
-mkdir $outdir
+#mkdir $outdir
 
 #for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
+for layer in ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 do
 
 mkdir $outdir/$layer
