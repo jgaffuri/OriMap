@@ -11095,9 +11095,9 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 </templates>
 <view>
 <grid color="#1a5fb4" display="2" alignment="0" additional_rotation="0" unit="1" h_spacing="200" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="0.353552" position_x="20013652" position_y="-19364444"><map opacity="0.6" visible="true"/><templates hidden="true" count="4"><ref template="3" visible="true" opacity="1"/><ref template="2" visible="true" opacity="1"/><ref template="0" visible="true" opacity="1"/><ref template="1" visible="true" opacity="1"/></templates></map_view>
+<map_view zoom="0.999996" position_x="20150871" position_y="-19379520"><map opacity="0.6" visible="true"/><templates hidden="true" count="4"><ref template="3" visible="true" opacity="1"/><ref template="2" visible="true" opacity="1"/><ref template="0" visible="true" opacity="1"/><ref template="1" visible="true" opacity="1"/></templates></map_view>
 </view>
-<print scale="4000" resolution="600" mode="raster"><page_format paper_size="A4" orientation="landscape" h_overlap="5" v_overlap="5"><dimensions width="297" height="210"/><page_rect left="0" top="0" width="297" height="210"/></page_format><print_area left="20001.328" top="-19498.486" width="297" height="210" single_page="true"/></print>
+<print scale="4000" resolution="600" mode="raster"><page_format paper_size="A4" orientation="landscape" h_overlap="5" v_overlap="5"><dimensions width="297" height="210"/><page_rect left="0" top="0" width="297" height="210"/></page_format><print_area left="19963.27" top="-19496.241" width="297" height="210" single_page="true"/></print>
 </barrier>
 <barrier version="6" required="0.6.0">
 <undo>
