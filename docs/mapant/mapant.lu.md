@@ -22,5 +22,5 @@ In conclusion: **15 GB disk space is necessary**
 
 There are 20000 tiles to process. Each takes around 30'. In total, around 300 days.
 
-With 3 processors, this duration can be reduced to 3 times less: **100 days***.
+With 3 processors, this duration can be reduced to 3 times less: **100 days**.
 
