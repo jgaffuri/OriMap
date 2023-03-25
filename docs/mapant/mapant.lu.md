@@ -1,6 +1,6 @@
 # Computing resource estimation
 
-Objective: Estimate necessary computing resources to run karttapullautin on the entire Luxembourg territory.
+Objective: Estimate necessary computing resources to run karttapullautin on the entire Luxembourg territory LIDAR data and get something like https://www.mapant.fi/.
 
 ## Disk space
 
