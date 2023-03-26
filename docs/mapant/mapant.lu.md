@@ -27,6 +27,7 @@ With 3 processors, this duration can be reduced to 3 times less: **110 days**.
 That's a lot but not unrealistic.
 
 To improve this:
-- select settings that may speedup the 40' duration
-- use more processors, faster
+- try 64 bits version. Maybe it runs faster.
+- select settings that may speedup the 40' duration.
+- use more processors, faster. AWS ?
 - reduce area - maybe with a focus on most interesting zones (mullertall, red rocks, forests, etc.)
