@@ -26,7 +26,7 @@ With 3 processors, this duration can be reduced to 3 times less: **40 days**.
 
 That's a lot but not unrealistic.
 
-## Improvements
+## Improvement
 
 To improve this:
 - select settings that may speedup the process duration.
