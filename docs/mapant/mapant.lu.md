@@ -16,7 +16,7 @@ It is however not necessary to download all the files at once - a moving window 
 
 The output of each tile is around 50 MB, most of this space is occupied by dxf files which are not necessary to keep. Only png images can be kept. There size is around 250 kB per tile. There are 9 tiles per zip file, so in total **11500 tiles**. The disk space is: 11500x250kO = less that 3 GB.
 
-In conclusion: **around 6 GB disk space is necessary**
+In conclusion: **Around 6 GB disk space is necessary**. Disk space is not a problem.
 
 ## Computing time
 
@@ -24,3 +24,9 @@ There are 11500 tiles to process. Each takes around 40' (rough estimation). In t
 
 With 3 processors, this duration can be reduced to 3 times less: **110 days**.
 
+That's a lot but not irrealistic.
+
+To improve this:
+- select settings that may speedup the 40' duration
+- use more processors, faster
+- reduce area - maybe with a focus on most interesting zones (mullertall, red rocks, forests, etc.)
