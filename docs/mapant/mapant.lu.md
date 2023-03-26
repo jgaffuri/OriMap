@@ -20,14 +20,15 @@ In conclusion: **Around 6 GB disk space is necessary**. Disk space is not a prob
 
 ## Computing time
 
-There are 11500 tiles to process. Each takes around 40' (rough estimation). In total, around 320 days.
+There are 11500 tiles to process. The process of each tile takes around 15' (rough estimation, with the 64 bit version of the program - it was 40' with the 32 bit). In total, around 120 days.
 
-With 3 processors, this duration can be reduced to 3 times less: **110 days**.
+With 3 processors, this duration can be reduced to 3 times less: **40 days**.
 
 That's a lot but not unrealistic.
 
+## Imrpvements
+
 To improve this:
-- try 64 bits version. Maybe it runs faster.
-- select settings that may speedup the 40' duration.
+- select settings that may speedup the process duration.
 - use more processors, faster. AWS ?
 - reduce area - maybe with a focus on most interesting zones (mullertall, red rocks, forests, etc.)
