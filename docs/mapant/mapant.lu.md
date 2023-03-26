@@ -24,7 +24,7 @@ There are 11500 tiles to process. Each takes around 40' (rough estimation). In t
 
 With 3 processors, this duration can be reduced to 3 times less: **110 days**.
 
-That's a lot but not irrealistic.
+That's a lot but not unrealistic.
 
 To improve this:
 - select settings that may speedup the 40' duration
