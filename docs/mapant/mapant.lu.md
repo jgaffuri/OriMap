@@ -10,13 +10,13 @@ Number of zip files to download (from [here](https://map.geoportail.lu/theme/mai
 
 The size of each file is around 300 MB. When unzipped, the files have a similar size. Total size is thus around 390 GB
 
-It is however not necessary to download all the files at once - a moving window can be used, and only the necessary data is downloaded on-the-fly, processed, and then deleted. A maximum of 3x3=9 zip files is necessary, which represents less than 3 GB.
+It is however not necessary to download all the files at once - a moving window can be used, and only the necessary data is downloaded on-the-fly, processed, and then deleted. A maximum of 3x3= 9 zip files is necessary, which represents less than 3 GB.
 
 ### Output data
 
-The output of each tile is around 50 MB, most of this space is occupied by dxf files which are not necessary to keep. Only png images can be kept. There size is around 250 kB per tile. There are 9 tiles per zip file, so in total **11500 tiles**. The disk space is: 11500x250kO = less that 3 GB.
+The output of each tile is around 50 MB, most of this space is occupied by dxf files which are not necessary to keep. Only png images can be kept. There size is around 250 kB per tile. There are 9 tiles per zip file, so in total **11500 tiles**. The disk space is: 11500x250kB = less that 3 GB.
 
-In conclusion: **Around 6 GB disk space is necessary**. Disk space is not a problem.
+In conclusion: **Around 6 GB disk space is necessary**. So, disk space is not a problem.
 
 ## Computing time
 
