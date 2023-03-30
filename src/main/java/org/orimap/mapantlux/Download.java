@@ -1,27 +1,39 @@
 package org.orimap.mapantlux;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
-import eu.europa.ec.eurostat.jgiscotools.io.web.HTTPUtil;
 
 public class Download {
+	final static Logger LOGGER = LogManager.getLogger(Download.class.getName());
 
 	public static void main(String[] args) {
-		System.out.println("Start");
+		LOGGER.info("Start");
 
-		String baseURL = "https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200108-130715/lidar2019-ndp-c0-r26-ll48500-95500-epsg2169.zip";
+		String destDir = "/home/juju/Bureau/orienteering/lidar/in/lux/";
 
-		System.out.println("Load tiles");
+		LOGGER.info("Load tiles");
 		ArrayList<Feature> ziptiles = GeoData.getFeatures("/home/juju/Bureau/orienteering/lidar/lux_project/lidar_urls.gpkg");
-		System.out.println(ziptiles.size());
+		LOGGER.info(ziptiles.size());
 
 		int xMin = 48500;
-		int xMax = 51500;//59000;
+		int xMax = 59000;//;51500
 		int yMin = 80500;
-		int yMax = 95500;//130000;
+		int yMax = 130000;//; 95500
 
+		//ArrayList<String> urls = new ArrayList();
 		for(Feature zt : ziptiles) {
 			int x = (Integer) zt.getAttribute("x_llc");
 			if(x<xMin) continue;
@@ -30,16 +42,57 @@ public class Download {
 			if(y<yMin) continue;
 			if(y>yMax) continue;
 
+			//get url
 			String url = zt.getAttribute("url").toString();
-			System.out.println(url);
 
-			//download
-			HTTPUtil.downloadFromURL(url, "/home/juju/Bureau/temp/");
+			LOGGER.info("Download " + url);
+			String zipFile = "/home/juju/Bureau/temp/"+x+"_"+y+".zip";
+			try {
+				FileUtils.copyURLToFile(new URL(url), new File(zipFile));
+			} catch (Exception e) {
+				e.printStackTrace();
+				continue;
+			}
 
-			//unzip
+
+			LOGGER.info("Unzip " + zipFile);
+			try {
+
+				byte[] buffer = new byte[1024];
+				ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile));
+
+				ZipEntry zipEntry = zis.getNextEntry();
+				while (zipEntry != null) {
+					File newFile = new File(destDir + zipEntry);
+					LOGGER.info("   " + zipEntry);
+
+					//fix (win case)
+					File parent = newFile.getParentFile();
+					if (!parent.isDirectory() && !parent.mkdirs()) {
+						throw new IOException("Failed to create directory " + parent);
+					}
+
+					//write
+					FileOutputStream fos = new FileOutputStream(newFile);
+					int len;
+					while ((len = zis.read(buffer)) > 0) {
+						fos.write(buffer, 0, len);
+					}
+					fos.close();
+
+					zipEntry = zis.getNextEntry();
+				}
+
+				zis.closeEntry();
+				zis.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				continue;
+			}
+
 		}
 
-		System.out.println("End");
+		LOGGER.info("End");
 	}
 
 }
