@@ -43,11 +43,11 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-csv</artifactId>
-			<version>1.5</version>
-		</dependency>
+<dependency>
+    <groupId>eu.europa.ec.eurostat</groupId>
+    <artifactId>jgiscotools-geo-io</artifactId>
+    <version>0.9.23</version>
+</dependency>
 
 	</dependencies>
 
