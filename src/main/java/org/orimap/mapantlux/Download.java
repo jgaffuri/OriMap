@@ -33,7 +33,9 @@ public class Download {
 		int yMin = 80500;
 		int yMax = 130000;//; 95500
 
+		//TODO parallelisation
 		//ArrayList<String> urls = new ArrayList();
+
 		for(Feature zt : ziptiles) {
 			int x = (Integer) zt.getAttribute("x_llc");
 			if(x<xMin) continue;
@@ -89,6 +91,9 @@ public class Download {
 				e.printStackTrace();
 				continue;
 			}
+
+			LOGGER.info("Delete " + zipFile);
+			new File(zipFile).delete();
 
 		}
 
