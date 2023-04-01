@@ -23,6 +23,7 @@ public class Download {
 	//time per tile: 15min
 	//one night = 9h*4tiles/hour*4processors = 144 tiles
 	//9 tiles per zip -> one night = 16 zips = 4*4 zips 
+	//1287 zips: 1287/12 = 100 nights
 
 	public static void main(String[] args) {
 		LOGGER.info("Start");
