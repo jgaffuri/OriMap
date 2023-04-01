@@ -19,6 +19,11 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 public class Download {
 	final static Logger LOGGER = LogManager.getLogger(Download.class.getName());
 
+	//one night = 9h
+	//time per tile: 15min
+	//one night = 9h*4tiles/hour*4processors = 144 tiles
+	//9 tiles per zip -> one night = 16 zips = 4*4 zips 
+
 	public static void main(String[] args) {
 		LOGGER.info("Start");
 
