@@ -96,7 +96,7 @@ public class Status {
 			ft.setAttribute("y", y);
 			int size = (int) Files.size(Paths.get(pathOut+f));
 			ft.setAttribute("size", Math.ceil(size));
-			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y+500), new Coordinate(x,y+500), new Coordinate(x,y) } ));
+			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y-500), new Coordinate(x,y-500), new Coordinate(x,y) } ));
 			fs.add(ft);
 		}
 		LOGGER.info(fs.size());
