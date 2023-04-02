@@ -16,8 +16,8 @@ import org.apache.logging.log4j.Logger;
 import eu.europa.ec.eurostat.jgiscotools.feature.Feature;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
-public class Download {
-	final static Logger LOGGER = LogManager.getLogger(Download.class.getName());
+public class A1Download {
+	final static Logger LOGGER = LogManager.getLogger(A1Download.class.getName());
 
 	//one night = 9h
 	//time per tile: 15min

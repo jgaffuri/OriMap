@@ -25,8 +25,8 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 /**
  * @author juju
  */
-public class Status {
-	final static Logger LOGGER = LogManager.getLogger(Status.class.getName());
+public class A0Status {
+	final static Logger LOGGER = LogManager.getLogger(A0Status.class.getName());
 
 	private final static String path = "/home/juju/Bureau/orienteering/lidar/";
 	private final static String pathIn = path + "in/lux/";
