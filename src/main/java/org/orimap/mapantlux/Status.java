@@ -28,6 +28,10 @@ public class Status {
 		String pathIn = path + "in/lux/";
 		String pathOut = path + "out/lux/";
 
+		Set<String> files = getFiles(pathIn);
+		for(String f : files) {
+			System.out.println(f);
+		}
 
 
 
@@ -36,7 +40,7 @@ public class Status {
 		LOGGER.info("End");
 	}
 
-	public static Set<String> listFilesUsingJavaIO(String dir) {
+	public static Set<String> getFiles(String dir) {
 		return Stream.of(new File(dir).listFiles())
 				.filter(file -> !file.isDirectory())
 				.map(File::getName)
