@@ -101,7 +101,7 @@ public class Status {
 		}
 		LOGGER.info(fs.size());
 
-		LOGGER.info("Around " + (Math.ceil(10000*fs.size())/100) + " % completed");
+		LOGGER.info("Around " + (Math.ceil(10000*fs.size()/(1287*9))/100) + " % completed");
 
 		LOGGER.info("Save");
 		GeoData.save(fs, path+"lux_project/files_output.gpkg", crs);
