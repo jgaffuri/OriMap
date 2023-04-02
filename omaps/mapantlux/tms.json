@@ -1,0 +1,125 @@
+{
+     "type": "TileMatrixSetType",
+     "title": "European Map Tile Grid",
+     "identifier": "EUR",
+     "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3035",
+     "boundingBox":
+     {
+         "type": "BoundingBoxType",
+         "crs": "http://www.opengis.net/def/crs/EPSG/0/3035",
+         "lowerCorner": [0, 0],
+         "upperCorner": [7500000, 6000000]
+     },
+     "tileMatrix": [
+     {
+          "type": "TileMatrixType",
+          "identifier": "0",
+          "scaleDenominator": 102400000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 2,
+          "matrixHeight": 2
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "1",
+          "scaleDenominator": 51200000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 4,
+          "matrixHeight": 4
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "2",
+          "scaleDenominator": 25600000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 8,
+          "matrixHeight": 8
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "3",
+          "scaleDenominator": 12800000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 16,
+          "matrixHeight": 16
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "4",
+          "scaleDenominator": 6400000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 32,
+          "matrixHeight": 32
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "5",
+          "scaleDenominator": 3200000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 64,
+          "matrixHeight": 64
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "6",
+          "scaleDenominator": 1600000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 128,
+          "matrixHeight": 128
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "7",
+          "scaleDenominator": 800000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 512,
+          "matrixHeight": 512
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "8",
+          "scaleDenominator": 400000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 1024,
+          "matrixHeight": 1024
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "9",
+          "scaleDenominator": 200000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 2048,
+          "matrixHeight": 2048
+     },
+     {
+          "type": "TileMatrixType",
+          "identifier": "10",
+          "scaleDenominator": 100000,
+          "topLeftCorner": [6000000, 0],
+          "tileWidth": 256,
+          "tileHeight": 256,
+          "matrixWidth": 4096,
+          "matrixHeight": 4096
+     }
+     ]
+ }
