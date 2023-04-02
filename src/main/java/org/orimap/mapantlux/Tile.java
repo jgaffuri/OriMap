@@ -9,9 +9,6 @@ package org.orimap.mapantlux;
  */
 public class Tile {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		//see mbtiles
