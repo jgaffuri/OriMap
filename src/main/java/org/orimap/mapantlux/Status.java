@@ -4,6 +4,8 @@
 package org.orimap.mapantlux;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
@@ -35,7 +37,7 @@ public class Status {
 		LOGGER.info("Start");
 
 		//in laz
-		//in();
+		in();
 		//out png
 		out();
 
@@ -83,7 +85,7 @@ public class Status {
 			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
 
-			System.out.println(f);
+			//System.out.println(f);
 			//LIDAR2019_NdP_53000_111000_EPSG2169.laz.png
 			String[] sp = f.split("_");
 			int x = Integer.parseInt(sp[2]);
@@ -92,12 +94,10 @@ public class Status {
 			ft.setAttribute("file", f);
 			ft.setAttribute("x", x);
 			ft.setAttribute("y", y);
+			int size = (int) Files.size(Paths.get(pathOut+f));
+			ft.setAttribute("size", Math.ceil(size));
 			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y+500), new Coordinate(x,y+500), new Coordinate(x,y) } ));
 			fs.add(ft);
-
-			//long size = Files.size(Paths.get(pathOut+f));
-
-
 		}
 		LOGGER.info(fs.size());
 
