@@ -30,7 +30,13 @@ public class Status {
 
 		Set<String> files = getFiles(pathIn);
 		for(String f : files) {
-			System.out.println(f);
+			//System.out.println(f);
+			//LIDAR2019_NdP_59500_115000_EPSG2169.laz
+			String a = f.replace("LIDAR2019_NdP_", "").replace("_EPSG2169.laz", "");
+			String[] sp = a.split("_");
+			System.out.println(a);
+			System.out.println(sp[0]);
+			System.out.println(sp[1]);
 		}
 
 
