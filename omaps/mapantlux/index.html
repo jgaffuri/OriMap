@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mapant Luxembourg</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+<body>
+
+<div id="map" style="width: 1000px; height: 800px;"></div>
+<script>
+	const map = L.map('map').setView([49.80, 6.10], 10);
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
+	L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(map);
+</script>
+
+</body>
+</html>
