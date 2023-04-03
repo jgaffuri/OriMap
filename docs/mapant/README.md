@@ -4,8 +4,7 @@ Objective:
 - Compute a schematic orienteering map on the entire Luxembourg territory using [Karttapullatin software](https://www.routegadget.net/karttapullautin/) and [ACT 2019 LIDAR data](https://act.public.lu/fr/cartographie/lidar1.html).
 - Make a mapant.lu site, similar to https://www.mapant.fi/, https://mapant.es/, https://mapant.no/ and https://mapant.fr/.
 
-Current status:
-See [**MAP HERE**](https://jgaffuri.github.io/OriMap/omaps/mapantlux/)
+Current status: See [**MAP HERE**](https://jgaffuri.github.io/OriMap/omaps/mapantlux/)
 
 # Computing resource estimation
 
@@ -29,9 +28,9 @@ In conclusion: **Around 6 GB disk space is necessary**. So, disk space is not a 
 
 ## Computing time
 
-There are 11500 tiles to process. The process of each tile takes around 15' (rough estimation, with the 64 bit version of the program - it was 40' with the 32 bit). In total, around 120 days.
+There are 11500 tiles to process. The process of each tile takes around 25' (rough estimation, with the 64 bit version of the program - it was 40' with the 32 bit). In total, around 200 days.
 
-With 3 processors, this duration can be reduced to 3 times less: **40 days**.
+With 4 processors, this duration can be reduced to 4 times less: **50 days**.
 
 That's a lot but not unrealistic.
 
