@@ -31,6 +31,7 @@ public class A0Status {
 	private final static String path = "/home/juju/Bureau/orienteering/lidar/";
 	private final static String pathIn = path + "in/lux/";
 	private final static String pathOut = path + "out/lux/";
+	private final static String pathW = "/home/juju/Bureau/workspace/OriMap/omaps/mapantlux/";
 	private final static CoordinateReferenceSystem crs = CRSUtil.getCRS(2169);
 
 	public static void main(String[] args) throws Throwable {
@@ -68,8 +69,8 @@ public class A0Status {
 		LOGGER.info(fs.size());
 
 		LOGGER.info("Save");
-		GeoData.save(fs, path+"lux_project/files_input.gpkg", crs);
-		GeoData.save(fs, path+"lux_project/files_input.geojson", crs);
+		//GeoData.save(fs, path+"lux_project/files_input.gpkg", crs);
+		GeoData.save(fs, pathW+"files_input.geojson", crs);
 	}
 
 
@@ -105,8 +106,8 @@ public class A0Status {
 		LOGGER.info("Around " + (Math.ceil(10000*fs.size()/(1287*9))/100) + " % completed");
 
 		LOGGER.info("Save");
-		GeoData.save(fs, path+"lux_project/files_output.gpkg", crs);
-		GeoData.save(fs, path+"lux_project/files_output.geojson", crs);
+		//GeoData.save(fs, path+"lux_project/files_output.gpkg", crs);
+		GeoData.save(fs, pathW+"files_output.geojson", crs);
 	}
 
 
