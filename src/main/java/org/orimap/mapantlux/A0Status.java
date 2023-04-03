@@ -23,7 +23,7 @@ import eu.europa.ec.eurostat.jgiscotools.io.geo.CRSUtil;
 import eu.europa.ec.eurostat.jgiscotools.io.geo.GeoData;
 
 /**
- * @author juju
+ * @author julien Gaffuri
  */
 public class A0Status {
 	final static Logger LOGGER = LogManager.getLogger(A0Status.class.getName());
