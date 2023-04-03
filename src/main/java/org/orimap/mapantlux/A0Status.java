@@ -60,9 +60,9 @@ public class A0Status {
 			int x = Integer.parseInt(sp[2]);
 			int y = Integer.parseInt(sp[3]);
 			Feature ft = new Feature();
-			ft.setAttribute("file", f);
-			ft.setAttribute("x", x);
-			ft.setAttribute("y", y);
+			//ft.setAttribute("file", f);
+			//ft.setAttribute("x", x);
+			//ft.setAttribute("y", y);
 			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y-500), new Coordinate(x,y-500), new Coordinate(x,y) } ));
 			fs.add(ft);
 		}
@@ -93,11 +93,11 @@ public class A0Status {
 			int x = Integer.parseInt(sp[2]);
 			int y = Integer.parseInt(sp[3]);
 			Feature ft = new Feature();
-			ft.setAttribute("file", f);
-			ft.setAttribute("x", x);
-			ft.setAttribute("y", y);
+			//ft.setAttribute("file", f);
+			//ft.setAttribute("x", x);
+			//ft.setAttribute("y", y);
 			int size = (int) Files.size(Paths.get(pathOut+f));
-			ft.setAttribute("size", size);
+			ft.setAttribute("st", size==0?"1":"0");
 			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y-500), new Coordinate(x,y-500), new Coordinate(x,y) } ));
 			fs.add(ft);
 		}
