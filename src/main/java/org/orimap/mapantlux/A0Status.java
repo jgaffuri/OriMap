@@ -69,6 +69,7 @@ public class A0Status {
 
 		LOGGER.info("Save");
 		GeoData.save(fs, path+"lux_project/files_input.gpkg", crs);
+		GeoData.save(fs, path+"lux_project/files_input.geojson", crs);
 	}
 
 
@@ -105,6 +106,7 @@ public class A0Status {
 
 		LOGGER.info("Save");
 		GeoData.save(fs, path+"lux_project/files_output.gpkg", crs);
+		GeoData.save(fs, path+"lux_project/files_output.geojson", crs);
 	}
 
 
