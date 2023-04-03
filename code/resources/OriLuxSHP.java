@@ -15,6 +15,7 @@ import eu.europa.ec.eurostat.jgiscotools.io.SHPUtil;
 public class OriLuxSHP {
 
 	public static void main(String[] args) throws Exception {
+	/*
 		System.out.println("Start");
 
 		//TODO see: https://wiki.openstreetmap.org/wiki/IOF_mapping
@@ -58,11 +59,11 @@ public class OriLuxSHP {
 			SHPUtil.clip(basePathOriCadastre, omap.outPath+"ori_cadastre/", omap.env);
 		}
 
-		System.out.println("End");
+		System.out.println("End");*/
 	}
 
 
-
+/*
 	public static void extractBDTToOri(String inBasePath, String outBasePath) throws Exception {
 
 		//101_L_contour
@@ -488,6 +489,7 @@ public class OriLuxSHP {
 		5021	carrière
 		5022	crassier
 		5051	nature multiple*/
+		/*
 		SHPUtil.extractFilterClip(inBasePath + "PARCELLES.shp", outBasePath+"403_S_rough_open_land.shp", null, CQL.toFilter( "CODE_NATUR = 5040 OR CODE_NATUR = 5037 OR CODE_NATUR = 5038 OR CODE_NATUR = 5027 OR CODE_NATUR = 5013 OR CODE_NATUR = 5028 OR CODE_NATUR = 5033 OR CODE_NATUR = 5030 OR CODE_NATUR = 5049 OR CODE_NATUR = 5021 OR CODE_NATUR = 5022 OR CODE_NATUR = 5051" ) );
 		//404_S_rough_open_land_scattered_trees
 		//405_S_forest
@@ -500,6 +502,7 @@ public class OriLuxSHP {
 		5053	réserve naturelle
 		5019	haie
 		5020	plantation*/
+		/*
 		SHPUtil.extractFilterClip(inBasePath + "PARCELLES.shp", outBasePath+"408_S_vegetation_walk.shp", null, CQL.toFilter( "CODE_NATUR = 5052 OR CODE_NATUR = 5053 OR CODE_NATUR = 5019 OR CODE_NATUR = 5020" ) );
 		//409_S_vegetation_walk_good_visibility
 		//5018	broussailles
@@ -535,6 +538,7 @@ public class OriLuxSHP {
 		5032	piste d'essai
 		5043	place voirie //TODO ?
 		 */
+		/*
 		SHPUtil.extractFilterClip(inBasePath + "PARCELLES.shp", outBasePath+"501.1_S_paved_area.shp", null, CQL.toFilter( "CODE_NATUR = 5035 OR CODE_NATUR = 5036 OR CODE_NATUR = 5041 OR CODE_NATUR = 5039 OR CODE_NATUR = 5032 OR CODE_NATUR = 5043" ) );
 		//502_L_wide_road
 		//503_L_road
@@ -569,6 +573,7 @@ public class OriLuxSHP {
 		5046	écluse
 		5047	port
 		 */
+		/*
 		SHPUtil.extractFilterClip(inBasePath + "PARCELLES.shp", outBasePath+"520_S_area_shall_not_entered.shp", null, CQL.toFilter( "CODE_NATUR = 5023 OR CODE_NATUR = 5024 OR CODE_NATUR = 5025 OR CODE_NATUR = 5026 OR CODE_NATUR = 5034 OR CODE_NATUR = 5031 OR CODE_NATUR = 5044 OR CODE_NATUR = 5029 OR CODE_NATUR = 5045 OR CODE_NATUR = 5046 OR CODE_NATUR = 5047" ) );
 		//521_S_building
 		SHPUtil.extractFilterClip(inBasePath + "BATIMENTS.shp", outBasePath+"521_S_building.shp");
@@ -588,7 +593,7 @@ public class OriLuxSHP {
 		//601_L_magnetic_north_line
 		//603.0_P_spot_height
 	}
-
+*/
 
 
 
