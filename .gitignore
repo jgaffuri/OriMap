@@ -1,6 +1,7 @@
 /data/tmp/
 *.class
 /target/
+/.vscode/
 .classpath
 .project
 /.settings/
