@@ -1,6 +1,15 @@
+# LIDAR based orienteering map of Luxembourg 
+
+Objective:
+- Compute a schematic orienteering map on the entire Luxembourg territory using [Karttapullatin software](https://www.routegadget.net/karttapullautin/) and [ACT 2019 LIDAR data](https://act.public.lu/fr/cartographie/lidar1.html).
+- Make a mapant.lu site, similar to https://www.mapant.fi/, https://mapant.es/, https://mapant.no/ and https://mapant.fr/.
+
+Current status:
+See [**MAP HERE**](https://jgaffuri.github.io/OriMap/omaps/mapantlux/)
+
 # Computing resource estimation
 
-Objective: Estimate necessary computing resources to run karttapullautin on the entire Luxembourg territory LIDAR data and get a mapant.lu site, similar to https://www.mapant.fi/, https://mapant.es/, https://mapant.no/ and https://mapant.fr/.
+Objective: Estimate necessary computing resources for a mapant.lu.
 
 ## Disk space
 
