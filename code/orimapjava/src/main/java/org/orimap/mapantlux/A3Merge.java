@@ -8,8 +8,8 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class A2Merge {
-	final static Logger LOGGER = LogManager.getLogger(A2Merge.class.getName());
+public class A3Merge {
+	final static Logger LOGGER = LogManager.getLogger(A3Merge.class.getName());
 
 
 	//https://gdal.org/programs/gdal_merge.html
@@ -28,13 +28,18 @@ public class A2Merge {
 	//You're advised to pre-process your rasters with other tools, such as pct2rgb.py or gdal_translate -expand RGB
 	//to operate gdalbuildvrt on RGB rasters instead
 
+	static String pathOut = "/home/juju/Bureau/orienteering/lidar/";
+	static String listFile = pathOut + "lux_merged/lux_list.txt";
+
 
 	public static void main(String[] args) throws Throwable {
 		LOGGER.info("Start");
 
-		String pathOut = "/home/juju/Bureau/orienteering/lidar/";
-		String listFile = pathOut + "lux_merged/lux_list.txt";
 		new File(pathOut + "lux_merged/").mkdirs();
+
+		toRGB();
+
+		/*
 
 		LOGGER.info("Get output files");
 		Set<String> files = A0Status.getFiles(pathOut+"out/lux/");
@@ -85,9 +90,39 @@ public class A2Merge {
 				LOGGER.info("   " + cmd);
 				run(cmd);
 			}
+		 */
 
 		LOGGER.info("End");
 	}
+
+	private static void toRGB() {
+
+		LOGGER.info("Get output files");
+		Set<String> files = A0Status.getFiles(pathOut+"out/lux/");
+		LOGGER.info(files.size());
+
+		for(String f : files) {
+			if(f.contains("_EPSG2169.laz_depr.png")) continue;
+			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
+			if(f.contains("_EPSG2169.laz.pgw")) continue;
+			if(f.contains("_undergrowth")) continue;
+			if(f.contains("_vege")) continue;
+
+			///home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_51000_108500_EPSG2169.laz.png
+			String f_ = new File(f).getName();
+			//LIDAR2019_NdP_90000_80500_EPSG2169.laz.png
+
+			//
+			LOGGER.info(f_);
+			String cmd = "pct2rgb.py " + f + " " + pathOut + "lux_rgb/" + f_;
+			//System.out.println(cmd);
+			run(cmd);
+		}
+
+	}
+
+
+
 
 
 	public static void run(String cmd) {
