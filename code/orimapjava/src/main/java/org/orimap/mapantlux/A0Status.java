@@ -89,6 +89,8 @@ public class A0Status {
 			if(f.contains("_EPSG2169.laz_depr.png")) continue;
 			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
+			if(f.contains("_undergrowth")) continue;
+			if(f.contains("_vege")) continue;
 
 			String f2 = f.replace(pathOut, "");
 			//f2 = f2.replace(pathOut2, "");
