@@ -31,7 +31,7 @@ public class A0Status {
 	private final static String path = "/home/juju/Bureau/orienteering/lidar/";
 	private final static String pathIn = path + "in/lux/";
 	private final static String pathOut = path + "out/lux/";
-	private final static String pathOut2 = path + "out/lux_done/";
+	//private final static String pathOut2 = path + "out/lux_done/";
 	private final static String pathW = "/home/juju/Bureau/workspace/OriMap/omaps/mapantlux/";
 	private final static CoordinateReferenceSystem crs = CRSUtil.getCRS(2169);
 
@@ -80,7 +80,7 @@ public class A0Status {
 	private static void out() throws Throwable {
 		LOGGER.info("Get output files");
 		Set<String> files = getFiles(pathOut);
-		files.addAll(getFiles(pathOut2));
+		//files.addAll(getFiles(pathOut2));
 		LOGGER.info(files.size());
 
 		LOGGER.info("Make output files geo");
@@ -91,7 +91,7 @@ public class A0Status {
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
 
 			String f2 = f.replace(pathOut, "");
-			f2 = f2.replace(pathOut2, "");
+			//f2 = f2.replace(pathOut2, "");
 			//System.out.println(f2);
 			//LIDAR2019_NdP_53000_111000_EPSG2169.laz.png
 			String[] sp = f2.split("_");
