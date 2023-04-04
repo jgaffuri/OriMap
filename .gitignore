@@ -9,3 +9,5 @@ hs_err_pid*
 *.log
 
 /src/main/javascript/map/luxocmap/
+/.apt_generated/
+/.apt_generated_tests/

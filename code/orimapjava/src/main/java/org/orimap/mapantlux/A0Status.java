@@ -31,6 +31,7 @@ public class A0Status {
 	private final static String path = "/home/juju/Bureau/orienteering/lidar/";
 	private final static String pathIn = path + "in/lux/";
 	private final static String pathOut = path + "out/lux/";
+	private final static String pathOut2 = path + "out/lux_done/";
 	private final static String pathW = "/home/juju/Bureau/workspace/OriMap/omaps/mapantlux/";
 	private final static CoordinateReferenceSystem crs = CRSUtil.getCRS(2169);
 
@@ -54,6 +55,7 @@ public class A0Status {
 		LOGGER.info("Make input files geo");
 		Collection<Feature> fs = new ArrayList<>();
 		for(String f : files) {
+			f = f.replace(pathIn, "");
 			//System.out.println(f);
 			//LIDAR2019_NdP_59500_115000_EPSG2169.laz
 			String[] sp = f.split("_");
@@ -78,6 +80,7 @@ public class A0Status {
 	private static void out() throws Throwable {
 		LOGGER.info("Get output files");
 		Set<String> files = getFiles(pathOut);
+		files.addAll(getFiles(pathOut2));
 		LOGGER.info(files.size());
 
 		LOGGER.info("Make output files geo");
@@ -87,16 +90,18 @@ public class A0Status {
 			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
 
-			//System.out.println(f);
+			String f2 = f.replace(pathOut, "");
+			f2 = f2.replace(pathOut2, "");
+			//System.out.println(f2);
 			//LIDAR2019_NdP_53000_111000_EPSG2169.laz.png
-			String[] sp = f.split("_");
+			String[] sp = f2.split("_");
 			int x = Integer.parseInt(sp[2]);
 			int y = Integer.parseInt(sp[3]);
 			Feature ft = new Feature();
 			//ft.setAttribute("file", f);
 			//ft.setAttribute("x", x);
 			//ft.setAttribute("y", y);
-			int size = (int) Files.size(Paths.get(pathOut+f));
+			int size = (int) Files.size(Paths.get(f));
 			ft.setAttribute("st", size==0?"1":"0");
 			ft.setGeometry(new GeometryFactory().createPolygon(new Coordinate[] { new Coordinate(x,y), new Coordinate(x+500,y), new Coordinate(x+500,y-500), new Coordinate(x,y-500), new Coordinate(x,y) } ));
 			fs.add(ft);
@@ -117,7 +122,7 @@ public class A0Status {
 	public static Set<String> getFiles(String dir) {
 		return Stream.of(new File(dir).listFiles())
 				.filter(file -> !file.isDirectory())
-				.map(File::getName)
+				.map(File::getAbsolutePath)
 				.collect(Collectors.toSet());
 	}
 
