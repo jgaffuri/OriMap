@@ -84,7 +84,7 @@ public class A3Merge {
 				LOGGER.info("   Run gdalbuildvrt");
 				String cmd = "   gdalbuildvrt -input_file_list " +listFile+ " -overwrite " +pathOut+"lux_merged/lux"+sign+".vrt";
 				LOGGER.info("   " + cmd);
-				run(cmd);
+				run(cmd, true);
 			}
 
 
@@ -93,7 +93,7 @@ public class A3Merge {
 
 
 
-	public static void run(String cmd) {
+	public static void run(String cmd, boolean message) {
 		//ProcessBuilder processBuilder = new ProcessBuilder(cmd);
 		//ProcessBuilder processBuilder = new ProcessBuilder("gdalwarp", inF, outF, "-tr", resT+"", resT+"", "-r", "mode");
 		ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", cmd);

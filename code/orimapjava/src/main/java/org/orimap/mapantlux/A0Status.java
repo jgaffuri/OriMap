@@ -91,6 +91,14 @@ public class A0Status {
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
 			if(f.contains("_undergrowth")) continue;
 			if(f.contains("_vege")) continue;
+			if(f.contains(".xml")) {
+				System.err.println(f);
+				continue;
+			}
+			if(!f.contains(".png")) {
+				System.err.println(f);
+				continue;
+			}
 
 			String f2 = f.replace(pathOut, "");
 			//f2 = f2.replace(pathOut2, "");

@@ -23,11 +23,11 @@ public class A2ToRGB {
 		LOGGER.info(files.size());
 
 		for(String f : files) {
-			//if(f.contains("_EPSG2169.laz_depr.png")) continue;
-			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
-			if(f.contains("_EPSG2169.laz.pgw")) continue;
-			//if(f.contains("_undergrowth")) continue;
-			//if(f.contains("_vege")) continue;
+			if(f.contains(".pgw")) continue;
+			if(!f.contains(".png")) {
+				System.err.println(f);
+				continue;
+			}
 
 			int size = (int) Files.size(Paths.get(f));
 			if(size == 0) continue;
@@ -37,10 +37,10 @@ public class A2ToRGB {
 			//LIDAR2019_NdP_90000_80500_EPSG2169.laz.png
 
 			//
-			LOGGER.info(f);
+			//LOGGER.info(f);
 			String cmd = "pct2rgb.py " + f + " " + f;
 			//System.out.println(cmd);
-			A3Merge.run(cmd);
+			A3Merge.run(cmd, false);
 		}
 
 		LOGGER.info("End");
