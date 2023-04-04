@@ -1,5 +1,7 @@
 package org.orimap.mapantlux;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +28,9 @@ public class A2ToRGB {
 			if(f.contains("_EPSG2169.laz.pgw")) continue;
 			//if(f.contains("_undergrowth")) continue;
 			//if(f.contains("_vege")) continue;
+
+			int size = (int) Files.size(Paths.get(f));
+			if(size == 0) continue;
 
 			///home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_51000_108500_EPSG2169.laz.png
 			//String f_ = new File(f).getName();

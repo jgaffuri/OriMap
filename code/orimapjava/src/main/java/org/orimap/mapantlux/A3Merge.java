@@ -37,10 +37,6 @@ public class A3Merge {
 
 		new File(pathOut + "lux_merged/").mkdirs();
 
-		toRGB();
-
-		/*
-
 		LOGGER.info("Get output files");
 		Set<String> files = A0Status.getFiles(pathOut+"out/lux/");
 		LOGGER.info(files.size());
@@ -90,38 +86,10 @@ public class A3Merge {
 				LOGGER.info("   " + cmd);
 				run(cmd);
 			}
-		 */
+
 
 		LOGGER.info("End");
 	}
-
-	private static void toRGB() {
-
-		LOGGER.info("Get output files");
-		Set<String> files = A0Status.getFiles(pathOut+"out/lux/");
-		LOGGER.info(files.size());
-
-		for(String f : files) {
-			if(f.contains("_EPSG2169.laz_depr.png")) continue;
-			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
-			if(f.contains("_EPSG2169.laz.pgw")) continue;
-			if(f.contains("_undergrowth")) continue;
-			if(f.contains("_vege")) continue;
-
-			///home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_51000_108500_EPSG2169.laz.png
-			String f_ = new File(f).getName();
-			//LIDAR2019_NdP_90000_80500_EPSG2169.laz.png
-
-			//
-			LOGGER.info(f_);
-			String cmd = "pct2rgb.py " + f + " " + pathOut + "lux_rgb/" + f_;
-			//System.out.println(cmd);
-			run(cmd);
-		}
-
-	}
-
-
 
 
 
