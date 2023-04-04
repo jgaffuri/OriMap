@@ -59,7 +59,9 @@ public class A2Merge {
 		LOGGER.info(nb);
 
 		LOGGER.info("Run gdalbuildvrt");
-		run("gdalbuildvrt -input_file_list " +pathOut+"lux_list.txt"+ " -overwrite " +pathOut+"lux.vrt");
+		String cmd = "gdalbuildvrt -input_file_list " +pathOut+"lux_list.txt"+ " -overwrite " +pathOut+"lux.vrt";
+		LOGGER.info("   " + cmd);
+		run(cmd);
 
 		LOGGER.info("End");
 	}
