@@ -1,9 +1,8 @@
 package org.orimap.mapantlux;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
-import java.io.InputStreamReader;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -33,35 +32,59 @@ public class A2Merge {
 	public static void main(String[] args) throws Throwable {
 		LOGGER.info("Start");
 
-		String pathOut = "/home/juju/Bureau/orienteering/lidar/out/";
+		String pathOut = "/home/juju/Bureau/orienteering/lidar/";
+		String listFile = pathOut + "lux_merged/lux_list.txt";
+		new File(pathOut + "lux_merged/").mkdirs();
 
 		LOGGER.info("Get output files");
-		Set<String> files = A0Status.getFiles(pathOut+"lux/");
+		Set<String> files = A0Status.getFiles(pathOut+"out/lux/");
 		LOGGER.info(files.size());
 
-		LOGGER.info("Make output files list");
-		int nb=0;
-		BufferedWriter writer = new BufferedWriter(new FileWriter(pathOut + "lux_list.txt"));
-		for(String f : files) {
-			if(f.contains("_EPSG2169.laz_depr.png")) continue;
-			if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
-			if(f.contains("_EPSG2169.laz.pgw")) continue;
-			if(f.contains("_undergrowth")) continue;
-			if(f.contains("_vege")) continue;
+		int xS = 47500, yS = 55500;
+		int xE = 108000, yE = 140000;
+		int step = 10000;
 
-			//System.out.println(f);
-			writer.write(f);
-			writer.write("\n");
+		for(int x=xS; x<xE; x+=step)
+			for(int y=yS; y<yE; y+=step) {
+				LOGGER.info(x + " " + y);
+				String sign = "_" + x + "_" + y;
 
-			nb++;
-		}
-		writer.close();
-		LOGGER.info(nb);
+				LOGGER.info("   Make output files list");
+				int nb=0;
+				BufferedWriter writer = new BufferedWriter(new FileWriter(listFile));
 
-		LOGGER.info("Run gdalbuildvrt");
-		String cmd = "gdalbuildvrt -input_file_list " +pathOut+"lux_list.txt"+ " -overwrite " +pathOut+"lux.vrt";
-		LOGGER.info("   " + cmd);
-		run(cmd);
+				for(String f : files) {
+					if(f.contains("_EPSG2169.laz_depr.png")) continue;
+					if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
+					if(f.contains("_EPSG2169.laz.pgw")) continue;
+					if(f.contains("_undergrowth")) continue;
+					if(f.contains("_vege")) continue;
+
+					//exclude files out of the tile
+					String f2 = f.replace(pathOut+"lux/", "");
+					String[] sp = f2.split("_");
+					int x_ = Integer.parseInt(sp[2]);
+					if(x_<x) continue;
+					if(x_>=x+step) continue;
+					int y_ = Integer.parseInt(sp[3]);
+					if(y_<y) continue;
+					if(y_>=y+step) continue;
+
+					//System.out.println(f);
+					writer.write(f);
+					writer.write("\n");
+
+					nb++;
+				}
+				writer.close();
+				LOGGER.info("   "+nb);
+				if(nb == 0) continue;
+
+				LOGGER.info("   Run gdalbuildvrt");
+				String cmd = "   gdalbuildvrt -input_file_list " +listFile+ " -overwrite " +pathOut+"lux_merged/lux"+sign+".vrt";
+				LOGGER.info("   " + cmd);
+				run(cmd);
+			}
 
 		LOGGER.info("End");
 	}
@@ -77,18 +100,18 @@ public class A2Merge {
 
 		try {
 			Process process = processBuilder.start();
-			StringBuilder output = new StringBuilder();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			//StringBuilder output = new StringBuilder();
+			//BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-			String line;
-			while ((line = reader.readLine()) != null) {
-				output.append(line + "\n");
-			}
+			//String line;
+			/*while ((line = reader.readLine()) != null) {
+				//output.append(line + "\n");
+			}*/
 
 			int exitVal = process.waitFor();
 			if (exitVal == 0) {
 				System.out.println("Success!");
-				System.out.println(output);
+				//System.out.println(output);
 			} else {
 				System.err.println("Problem");
 			}
@@ -97,6 +120,5 @@ public class A2Merge {
 			e.printStackTrace();
 		}
 	}
-
 
 }
