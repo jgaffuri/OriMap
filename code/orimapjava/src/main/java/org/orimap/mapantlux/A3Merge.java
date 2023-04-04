@@ -60,6 +60,8 @@ public class A3Merge {
 					if(f.contains("_EPSG2169.laz.pgw")) continue;
 					if(f.contains("_undergrowth")) continue;
 					if(f.contains("_vege")) continue;
+					if(f.contains(".xml")) continue;
+					if(f.contains(".pgw")) continue;
 
 					//exclude files out of the tile
 					String f2 = f.replace(pathOut+"lux/", "");
