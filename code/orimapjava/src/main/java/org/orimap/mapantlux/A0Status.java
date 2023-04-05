@@ -92,7 +92,7 @@ public class A0Status {
 			if(f.contains("_undergrowth")) continue;
 			if(f.contains("_vege")) continue;
 			if(f.contains(".xml")) {
-				System.err.println(f);
+				//System.err.println(f);
 				continue;
 			}
 			if(!f.contains(".png")) {

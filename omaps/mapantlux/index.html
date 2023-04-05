@@ -13,15 +13,15 @@
 
 //https://leafletjs.com/reference.html#map-option
 const map = L.map('map', {
-	center: [49.80, 6.10],
-	zoom: 10,
+	center: [49.8133, 6.1401],
+	zoom: 6,
 	attributionControl: false,
-	crs: L.CRS.EPSG3857,
+	//crs: L.CRS.EPSG3857,
 //see https://github.com/kartena/Proj4Leaflet
 
 });
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
-//L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(map);
+L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(map);
 
 console.log(L.CRS)
 
