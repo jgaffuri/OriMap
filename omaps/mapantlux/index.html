@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Mapant Luxembourg</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
@@ -20,16 +20,10 @@ const map = L.map('map', {
 //see https://github.com/kartena/Proj4Leaflet
 
 });
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
+//L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
 L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(map);
 
-console.log(L.CRS)
-
 </script>
-
-
-//https://openlayers.org/doc/faq.html#how-do-i-change-the-projection-of-my-map-
-
 
 </body>
 </html>
