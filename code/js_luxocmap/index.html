@@ -41,13 +41,13 @@ and <a href='http://orienteering.org/resources/mapping/'>the orienteering map sp
 	};
 
 	var
-		latIni = getParameterByName("lat") || 49.61,
-		lonIni = getParameterByName("lon") || 6.131,
-		zoomIni = getParameterByName("z") || 15
+		latIni = +getParameterByName("lat") || 49.61,
+		lonIni = +getParameterByName("lon") || 6.131,
+		zoomIni = +getParameterByName("z") || 15
 		;
 	
 	
-	var map = L.map('mapdiv').setView([1.0*latIni, 1.0*lonIni], 1.0*zoomIni);
+	var map = L.map('mapdiv').setView([latIni, lonIni], zoomIni);
 	L.tileLayer('luxocmap/{z}/{x}/{y}.png', {
 		minZoom: 9,
 		maxZoom: 15

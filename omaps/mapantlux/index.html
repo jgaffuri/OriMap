@@ -11,15 +11,33 @@
 <div id="map" style="width: 800px; height: 600px;"></div>
 <script>
 
+
+	//function to retrieve URL parameters
+	var getParameterByName = function(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+		return !results? null : decodeURIComponent(results[1].replace(/\+/g, " "));
+	};
+
+	var
+		latIni = +getParameterByName("lat") || 49.8133,
+		lonIni = +getParameterByName("lon") || 6.1401,
+		zoomIni = +getParameterByName("z") || 10
+		;
+	
+
+
 //https://leafletjs.com/reference.html#map-option
 const map = L.map('map', {
-	center: [49.8133, 6.1401],
-	zoom: 8,
+	center: [latIni, lonIni],
+	zoom: zoomIni,
 	attributionControl: false,
 });
 //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
 //L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
-L.tileLayer('https://ahahah.eu/luxoc/mapantlux_tiles/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
+L.tileLayer('https://ahahah.eu/luxoc/mapantlux_tiles/{z}/{x}/{y}.png', { minZoom: 9, maxZoom: 15 }).addTo(map);
+//https://ahahah.eu/luxoc/map/luxocmap/
 
 </script>
 
