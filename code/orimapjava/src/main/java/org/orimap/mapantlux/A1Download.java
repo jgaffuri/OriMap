@@ -31,7 +31,7 @@ public class A1Download {
 		String destDir = "/home/juju/Bureau/orienteering/lidar/in/lux/";
 
 		LOGGER.info("Load tiles");
-		ArrayList<Feature> ziptiles = GeoData.getFeatures("/home/juju/Bureau/orienteering/lidar/lux_project/lidar_urls.gpkg");
+		ArrayList<Feature> ziptiles = GeoData.getFeatures("/home/juju/Bureau/workspace/OriMap/code/mapantlux/lidar_urls.gpkg");
 		LOGGER.info(ziptiles.size());
 
 		int xMin = 48500;
