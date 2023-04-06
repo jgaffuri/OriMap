@@ -77,10 +77,11 @@ public class A2Merge {
 
 					//System.out.println(f);
 
+					//TODO do this only when image is rgb
 					//LOGGER.info("   to RGB");
-					String cmd = "pct2rgb.py " + f + " " + f;
+					//String cmd = "pct2rgb.py " + f + " " + f;
 					//System.out.println(cmd);
-					A2Merge.run(cmd, false);
+					//A2Merge.run(cmd, false);
 
 					sb.append(f);
 					sb.append(" ");
