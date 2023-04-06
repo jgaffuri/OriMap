@@ -80,20 +80,18 @@ public class A3Merge2 {
 					//A3Merge.run(cmd, false);
 					
 					sb.append(f);
-					if(nb>0) sb.append(" ");
+					sb.append(" ");
 
 					nb++;
 				}
 				LOGGER.info("   "+nb);
 				if(nb == 0) continue;
 
-				System.out.println(sb.toString());
-				
 				LOGGER.info("   Run gdal_merge");
-				String cmd = "";
+				String cmd = "gdal_merge.py -o " +pathOut+"lux_merged/lux"+sign+".tiff " + sb.toString();
 				//gdal_merge.py -o /home/juju/Bureau/orienteering/lidar/out/lux.tiff /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112500_EPSG2169.laz.png /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112000_EPSG2169.laz.png
 				LOGGER.info("   " + cmd);
-				//A3Merge.run(cmd, true);
+				A3Merge.run(cmd, true);
 				
 
 				
