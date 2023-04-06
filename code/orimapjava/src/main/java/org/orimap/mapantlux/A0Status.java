@@ -32,7 +32,7 @@ public class A0Status {
 	private final static String pathIn = path + "in/lux/";
 	private final static String pathOut = path + "out/lux/";
 	//private final static String pathOut2 = path + "out/lux_done/";
-	private final static String pathW = "/home/juju/Bureau/workspace/OriMap/omaps/mapantlux/";
+	private final static String pathW = "/home/juju/Bureau/workspace/OriMap/code/mapantlux/";
 	private final static CoordinateReferenceSystem crs = CRSUtil.getCRS(2169);
 
 	public static void main(String[] args) throws Throwable {
