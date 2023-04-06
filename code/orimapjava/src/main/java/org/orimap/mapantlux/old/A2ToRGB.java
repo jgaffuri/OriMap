@@ -1,4 +1,4 @@
-package org.orimap.mapantlux;
+package org.orimap.mapantlux.old;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -6,6 +6,8 @@ import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.orimap.mapantlux.A0Status;
+import org.orimap.mapantlux.A2Merge;
 
 public class A2ToRGB {
 	final static Logger LOGGER = LogManager.getLogger(A2ToRGB.class.getName());
@@ -40,7 +42,7 @@ public class A2ToRGB {
 			//LOGGER.info(f);
 			String cmd = "pct2rgb.py " + f + " " + f;
 			//System.out.println(cmd);
-			A3Merge.run(cmd, false);
+			A2Merge.run(cmd, false);
 		}
 
 		LOGGER.info("End");

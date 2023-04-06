@@ -1,4 +1,4 @@
-package org.orimap.mapantlux;
+package org.orimap.mapantlux.old;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,9 +7,11 @@ import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.orimap.mapantlux.A0Status;
+import org.orimap.mapantlux.A2Merge;
 
-public class A3Merge2 {
-	final static Logger LOGGER = LogManager.getLogger(A3Merge2.class.getName());
+public class A3Merge {
+	final static Logger LOGGER = LogManager.getLogger(A3Merge.class.getName());
 
 
 	//https://gdal.org/programs/gdal_merge.html
@@ -42,7 +44,6 @@ public class A3Merge2 {
 		LOGGER.info(files.size());
 
 		int xS = 47500, yS = 55500;
-		//int xE = 50000, yE = 60000;
 		int xE = 108000, yE = 140000;
 		int step = 10000;
 
@@ -51,53 +52,6 @@ public class A3Merge2 {
 				LOGGER.info(x + " " + y);
 				String sign = "_" + x + "_" + y;
 
-				int nb=0;
-				StringBuffer sb = new StringBuffer();
-				for(String f : files) {
-					if(f.contains("_EPSG2169.laz_depr.png")) continue;
-					if(f.contains("_EPSG2169.laz_depr.pgw")) continue;
-					if(f.contains("_EPSG2169.laz.pgw")) continue;
-					if(f.contains("_undergrowth")) continue;
-					if(f.contains("_vege")) continue;
-					if(f.contains(".xml")) continue;
-					if(f.contains(".pgw")) continue;
-
-					//exclude files out of the tile
-					String f2 = f.replace(pathOut+"lux/", "");
-					String[] sp = f2.split("_");
-					int x_ = Integer.parseInt(sp[2]);
-					if(x_<x) continue;
-					if(x_>=x+step) continue;
-					int y_ = Integer.parseInt(sp[3]);
-					if(y_<y) continue;
-					if(y_>=y+step) continue;
-
-					//System.out.println(f);
-
-					//LOGGER.info("   to RGB");
-					//String cmd = "pct2rgb.py " + f + " " + f;
-					//System.out.println(cmd);
-					//A3Merge.run(cmd, false);
-					
-					sb.append(f);
-					sb.append(" ");
-
-					nb++;
-				}
-				LOGGER.info("   "+nb);
-				if(nb == 0) continue;
-
-				LOGGER.info("   Run gdal_merge");
-				String cmd = "gdal_merge.py -init \"255 255 255\" -o " +pathOut+"lux_merged/lux"+sign+".tiff " + sb.toString();
-				//gdal_merge.py -o /home/juju/Bureau/orienteering/lidar/out/lux.tiff /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112500_EPSG2169.laz.png /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112000_EPSG2169.laz.png
-				//LOGGER.info("   " + cmd);
-				A3Merge.run(cmd, true);
-				
-				LOGGER.info("   Build pyramids with gdaladdo");
-				A3Merge.run("gdaladdo -r average "+pathOut+"lux_merged/lux"+sign+".tiff", true);
-
-				
-				/*
 				LOGGER.info("   Make output files list");
 				int nb=0;
 				BufferedWriter writer = new BufferedWriter(new FileWriter(listFile));
@@ -132,15 +86,13 @@ public class A3Merge2 {
 				if(nb == 0) continue;
 
 				LOGGER.info("   Run gdalbuildvrt");
-				String cmd = "gdalbuildvrt -input_file_list " +listFile+ " -overwrite " +pathOut+"lux_merged/lux"+sign+".vrt";
+				String cmd = "   gdalbuildvrt -input_file_list " +listFile+ " -overwrite " +pathOut+"lux_merged/lux"+sign+".vrt";
 				LOGGER.info("   " + cmd);
-				A3Merge.run(cmd, true);*/
-
+				A2Merge.run(cmd, true);
 			}
 
 
 		LOGGER.info("End");
 	}
-
 
 }
