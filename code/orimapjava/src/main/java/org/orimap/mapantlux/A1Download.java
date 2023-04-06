@@ -34,10 +34,10 @@ public class A1Download {
 		ArrayList<Feature> ziptiles = GeoData.getFeatures("/home/juju/Bureau/workspace/OriMap/code/mapantlux/lidar_urls.gpkg");
 		LOGGER.info(ziptiles.size());
 
-		int xMin = 59729;
-		int xMax = 59729;//;51500
-		int yMin = 30838;
-		int yMax = 1300000;//; 95500
+		int xMin = 58738;
+		int xMax = 61226;//;51500
+		int yMin = 0;
+		int yMax = 80015;//; 95500
 
 		//TODO parallelisation
 		//ArrayList<String> urls = new ArrayList();
