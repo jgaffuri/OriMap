@@ -77,7 +77,7 @@ public class A2Merge {
 
 					//System.out.println(f);
 
-					LOGGER.info("   to RGB");
+					//LOGGER.info("   to RGB");
 					String cmd = "pct2rgb.py " + f + " " + f;
 					//System.out.println(cmd);
 					A2Merge.run(cmd, false);
@@ -127,10 +127,10 @@ public class A2Merge {
 
 			int exitVal = process.waitFor();
 			if (exitVal == 0) {
-				System.out.println("Done");
+				if(message) System.out.println("Done");
 				//System.out.println(output);
 			} else {
-				System.err.println("Problem");
+				if(message) System.err.println("Problem");
 			}
 
 		} catch (Exception e) {
