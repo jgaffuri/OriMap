@@ -42,8 +42,8 @@ public class A3Merge2 {
 		LOGGER.info(files.size());
 
 		int xS = 47500, yS = 55500;
-		int xE = 50000, yE = 60000;
-		//int xE = 108000, yE = 140000;
+		//int xE = 50000, yE = 60000;
+		int xE = 108000, yE = 140000;
 		int step = 10000;
 
 		for(int x=xS; x<xE; x+=step)
@@ -88,14 +88,14 @@ public class A3Merge2 {
 				if(nb == 0) continue;
 
 				LOGGER.info("   Run gdal_merge");
-				String cmd = "gdal_merge.py -o " +pathOut+"lux_merged/lux"+sign+".tiff " + sb.toString();
+				String cmd = "gdal_merge.py -init \"255 255 255\" -o " +pathOut+"lux_merged/lux"+sign+".tiff " + sb.toString();
 				//gdal_merge.py -o /home/juju/Bureau/orienteering/lidar/out/lux.tiff /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112500_EPSG2169.laz.png /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112000_EPSG2169.laz.png
-				LOGGER.info("   " + cmd);
+				//LOGGER.info("   " + cmd);
 				A3Merge.run(cmd, true);
 				
+				LOGGER.info("   Build pyramids with gdaladdo");
+				A3Merge.run("gdaladdo -r average "+pathOut+"lux_merged/lux"+sign+".tiff", true);
 
-				
-				
 				
 				/*
 				LOGGER.info("   Make output files list");

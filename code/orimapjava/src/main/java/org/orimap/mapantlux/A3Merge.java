@@ -115,7 +115,7 @@ public class A3Merge {
 
 			int exitVal = process.waitFor();
 			if (exitVal == 0) {
-				System.out.println("Success!");
+				System.out.println("Done");
 				//System.out.println(output);
 			} else {
 				System.err.println("Problem");
