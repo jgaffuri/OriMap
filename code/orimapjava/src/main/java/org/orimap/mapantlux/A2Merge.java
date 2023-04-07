@@ -13,6 +13,8 @@ import javax.imageio.stream.ImageInputStream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class A2Merge {
 	final static Logger LOGGER = LogManager.getLogger(A2Merge.class.getName());
@@ -147,10 +149,15 @@ public class A2Merge {
 			// read metadata of first image
 			IIOMetadata metadata = reader.getImageMetadata(0);
 			String[] names = metadata.getMetadataFormatNames();
-			int length = names.length;
-			for (int i = 0; i < length; i++) {
+			for (int i = 0; i < names.length; i++) {
 				System.out.println( "Format name: " + names[ i ] );
-				System.out.println( metadata.getAsTree(names[i]) );
+				Node md = metadata.getAsTree(names[i]);
+				NodeList li = md.getChildNodes();
+				for(int j =0; j<li.getLength(); j++) {
+					System.out.println("   " + li.item(j));
+				}
+
+
 				//displayMetadata(metadata.getAsTree(names[i]));
 			}
 		}
