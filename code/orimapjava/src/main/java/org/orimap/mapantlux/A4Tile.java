@@ -7,7 +7,7 @@ package org.orimap.mapantlux;
  * @author juju
  *
  */
-public class A3Tile {
+public class A4Tile {
 
 	public static void main(String[] args) {
 

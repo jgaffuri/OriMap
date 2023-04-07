@@ -1,4 +1,4 @@
-package org.orimap.mapantlux.old;
+package org.orimap.mapantlux;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -6,19 +6,18 @@ import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.orimap.mapantlux.A0Status;
-import org.orimap.mapantlux.A2Merge;
 
 public class A2ToRGB {
 	final static Logger LOGGER = LogManager.getLogger(A2ToRGB.class.getName());
 
-	//You're advised to pre-process your rasters with other tools, such as pct2rgb.py or gdal_translate -expand RGB
-	//to operate gdalbuildvrt on RGB rasters instead
 
 	static String pathOut = "/home/juju/Bureau/orienteering/lidar/out/lux/";
 
 	public static void main(String[] args) throws Throwable {
 		LOGGER.info("Start");
+
+		int xS = 59336, yS = 50000;
+		int xE = 62000, yE = 240000;
 
 		LOGGER.info("Get output files");
 		Set<String> files = A0Status.getFiles(pathOut);
@@ -31,18 +30,24 @@ public class A2ToRGB {
 				continue;
 			}
 
+			//exclude files out of the tile
+			String f2 = f.replace(pathOut, "");
+			String[] sp = f2.split("_");
+			int x_ = Integer.parseInt(sp[2]);
+			if(x_<xS) continue;
+			if(x_>=xE) continue;
+			int y_ = Integer.parseInt(sp[3]);
+			if(y_<yS) continue;
+			if(y_>=yE) continue;
+
 			int size = (int) Files.size(Paths.get(f));
 			if(size == 0) continue;
 
-			///home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_51000_108500_EPSG2169.laz.png
-			//String f_ = new File(f).getName();
-			//LIDAR2019_NdP_90000_80500_EPSG2169.laz.png
-
 			//
-			//LOGGER.info(f);
+			LOGGER.info(f);
 			String cmd = "pct2rgb.py " + f + " " + f;
 			//System.out.println(cmd);
-			A2Merge.run(cmd, false);
+			//A3Merge.run(cmd, false);
 		}
 
 		LOGGER.info("End");

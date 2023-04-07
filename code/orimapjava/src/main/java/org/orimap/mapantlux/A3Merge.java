@@ -3,21 +3,13 @@ package org.orimap.mapantlux;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.Set;
-
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.stream.ImageInputStream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-public class A2Merge {
-	final static Logger LOGGER = LogManager.getLogger(A2Merge.class.getName());
+public class A3Merge {
+	final static Logger LOGGER = LogManager.getLogger(A3Merge.class.getName());
 
 
 	//https://gdal.org/programs/gdal_merge.html
@@ -43,10 +35,9 @@ public class A2Merge {
 	public static void main(String[] args) throws Throwable {
 		LOGGER.info("Start");
 
-
-		isIndexed(pathOut+"out/lux/LIDAR2019_NdP_59000_97000_EPSG2169.laz.png");
+		//isIndexed(pathOut+"out/lux/LIDAR2019_NdP_59000_97000_EPSG2169.laz.png");
 		//isIndexed(pathOut+"out/lux/LIDAR2019_NdP_96500_75500_EPSG2169.laz.png");
-		System.exit(0);
+		//System.exit(0);
 
 		new File(pathOut + "lux_merged/").mkdirs();
 
@@ -88,14 +79,13 @@ public class A2Merge {
 					if(y_<y) continue;
 					if(y_>=y+step) continue;
 
-					//System.out.println(f);
-
+					/*/System.out.println(f);
 					if(isIndexed(f)) {
 						//LOGGER.info("   to RGB");
 						String cmd = "pct2rgb.py " + f + " " + f;
 						//System.out.println(cmd);
-						A2Merge.run(cmd, false);
-					}
+						A3Merge.run(cmd, false);
+					}*/
 
 					sb.append(f);
 					sb.append(" ");
@@ -109,10 +99,10 @@ public class A2Merge {
 				String cmd = "gdal_merge.py -init \"255 255 255\" -o " +pathOut+"lux_merged/lux"+sign+".tiff " + sb.toString();
 				//gdal_merge.py -o /home/juju/Bureau/orienteering/lidar/out/lux.tiff /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112500_EPSG2169.laz.png /home/juju/Bureau/orienteering/lidar/out/lux/LIDAR2019_NdP_54500_112000_EPSG2169.laz.png
 				//LOGGER.info("   " + cmd);
-				A2Merge.run(cmd, true);
+				A3Merge.run(cmd, true);
 
 				LOGGER.info("   Build pyramids with gdaladdo");
-				A2Merge.run("gdaladdo -r average "+pathOut+"lux_merged/lux"+sign+".tiff", true);
+				A3Merge.run("gdaladdo -r average "+pathOut+"lux_merged/lux"+sign+".tiff", true);
 
 			}
 
@@ -122,15 +112,7 @@ public class A2Merge {
 
 
 
-
-	/**
-	 * Check if an image file is indexed (not in RGB)
-	 * 
-	 * @param f
-	 * @return
-	 * @throws Throwable 
-	 */
-	private static boolean isIndexed(String f) throws Throwable {
+	/*private static boolean isIndexed(String f) throws Throwable {
 
 		//TODO
 		//use gdalinfo ?
@@ -154,16 +136,19 @@ public class A2Merge {
 				Node md = metadata.getAsTree(names[i]);
 				NodeList li = md.getChildNodes();
 				for(int j =0; j<li.getLength(); j++) {
-					System.out.println("   " + li.item(j));
+					IIOMetadataNode aaa = (IIOMetadataNode) li.item(j);
+					System.out.println("   " + aaa.getLength());
 				}
 
 
 				//displayMetadata(metadata.getAsTree(names[i]));
 			}
 		}
+	 */
 
 
-		/*
+
+	/*
 
 gdalinfo LIDAR2019_NdP_59000_97000_EPSG2169.laz.png 
 
@@ -213,11 +198,11 @@ Band 1 Block=1183x1 Type=Byte, ColorInterp=Red
 Band 2 Block=1183x1 Type=Byte, ColorInterp=Green
 Band 3 Block=1183x1 Type=Byte, ColorInterp=Blue
 
-		 */	
-
+	 */	
+	/*
 		return false;
 	}
-
+	 */
 
 
 

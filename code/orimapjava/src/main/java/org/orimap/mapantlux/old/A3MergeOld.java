@@ -8,10 +8,10 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.orimap.mapantlux.A0Status;
-import org.orimap.mapantlux.A2Merge;
+import org.orimap.mapantlux.A3Merge;
 
-public class A3Merge {
-	final static Logger LOGGER = LogManager.getLogger(A3Merge.class.getName());
+public class A3MergeOld {
+	final static Logger LOGGER = LogManager.getLogger(A3MergeOld.class.getName());
 
 
 	//https://gdal.org/programs/gdal_merge.html
@@ -88,7 +88,7 @@ public class A3Merge {
 				LOGGER.info("   Run gdalbuildvrt");
 				String cmd = "   gdalbuildvrt -input_file_list " +listFile+ " -overwrite " +pathOut+"lux_merged/lux"+sign+".vrt";
 				LOGGER.info("   " + cmd);
-				A2Merge.run(cmd, true);
+				A3Merge.run(cmd, true);
 			}
 
 
