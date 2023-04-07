@@ -5,10 +5,20 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
+<style>
+   body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
 </head>
 <body>
-
-<div id="map" style="width: 800px; height: 600px;"></div>
+<div id="map"></div>
 <script>
 
 
@@ -29,15 +39,36 @@
 
 
 //https://leafletjs.com/reference.html#map-option
+
+
+const malu = L.tileLayer('https://ahahah.eu/luxoc/mapantlux_tiles/{z}/{x}/{y}.png', { minZoom: 9, maxZoom: 15 });
+const olu = L.tileLayer('https://ahahah.eu/luxoc/map/luxocmap/{z}/{x}/{y}.png', { minZoom: 9, maxZoom: 15 });
+const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 });
+
+const dsm1 = L.tileLayer('https://c.lidar-hillshade-2019.openstreetmap.lu/layer/mappers_delight_lidar_hillshade_2019_reprojected/{z}/{x}/{y}.png', { maxZoom: 16 });
+const dsm2 = L.tileLayer('https://a.lidar-hillshade-2019.openstreetmap.lu/layer/mappers_delight_lidar_hillshade_2019_withunclassified/{z}/{x}/{y}.png', { maxZoom: 16 });
+
 const map = L.map('map', {
 	center: [latIni, lonIni],
 	zoom: zoomIni,
 	attributionControl: false,
+    layers: [malu]
 });
-//L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
-//L.tileLayer('https://jgaffuri.github.io/OriMap/omaps/mapantlux/tiles/{z}/{x}/{y}.png', { maxZoom: 15 }).addTo(map);
-L.tileLayer('https://ahahah.eu/luxoc/mapantlux_tiles/{z}/{x}/{y}.png', { minZoom: 9, maxZoom: 15 }).addTo(map);
-//https://ahahah.eu/luxoc/map/luxocmap/
+
+	const baseLayers = {
+		'Mapant lu': malu,
+		'Old version': olu,
+		'DSM 1': dsm1,
+		'DSM 2': dsm2,
+		'OpenStreetMap': osm
+	};
+
+
+	const layerControl = L.control.layers(baseLayers, undefined, { collapsed:false }).addTo(map);
+
+	//const mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+ 	//const satellite = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1});
+	//layerControl.addBaseLayer(satellite, 'Satellite');
 
 </script>
 
