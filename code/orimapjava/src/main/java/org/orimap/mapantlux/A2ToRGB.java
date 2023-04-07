@@ -10,7 +10,6 @@ import org.apache.logging.log4j.Logger;
 public class A2ToRGB {
 	final static Logger LOGGER = LogManager.getLogger(A2ToRGB.class.getName());
 
-
 	static String pathOut = "/home/juju/Bureau/orienteering/lidar/out/lux/";
 
 	public static void main(String[] args) throws Throwable {
