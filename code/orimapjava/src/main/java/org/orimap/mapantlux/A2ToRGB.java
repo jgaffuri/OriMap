@@ -15,8 +15,8 @@ public class A2ToRGB {
 	public static void main(String[] args) throws Throwable {
 		LOGGER.info("Start");
 
-		int xS = 59336, yS = 50000;
-		int xE = 62000, yE = 240000;
+		int xS = 58200, yS = 40000;
+		int xE = 62000, yE = 150000;
 
 		LOGGER.info("Get output files");
 		Set<String> files = A0Status.getFiles(pathOut);
@@ -48,7 +48,7 @@ public class A2ToRGB {
 			LOGGER.info(f);
 			String cmd = "pct2rgb.py " + f + " " + f;
 			//System.out.println(cmd);
-			A3Merge.run(cmd, false);
+			A3Merge.run(cmd, true);
 		}
 
 		LOGGER.info("End");
