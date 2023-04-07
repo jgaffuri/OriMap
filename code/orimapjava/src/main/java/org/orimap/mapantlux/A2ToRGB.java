@@ -25,6 +25,8 @@ public class A2ToRGB {
 
 		for(String f : files) {
 			if(f.contains(".pgw")) continue;
+			if(f.contains(".xml")) continue;
+			if(f.contains(".laz_depr.png")) continue;
 			if(!f.contains(".png")) {
 				System.err.println(f);
 				continue;
@@ -47,7 +49,7 @@ public class A2ToRGB {
 			LOGGER.info(f);
 			String cmd = "pct2rgb.py " + f + " " + f;
 			//System.out.println(cmd);
-			//A3Merge.run(cmd, false);
+			A3Merge.run(cmd, false);
 		}
 
 		LOGGER.info("End");
