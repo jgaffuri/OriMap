@@ -37,7 +37,7 @@ kirchberg arboretum
 outdir=$outdirbase/"omap_kirchberg_merge/img_arboretum"
 xmin_=79250
 ymin_=76750
-nbx=3
+nbx=4
 nby=4
 
 #kirchberg klose groendchen
