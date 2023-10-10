@@ -12340,7 +12340,7 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 </templates>
 <view>
 <grid color="#1a5fb4" display="2" alignment="0" additional_rotation="0" unit="1" h_spacing="200" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="8" position_x="20024096" position_y="-19393172"><map opacity="0.6" visible="true"/><templates count="5"><ref template="3" opacity="1"/><ref template="2" opacity="1"/><ref template="0" opacity="1"/><ref template="1" opacity="1"/><ref template="4" visible="true" opacity="1"/></templates></map_view>
+<map_view zoom="1.41421" position_x="19969706" position_y="-19388146"><map opacity="0.6" visible="true"/><templates hidden="true" count="5"><ref template="3" opacity="1"/><ref template="2" opacity="1"/><ref template="0" opacity="1"/><ref template="1" opacity="1"/><ref template="4" visible="true" opacity="1"/></templates></map_view>
 </view>
 <print scale="4000" resolution="600" mode="raster"><page_format paper_size="A4" orientation="landscape" h_overlap="5" v_overlap="5"><dimensions width="297" height="210"/><page_rect left="0" top="0" width="297" height="210"/></page_format><print_area left="19776.55" top="-19436.395" width="297" height="210" single_page="true"/></print>
 </barrier>
