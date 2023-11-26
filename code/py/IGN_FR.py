@@ -5,8 +5,7 @@
 # read key
 with open('/home/juju/clef_ign.txt', 'r') as f:
     clef = f.read()
-
-print(clef)
+#print(clef)
 
 # WMS Raster;cartes;IGN;Plan IGN;GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2;
 # https://wxs.ign.fr/cartes/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
