@@ -4588,15 +4588,16 @@ Competitors violating this rule will be disqualified.&lt;/span&gt;</description>
 <object type="1" symbol="231"><coords count="2">13561 -6029;13987 -10995;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 </objects></part>
 </parts>
-<templates count="3" first_front_template="1">
+<templates count="4" first_front_template="1">
 <template type="GdalTemplate" open="true" name="ortho_2022_arbor2.tif" path="/home/juju/orienteering/omap_kirchberg_merge/img_arboretum/ortho_2022_arbor2.tif" relpath="../../../../orienteering/omap_kirchberg_merge/img_arboretum/ortho_2022_arbor2.tif" georef="true"><crs_spec>+init=epsg:2169</crs_spec></template>
 <template type="TemplateTrack" open="false" name="Course_pied_le_midi (1).gpx" path="/home/juju/Bureau/Course_pied_le_midi (1).gpx" relpath="../../../../Bureau/Course_pied_le_midi (1).gpx" georef="true"><crs_spec>+proj=latlong +datum=WGS84</crs_spec></template>
+<template type="TemplateTrack" open="false" name="Course_pied_le_midi.gpx" path="/home/juju/Bureau/Course_pied_le_midi.gpx" relpath="../../../../Bureau/Course_pied_le_midi.gpx" georef="true"><crs_spec>+proj=latlong +datum=WGS84</crs_spec></template>
 <template type="TemplateTrack" open="false" name="Course_pied_le_midi.gpx" path="/home/juju/Bureau/Course_pied_le_midi.gpx" relpath="../../../../Bureau/Course_pied_le_midi.gpx" georef="true"><crs_spec>+proj=latlong +datum=WGS84</crs_spec></template>
 <defaults meters_per_pixel="0" dpi="0" scale="0"/>
 </templates>
 <view>
 <grid color="#646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="500" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="1.41421" position_x="-37189" position_y="2061"><map opacity="0.65" visible="true"/><templates hidden="true" count="1"><ref template="0" visible="true" opacity="1"/></templates></map_view>
+<map_view zoom="0.707105" position_x="-12178" position_y="-28736"><map opacity="0.65" visible="true"/><templates count="1"><ref template="0" opacity="1"/></templates></map_view>
 </view>
 <print scale="4000" resolution="600" mode="raster"><page_format paper_size="A4" orientation="portrait" h_overlap="5" v_overlap="5"><dimensions width="210" height="297"/><page_rect left="6.35" top="12.7" width="197.3" height="271.6"/></page_format><print_area left="-188.326" top="-119.05" width="297" height="210"/></print>
 </barrier>
