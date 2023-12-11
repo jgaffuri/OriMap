@@ -44,8 +44,20 @@ https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMa
 
 
 https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=OI.OrthoimageCoverage.HR&crs=EPSG%3A2154&bbox=923700,6914500,927000,6917200&width=&height=&styles=
-3300*5=16500
-2700*5=13500
+
+Thionville
+-> &bbox=928000,6921000,931000,6924000
+&bbox=928000,6921000,930000,6923000
+&bbox=930000,6921000,932000,6923000
+&bbox=928000,6923000,930000,6925000
+&bbox=930000,6923000,932000,6925000
+
+https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=OI.OrthoimageCoverage.HR&crs=EPSG%3A2154&styles=&width=10000&height=10000&bbox=928000,6921000,930000,6923000
+https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=OI.OrthoimageCoverage.HR&crs=EPSG%3A2154&styles=&width=10000&height=10000&bbox=930000,6921000,932000,6923000
+https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=OI.OrthoimageCoverage.HR&crs=EPSG%3A2154&styles=&width=10000&height=10000&bbox=928000,6923000,930000,6925000
+https://wxs.ign.fr/inspire/inspire/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=OI.OrthoimageCoverage.HR&crs=EPSG%3A2154&styles=&width=10000&height=10000&bbox=930000,6923000,932000,6925000
+
+
 
 # WMS Raster;essentiels;IGN;Plan IGN;GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2;
 # https://wxs.ign.fr/essentiels/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities;
