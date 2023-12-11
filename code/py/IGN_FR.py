@@ -24,10 +24,6 @@ dy=3200
 https://wxs.ign.fr/cartes/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&format=image%2Fpng&layers=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&crs=EPSG%3A2154&bbox=928000,6921000,931100,6924200&width=3100&height=3200&styles=
 
 
-https://sgx.geodatenzentrum.de/wms_basemapde?&service=WMS&request=GetMap&layers=de_basemapde_web_raster_grau&styles=
-&format=image%2Fjpeg&transparent=false&version=1.1.1&srs=EPSG%3A3035&width=1920&height=607
-&bbox=4281949.710144452,3051619.5653094496,4309518.470664381,3060335.3140779897
-
 # WMS Raster;essentiels;IGN;Plan IGN;GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2;
 # https://wxs.ign.fr/essentiels/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities;
 # https://data.geopf.fr/wms-r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
