@@ -11,15 +11,6 @@ with open('/home/juju/clef_ign.txt', 'r') as f:
 # https://wxs.ign.fr/cartes/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
 # https://data.geopf.fr/wms-r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
 
-https://wxs.ign.fr/cartes/geoportail/r/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap
-&format=image%2Fpng
-&layers=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2
-&layers=GEOGRAPHICALGRIDSYSTEMS.MAPS.BDUNI.J1
-&crs=EPSG%3A2154
-
-DE: &bbox=4281949,3051619,4309518,3060335
-xmin,ymin,xmax,ymax
-
 Fameck:
 &bbox=923700,6914500,927000,6917200
 dx=3300
@@ -54,8 +45,6 @@ https://sgx.geodatenzentrum.de/wms_basemapde?&service=WMS&request=GetMap&layers=
 #courbes de niveau: https://geoservices.ign.fr/courbes-de-niveau
 #bd topo: https://geoservices.ign.fr/bdtopo#telechargementgpkgdep
 
-
-
-
 #LIDAR HD classé Moselle
 # https://geoservices.ign.fr/lidarhd#telechargementclassifiees
+
