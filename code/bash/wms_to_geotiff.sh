@@ -20,18 +20,19 @@ outdirbase="/home/juju/orienteering"
 #nbx=9
 #nby=8
 
-#outdir=$outdirbase/"omap_niederanven/img"
-#xmin_=82000
-#ymin_=78000
-#nbx=18
-#nby=17
+#kirchberg coque
+outdir=$outdirbase/"omap_niederanven/img"
+xmin_=82000
+ymin_=78000
+nbx=18
+nby=17
 
-kirchberg coque
-outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
-xmin_=78500
-ymin_=76250
-nbx=4
-nby=4
+#kirchberg coque
+#outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
+#xmin_=78500
+#ymin_=76250
+#nbx=4
+#nby=4
 
 #kirchberg arboretum
 #outdir=$outdirbase/"omap_kirchberg_merge/img_arboretum"
