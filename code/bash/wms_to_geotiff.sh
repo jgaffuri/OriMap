@@ -87,7 +87,7 @@ crs=EPSG:2169
 
 #for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mnt_public lidar_2019_mns_public ortho_2019_winter ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-for layer in lidar_2019_mnt_public lidar_2019_mns_public
+for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc
 do
 
 mkdir $outdir/$layer
