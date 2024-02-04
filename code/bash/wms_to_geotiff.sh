@@ -22,10 +22,10 @@ outdirbase="/home/juju/orienteering"
 
 #kirchberg coque
 outdir=$outdirbase/"omap_niederanven/img"
-xmin_=82000
-ymin_=78000
-nbx=18
-nby=17
+xmin_=81000
+ymin_=78500
+nbx=20
+nby=16
 
 #kirchberg coque
 #outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
