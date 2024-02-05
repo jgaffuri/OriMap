@@ -17,8 +17,8 @@ outdirbase="/home/juju/orienteering"
 outdir=$outdirbase/"omap_grunewald_findel/img"
 xmin_=80500
 ymin_=76500
-nbx=8
-nby=8
+nbx=9
+nby=9
 
 #outdir=$outdirbase/"omap_bambesch/img"
 #X: 73880 - 76380 Y: 76900 - 79350
@@ -94,8 +94,8 @@ crs=EPSG:2169
 
 #for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mnt_public lidar_2019_mns_public ortho_2019_winter ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-#for layer in lidar_2019_mnt_public
-for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
+#for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
+for layer in lidar_2019_mns_public
 do
 
 mkdir $outdir/$layer
