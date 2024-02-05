@@ -6,6 +6,20 @@ outdirbase="/home/juju/orienteering"
 
 #each tile is 250m large
 
+#niederanven
+#outdir=$outdirbase/"omap_niederanven/img"
+#xmin_=81000
+#ymin_=78500
+#nbx=20
+#nby=16
+
+#grunewald findel
+outdir=$outdirbase/"omap_grunewald_findel/img"
+xmin_=81000
+ymin_=78500
+nbx=8
+nby=8
+
 #outdir=$outdirbase/"omap_bambesch/img"
 #X: 73880 - 76380 Y: 76900 - 79350
 #xmin_=73750
@@ -19,13 +33,6 @@ outdirbase="/home/juju/orienteering"
 #ymin_=74750
 #nbx=9
 #nby=8
-
-#kirchberg coque
-outdir=$outdirbase/"omap_niederanven/img"
-xmin_=81000
-ymin_=78500
-nbx=20
-nby=16
 
 #kirchberg coque
 #outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
