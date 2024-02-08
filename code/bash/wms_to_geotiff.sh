@@ -92,6 +92,11 @@ crs=EPSG:2169
 
 #mkdir $outdir
 
+#https://map.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+#https://map.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap
+#&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=ortho2022_IR&CRS=EPSG%3A3857&STYLES=&WIDTH=2400
+#&HEIGHT=288&BBOX=689329.5099787628%2C6384219.519667824%2C690762.7042591099%2C6384391.502981466
+
 #for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mnt_public lidar_2019_mns_public ortho_2019_winter ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
