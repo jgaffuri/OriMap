@@ -1,36 +1,17 @@
-# How to produce an orienteering map from ACT LIDAR data with Karttapullatin?
+# Comment produire une carte de course d'orientation à partir des données LIDAR HD IGN avec Karttapullatin?
 
-This is a tutorial for anyone interested in mapping natural areas of Luxembourg using the [ACT LIDAR data](https://act.public.lu/fr/cartographie/lidar.html). This is provided by the [Luxembourg Orienteering Club](https://orienteering.lu/) (feel free to [join us](https://orienteering.lu/en/join/)!).
 
-[![Luxembourg orienteering club](img/luxoc_logo_small.png)](https://orienteering.lu)
+## Télécharger les données LIDAR HD IGN
 
-## Requirements
+Rendez-vous sur [le site de l'IGN](https://www.ign.fr/) pour télécharger les données LIDAR HD classifiées sur votre zone d'intérêt: Voir [cette section](https://geoservices.ign.fr/lidarhd#telechargementclassifiees) ou [cette carte interactive](https://diffusion-lidarhd.ign.fr/) .
 
-- A PC with Windows.
-- A bit of time and maybe resilience !
+Pour ce tutoriel, notre zone d'intérêt correspond aux alentours du fort du Hackenberg:
 
-## Download the ACT LIDAR data
+![Hackenberg](img/hackenberg.png)
 
-Download the data tiles corresponding to the extent of your map from the [Luxembourgish Geoportal website](https://map.geoportail.lu/theme/main?version=3&zoom=14&X=691005&Y=6387292&lang=en&layers=1788&opacities=0.75&bgLayer=orthogr_2013_global&crosshair=false) or [this page](https://gist.github.com/grischard/0a2b5ade272a3ed351e5c269c3e30a89). Click on each of the tiles corresponding to the map extent. A popup window will then open and show the download URL of the corresponding file. To download the file, simply copy this URL and paste it in your web browser URL field.
+Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier correspond à une zone carrée de 1km². Ces fichiers sont au format *\*.laz* et font environ 100/150 Mo. Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/), pour un apercu rapide des données.
 
-As an example, we are going to make a map of Noumerléen:
-
-![Noumerléen](img/1_area.png)
-
-For our case, we need those 4 downloads:
-  - [lidar2019-ndp-c20-r24-ll78500-92500-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-075037/lidar2019-ndp-c20-r24-ll78500-92500-epsg2169.zip)
-  - [lidar2019-ndp-c20-r25-ll78500-94000-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-075309/lidar2019-ndp-c20-r25-ll78500-94000-epsg2169.zip)
-  - [lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-093636/lidar2019-ndp-c21-r24-ll80000-92500-epsg2169.zip)
-  - [lidar2019-ndp-c21-r25-ll80000-94000-epsg2169.zip](https://download.data.public.lu/resources/lidar-2019-releve-3d-du-territoire-luxembourgeois/20200109-093959/lidar2019-ndp-c21-r25-ll80000-94000-epsg2169.zip)
-
-Each zip file size is around 300/500 Mo.
-
-- Unzip the downloaded zip file. Each of them should contain 9 *\*.laz* files. So, for our example, we have 9x4=36 *\*.laz* files. Each of these *\*.laz* files correspond to a 500m x 500m square.
-- You can easily visualise the *\*.laz* files with [plas.io](https://plas.io/). This provides some overview of the input data.
-
-[![plas.io](img/plasio.png)](https://plas.io/)
-
-## Get Karttapullatin software and prepare the workspace
+## Télécharger le logiciel Karttapullatin et preparer l'espace de travail
 
 - Decide on a working folder on your PC, for example: *E:myfolder/myfolder2/workspace/*. This could be a folder on your desktop or anywhere else. No matter.
 - Create a folder for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
