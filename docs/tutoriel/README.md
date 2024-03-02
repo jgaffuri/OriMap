@@ -9,12 +9,12 @@ Pour ce tutoriel, notre zone d'intérêt correspond aux alentours du fort du Hac
 
 ![Hackenberg](img/hackenberg.png)
 
-Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier correspond à une zone carrée de 1km². Ces fichiers sont au format *\*.laz* et font environ 100/150 Mo. Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/), pour un apercu rapide des données (<- enfin bon, au dernier essai, ça marchait pas mais c'est pas bien grave).
+Pour cette zone, 6 fichiers doivent être téléchargés. Chaque fichier correspond à une zone carrée de 1km². Ces fichiers sont au format *\*.laz* et font environ 100/150 Mo. Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/), pour un apercu rapide des données (<- enfin bon, au dernier essai, ça marchait pas mais c'est pas bien grave).
 
 ## Télécharger le logiciel Karttapullatin et preparer l'espace de travail
 
 - Choisir un dossier de travail sur votre PC, par exemple *E:monDossier/monDossier2/tutoriel/*. Ca peut être simplement un dossier sur votre bureau...
-- Créer des sous-dossiers où mettre les données téléchargée: *.../tutoriel/entree/hackenberg/*. Y placer les 4 fichiers *\*.laz* téléchargés.
+- Créer des sous-dossiers où mettre les données téléchargée: *.../tutoriel/entree/hackenberg/*. Y placer les 6 fichiers *\*.laz* téléchargés.
 - Télécharger le logiciel Karttapullatin depuis [le site Karttapullatin](http://www.routegadget.net/karttapullautin/). Télécharger la version 32 ou 64 bits en fonction de votre PC - s'il est récent, ce devrait être un 64 bits.
 - Pas besoin d'installer le lociciel: Déplacez juste le dossier téléchargé et décompréssé ici: *.../tutoriel/karttapullautin_standalone/*
 - Preparer un dossier pour les résultats produits par le logiciel: *.../tutoriel/sortie/hackenberg/*
