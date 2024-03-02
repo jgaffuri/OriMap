@@ -52,16 +52,13 @@ batchoutfolder=../sortie/hackenberg/
 lazfolder=../entree/hackenberg/
 ```
 
-- Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par
+- Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par karttapullautin avec le paramètre `processes=XXX`. Cela permettra d'utiliser plusieurs processeurs en parallèle et donc accelerer le processus.
+- **Lancer le programme** en double-cliquant sur: *pullauta.exe*. L'execution peut prendre du temps en fonction du nombre et de la taille des fichiers *\*.laz* en entrée et des capacités de calcul du PC. L'avancée peut être suivie en examinant le contenu du dossier de sortie *.../tutoriel/sortie/hackenberg/*.
 
+Une fois le calcul terminé, ce n'est pas encore fini: Le processus a en effet produit un ensemble de fichiers pour chacun des fichiers *\*.laz* en entrée. Ces fichiers doivent être fusionnés. Pour cela:
 
-
-- If you know the number of processors available on your PC, you can specify how many will be used by karttapullautin with `processes=XXX` parameter. This will allow a parallel and thus faster computation.
-- **Launch the program** with e double click on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the computation power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder, where the output is progressively produced, tile after tile. Some images can be viewed there, step after step.
-
-Once the process is complete, we are not done yet: The process produces 1 output for each tile, and we need to merge all these outputs into a single one. An easy way to proceed the following:
-
-- Create a *merge.bat* file in *.../workspace/karttapullautin_standalone/* folder (right click, then *new file*). Edit it as a text file and add the following content:
+- Créer un fichier *fusion.bat* dans le dossier *.../tutoriel/karttapullautin_standalone/*.
+- Editer *fusion.bat* et y ajouter les lignes suivante:
 
 ```
 pullauta pngmerge 1
@@ -69,9 +66,15 @@ pullauta pngmergedepr 1
 pullauta pngmergevege
 pullauta dxfmerge
 ```
-- Double click on this *merge.bat* file to execute all the commands listed here, which merge the outputs. As a result, several **merged_XXXX.YYY** files are produced in the *.../workspace/karttapullautin_standalone/* folder. There are *\*.png* and *\*.jpg* image files, which can be viewed as a normal image, and also *\*.dxf* files, which can be imported in other mapping software (as explained below).
 
-Here is the output obtained for our Noumerléen map:
+- Double-cliquer sur le fichier *fusion.bat* pour l'executer, ce qui a pour effet de fusionner les fichiers en sortie de dossier *.../tutoriel/sortie/hackenberg/*. Comme résultat, plusieurs fichiers **merged_XXXX.YYY** sont produits dans le dossier *.../tutoriel/karttapullautin_standalone/*. Il y a des fichiers images *\*.png* and *\*.jpg*, qui peuvent être affichés comme n'importe quel fichier image, et également des fichiers de données *\*.dxf*, qui peuvent être importés dans des logiciels de cartographie (comme expliqué ci-dessous).
+
+Voici un des fichiers obtenus pour notre zone test à Hackenbourg::
+
+
+
+
+
 
 [![orienteering map noumerleen lidar karttapullautin](img/noumer_out.png)](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/howtoactlidar/img/merged_depr.png)
 
