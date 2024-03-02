@@ -22,14 +22,11 @@ Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier corresp
 
 - Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
 
-
-
-
-
 ## Paramétrer Karttapullatin
 
-The program parameters are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
-- Edit this *pullauta.ini* file and find the place with:
+Les paramètres du programme sont spécifiés dans le fichier texte: *.../tutoriel/karttapullautin_standalone/pullauta.ini* file.
+
+- Editer le fichier *pullauta.ini* (avec notepad ou n'importe quel programme d'édition de fichier texte) et trouver l'endroit avec ces lignes:
 
 ```
 # batch process mode, process all laz ans las files of this directory
@@ -42,20 +39,22 @@ processes=2
 # batch process output folder
 batchoutfolder=./out
 
-# batch process 
-
 # batch process input file folder
 lazfolder=./in
 ```
 
-- Modify this section with these parameter values:
+- Remplacer ces lignes par:
 
 ```
 batch=1
 processes=1
-batchoutfolder=../out/noumerleen/
-lazfolder=../in/noumerleen/
+batchoutfolder=../sortie/hackenberg/
+lazfolder=../entree/hackenberg/
 ```
+
+- Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par
+
+
 
 - If you know the number of processors available on your PC, you can specify how many will be used by karttapullautin with `processes=XXX` parameter. This will allow a parallel and thus faster computation.
 - **Launch the program** with e double click on: *pullauta.exe*. This may take several hours to complete depending on the number and size of the *\*.laz* files to process and the computation power of the PC. You can follow the process progress by looking at the content of the *.../workspace/out/noumerleen/* folder, where the output is progressively produced, tile after tile. Some images can be viewed there, step after step.
