@@ -69,7 +69,7 @@ pullauta dxfmerge
 
 Voici un des fichiers obtenus pour notre zone test à Hackenbourg::
 
-[![orienteering map hackenberg lidar hd ign karttapullautin](img/hackenberg_out.png)](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/tutoriel/img/merged_depr.png)
+[![carte course d'orientation hackenberg lidar hd ign karttapullautin](img/hackenberg_out.png)](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/tutoriel/img/merged_depr.png)
 
 ([Télécharger](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/tutoriel/img/merged_depr.png))
 
@@ -77,22 +77,20 @@ Voici un des fichiers obtenus pour notre zone test à Hackenbourg::
 
 ## Et ensuite...
 
+Les fichiers *\*.dxf* produits peuvent être importés comme couches vectorielles dans un logiciel de cartographie tel que [OCAD](https://www.ocad.com/), [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/) ou [QGIS](https://qgis.org/).
 
+Les images produites peuvent être utlisées comme fond de carte pour être vectorisés ou en support à des levers terrain.
 
+D'autres sources de données géographiques peuvent être utilisées, en particulier pour les objets non naturels (bâtiments, routes, chemins, etc.) qui ne sont pas très bien détectés par karttapullautin. Une bonne source de donnée est la [BD TOPO](https://geoservices.ign.fr/bdtopo) de l'[IGN](https://www.ign.fr/) qui peut être téléchargée par département sur [cette page](https://geoservices.ign.fr/bdtopo). Voir aussi peut-être le contenu de [OpenStreetMap](https://www.openstreetmap.org/) dont des extractions par région sont disponibles [ici](https://download.geofabrik.de/europe/france.html).
 
-- The output *\*.dxf* files can be imported as vector features in mapping software such as [OCAD](https://www.ocad.com/), [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/) or [QGIS](https://qgis.org/). Image outputs can also be used as a backdrop to be digitalised or to support field surveys.
-- Other geographical data sources can be used for non-natural features which are not detected properly by karttapullautin. Here are some of them:
-  - The Luxembourgish national topographic data base, whose 2015 version can be downloaded freely [**here**](https://data.public.lu/en/datasets/bd-l-tc-2015/). This include some excellent information for building footprints, transport networks (from main roads to hiking tracks), and many other man-made and natural features shown on topographic maps.
-  - [OpenStreetMap](https://www.openstreetmap.org/). An extraction for Luxembourg is available [here](http://download.geofabrik.de/europe/luxembourg.html).
+Ces sources de données vectorielles peuvent être affichées au-dessus de la carte obtenue par karttapullautin. Voici un exemple pour la zone sélectionée:
 
-This additional vector data can be displayed together or on top of the karttapullautin image to offer some better overview. Here is the output obtained for our Noumerléen map:
+[![carte course d'orientation hackenberg lidar hd ign karttapullautin](img/hackenberg_out_gis.png)](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf)
 
-[![orienteering map noumerleen lidar karttapullautin](img/noumer_out_gis.png)](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/noumerleen.pdf)
+(Download [full size](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf))
 
-(Download [full size](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/noumerleen.pdf))
+Une telle carte, bien qu'imparfaite, donne un bon aperçu de la zone. Pour une vraie carte de CO, un gros travail de contrôle et lever terrain, ainsi que de rédaction cartographique et de reprise est nécessaire.
 
-This could be seen as a 'good enough' map for some trainings or simply to detect some interesting areas to be then better mapped with unavoidable field surveys.
+Voir d'autres exemples de cartes [**ici**](../lidaroutputs).
 
-See some other examples of maps [**here**](../lidaroutputs).
-
-## Any comment? Anything unclear, missing, incorrect or wrong? Feel free to edit the file or create an issue [here](https://github.com/jgaffuri/OriMap/issues).
+## Un commentaire? Quelque chose de pas clair, ma,quant, incorrect ou faux? N'hésitez pas à éditer le tutoriel ou discuter [ici](https://github.com/jgaffuri/OriMap/issues).
