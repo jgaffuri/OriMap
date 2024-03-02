@@ -1,9 +1,9 @@
-# Comment produire une carte de course d'orientation à partir des données LIDAR HD IGN avec Karttapullatin?
+# Comment produire une (pseudo) carte de course d'orientation à partir des données LIDAR HD IGN, avec Karttapullatin?
 
 
 ## Télécharger les données LIDAR HD IGN
 
-Rendez-vous sur [le site de l'IGN](https://www.ign.fr/) pour télécharger les données LIDAR HD classifiées sur votre zone d'intérêt: Voir [cette section](https://geoservices.ign.fr/lidarhd#telechargementclassifiees) ou [cette carte interactive](https://diffusion-lidarhd.ign.fr/) .
+Aller sur [le site de l'IGN](https://www.ign.fr/) pour télécharger les données LIDAR HD classifiées sur votre zone d'intérêt: Voir [cette section](https://geoservices.ign.fr/lidarhd#telechargementclassifiees) ou [cette carte interactive](https://diffusion-lidarhd.ign.fr/) .
 
 Pour ce tutoriel, notre zone d'intérêt correspond aux alentours du fort du Hackenberg:
 
