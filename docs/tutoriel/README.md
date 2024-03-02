@@ -9,7 +9,7 @@ Pour ce tutoriel, notre zone d'intérêt correspond aux alentours du fort du Hac
 
 ![Hackenberg](img/hackenberg.png)
 
-Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier correspond à une zone carrée de 1km². Ces fichiers sont au format *\*.laz* et font environ 100/150 Mo. Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/), pour un apercu rapide des données.
+Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier correspond à une zone carrée de 1km². Ces fichiers sont au format *\*.laz* et font environ 100/150 Mo. Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/), pour un apercu rapide des données (<- enfin bon, au dernier essai, ça marchait pas mais c'est pas bien grave).
 
 ## Télécharger le logiciel Karttapullatin et preparer l'espace de travail
 
@@ -50,7 +50,7 @@ batchoutfolder=../sortie/hackenberg/
 lazfolder=../entree/hackenberg/
 ```
 
-- Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par karttapullautin avec le paramètre `processes=XXX`. Cela permettra d'utiliser plusieurs processeurs en parallèle et donc accelerer le processus.
+- Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par karttapullautin avec le paramètre `processes=XXX`. Cela permettra d'utiliser plusieurs processeurs en parallèle et donc d'accelerer le processus.
 - **Lancer le programme** en double-cliquant sur: *pullauta.exe*. L'execution peut prendre du temps en fonction du nombre et de la taille des fichiers *\*.laz* en entrée et des capacités de calcul du PC. L'avancée peut être suivie en examinant le contenu du dossier de sortie *.../tutoriel/sortie/hackenberg/*.
 
 Une fois le calcul terminé, ce n'est pas encore fini: Le processus a en effet produit un ensemble de fichiers pour chacun des fichiers *\*.laz* en entrée. Ces fichiers doivent être fusionnés. Pour cela:
