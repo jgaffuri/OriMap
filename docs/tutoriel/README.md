@@ -17,10 +17,8 @@ Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier corresp
 - Créer des sous-dossiers où mettre les données téléchargée: *.../tutoriel/entree/hackenberg/*. Y placer les 4 fichiers *\*.laz* téléchargés.
 - Télécharger le logiciel Karttapullatin depuis [le site Karttapullatin](http://www.routegadget.net/karttapullautin/). Télécharger la version 32 ou 64 bits en fonction de votre PC - s'il est récent, ce devrait être un 64 bits.
 - Pas besoin d'installer le lociciel: Déplacez juste le dossier téléchargé et décompréssé ici: *.../tutoriel/karttapullautin_standalone/*
-- Preparer un dossier pour les résultats produits par le lociciel: *.../tutoriel/sortie/hackenberg/*
-
-
-- Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
+- Preparer un dossier pour les résultats produits par le logiciel: *.../tutoriel/sortie/hackenberg/*
+- Télécharger et décomppresser [ces programmes issus de lastools](https://github.com/jgaffuri/OriMap/raw/master/docs/tutoriel/las_exe.zip). Placer les fichiers *\*.exe* dans le dossier *.../tutoriel/karttapullautin_standalone/*. Il est aussi possible d'installer le programme libLAS ([voir ici](https://liblas.org/osgeo4w.html)).
 
 ## Paramétrer Karttapullatin
 
@@ -71,18 +69,16 @@ pullauta dxfmerge
 
 Voici un des fichiers obtenus pour notre zone test à Hackenbourg::
 
+[![orienteering map hackenberg lidar hd ign karttapullautin](img/hackenberg_out.png)](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/tutoriel/img/merged_depr.png)
+
+([Télécharger](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/tutoriel/img/merged_depr.png))
+
+- Si le résultat n'est pas satisfaisant et ne montre pas correctement les objets naturels que vous savez être présents sur le terrain, il est possible d'ajuster certains paramètres dans le fichier *pullauta.ini*. La plupart de ces paramètres sont décrits, en anglais, directement dans le fichier. Il est également possible de consulter les documentation sur [le site Karttapullatin](http://www.routegadget.net/karttapullautin/) ou bien demander conseil sur [la page Facebook de RouteGadget](https://www.facebook.com/RouteGadget-177518995597572/).
+
+## Et ensuite...
 
 
 
-
-
-[![orienteering map noumerleen lidar karttapullautin](img/noumer_out.png)](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/howtoactlidar/img/merged_depr.png)
-
-(Download [full size](https://raw.githubusercontent.com/jgaffuri/OriMap/master/docs/howtoactlidar/img/merged_depr.png))
-
-- If the output is not satisfying and do not show properly natural features that you know are present on the field, it is possible to fine-tune some parameters in the *pullauta.ini* file. Most of them are explained directly in the file. You can also check the documentation on [Karttapullatin website](http://www.routegadget.net/karttapullautin/) or ask some advice on the [RouteGadget Facebook page](https://www.facebook.com/RouteGadget-177518995597572/).
-
-## After...
 
 - The output *\*.dxf* files can be imported as vector features in mapping software such as [OCAD](https://www.ocad.com/), [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/) or [QGIS](https://qgis.org/). Image outputs can also be used as a backdrop to be digitalised or to support field surveys.
 - Other geographical data sources can be used for non-natural features which are not detected properly by karttapullautin. Here are some of them:
