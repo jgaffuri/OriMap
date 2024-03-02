@@ -13,14 +13,20 @@ Pour cette zone, 4 fichiers doivent être téléchargés. Chaque fichier corresp
 
 ## Télécharger le logiciel Karttapullatin et preparer l'espace de travail
 
-- Decide on a working folder on your PC, for example: *E:myfolder/myfolder2/workspace/*. This could be a folder on your desktop or anywhere else. No matter.
-- Create a folder for the input data: *.../workspace/in/noumerleen/*. Move there the downloaded *\*.laz* files. For our example, we should then have the 36 *\*.laz* files in this folder.
-- Download Karttapullatin software on [Karttapullatin website](http://www.routegadget.net/karttapullautin/). Download the version of the program corresponding to your PC (64 of 32 bits). For modern PCs, 64 bits is the one to use.
-- No need for any installation: Just move the software executable files here: *.../workspace/karttapullautin_standalone/*
-- Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
-- Prepare a folder for the outputs: *.../workspace/out/noumerleen/*
+- Choisir un dossier de travail sur votre PC, par exemple *E:monDossier/monDossier2/tutoriel/*. Ca peut être simplement un dossier sur votre bureau...
+- Créer des sous-dossiers où mettre les données téléchargée: *.../tutoriel/entree/hackenberg/*. Y placer les 4 fichiers *\*.laz* téléchargés.
+- Télécharger le logiciel Karttapullatin depuis [le site Karttapullatin](http://www.routegadget.net/karttapullautin/). Télécharger la version 32 ou 64 bits en fonction de votre PC - s'il est récent, ce devrait être un 64 bits.
+- Pas besoin d'installer le lociciel: Déplacez juste le dossier téléchargé et décompréssé ici: *.../tutoriel/karttapullautin_standalone/*
+- Preparer un dossier pour les résultats produits par le lociciel: *.../tutoriel/sortie/hackenberg/*
 
-## Setup Karttapullatin
+
+- Download and unzip [las2txt](https://github.com/jgaffuri/OriMap/raw/master/docs/howtoactlidar/las2txt.zip). Move the file *las2txt.exe* here: *.../workspace/karttapullautin_standalone/*. Alternativelly, you can install libLAS following [these instructions](https://liblas.org/osgeo4w.html), but it is simpler to simply put *las2txt.exe* manually...
+
+
+
+
+
+## Paramétrer Karttapullatin
 
 The program parameters are defined in the *workspace/karttapullautin_standalone/pullauta.ini* file.
 - Edit this *pullauta.ini* file and find the place with:
