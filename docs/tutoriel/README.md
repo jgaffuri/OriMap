@@ -108,6 +108,8 @@ Image *merge_depr.png* produite par karttapullautin:
 
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/sous.png)
 
+Tout ensemble:
+
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/tout.png)
 
 ## Résultat
