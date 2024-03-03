@@ -55,7 +55,12 @@ lazfolder=../entree/hackenberg/
 Ca dit au programme de traiter les données du dossier `lazfolder=../entree/hackenberg/`, de traiter tous les fichiers ensemble (`batch=1`) en utilisant un processeur (`processes=1`) et de placer les résultats dans le dossier `batchoutfolder=../sortie/hackenberg/`.
 
 - Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par karttapullautin avec le paramètre `processes=XXX`. Cela permettra d'utiliser plusieurs processeurs en parallèle et donc d'accelerer le processus.
-- **Lancer le programme** en double-cliquant sur: *pullauta.exe*. L'execution peut prendre du temps en fonction du nombre et de la taille des fichiers *\*.laz* en entrée et des capacités de calcul du PC. L'avancée peut être suivie en examinant le contenu du dossier de sortie *.../tutoriel/sortie/hackenberg/*.
+
+## C'est parti !
+
+**Lancer le programme** en double-cliquant sur: *pullauta.exe*. L'execution peut prendre du temps en fonction du nombre et de la taille des fichiers *\*.laz* en entrée et des capacités de calcul du PC. L'avancée peut être suivie en examinant le contenu du dossier de sortie *.../tutoriel/sortie/hackenberg/*.
+
+## Fusion
 
 Une fois le calcul terminé, ce n'est pas encore fini: Le processus a en effet produit un ensemble de fichiers pour chacun des fichiers *\*.laz* en entrée. Ces fichiers doivent être fusionnés. Pour cela:
 
@@ -79,7 +84,7 @@ Voici un des fichiers obtenus pour notre zone test à Hackenbourg::
 
 - Si le résultat n'est pas satisfaisant et ne montre pas correctement les objets naturels que vous savez être présents sur le terrain, il est possible d'ajuster certains paramètres dans le fichier *pullauta.ini*. La plupart de ces paramètres sont décrits, en anglais, directement dans le fichier. Il est également possible de consulter les documentation sur [le site Karttapullatin](http://www.routegadget.net/karttapullautin/) ou bien demander conseil sur [la page Facebook de RouteGadget](https://www.facebook.com/RouteGadget-177518995597572/).
 
-## Et ensuite...
+## Cartographie
 
 Les fichiers *\*.dxf* produits peuvent être importés comme couches vectorielles dans un logiciel de cartographie tel que [OCAD](https://www.ocad.com/), [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/) ou [QGIS](https://qgis.org/).
 
@@ -89,21 +94,29 @@ D'autres sources de données géographiques peuvent être utilisées, en particu
 
 Ces sources de données vectorielles peuvent être affichées au-dessus de la carte obtenue par karttapullautin.
 
-Pour le zone selectionnée, nous avons téléchargé les données [BD TOPO](https://geoservices.ign.fr/bdtopo) sur tout le département de la Moselle, au format GPKG. Les données de la BD TOPO sur les bâtiments, routes, chemins, sentiers, hydrographie, haies, et autres objets topographiques usuels des cartes de CO ont été importées dans le logiciel [QGIS](https://qgis.org/). Ces objets ont été symbolisés conformément aux [specifications IOF](https://orienteering.sport/iof/mapping/) pour une carte à 1:10'000. La carte *merge_depr.png* issue de karttapullautin a été ajoutée comme fond de carte.
+Par exemple, pour la zone selectionnée, nous avons téléchargé les données [BD TOPO](https://geoservices.ign.fr/bdtopo) sur le département de la Moselle, au format GPKG. Les données de la BD TOPO sur les bâtiments, routes, chemins, sentiers, hydrographie, haies, et autres objets topographiques usuels des cartes de CO ont été importées dans le logiciel [QGIS](https://qgis.org/). Ces objets ont été symbolisés conformément aux [specifications IOF](https://orienteering.sport/iof/mapping/) pour une carte à 1:10'000. La carte *merge_depr.png* issue de karttapullautin a été ajoutée comme fond de carte.
+
+Apercu de l'interface de QGIS:
 
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/qgis.png)
 
+Données cartographiques issue de la [BD TOPO](https://geoservices.ign.fr/bdtopo) et stylisées conformément aux [specifications IOF](https://orienteering.sport/iof/mapping/):
+
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/sur.png)
+
+Image *merge_depr.png* produite par karttapullautin:
 
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/sous.png)
 
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/tout.png)
 
+## Résultat
+
 Le résultat final peut être exporté au format PDF, pour une carte à 1:10'000 au format A4:
 
 [![carte course d'orientation hackenberg lidar hd ign karttapullautin](img/hackenberg_out_gis.png)](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf)
 
-(Download [full size](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf))
+([Télécharger](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf))
 
 Une telle carte, bien qu'imparfaite, donne un bon aperçu de la zone. Pour une vraie carte de CO, un gros travail de contrôle et lever terrain, ainsi que de rédaction cartographique et de reprise est nécessaire.
 
