@@ -93,9 +93,4 @@ Une telle carte, bien qu'imparfaite, donne un bon aperçu de la zone. Pour une v
 
 Voir d'autres exemples de cartes [**ici**](../lidaroutputs).
 
-## Ajouter des données annexes
-
-
-
-
 ## Un commentaire? Quelque chose de pas clair, ma,quant, incorrect ou faux? N'hésitez pas à éditer le tutoriel ou discuter [ici](https://github.com/jgaffuri/OriMap/issues).
