@@ -20,11 +20,11 @@ Chaque fichier peut être visualisé facilement avec [plas.io](https://plas.io/)
 - Télécharger le logiciel Karttapullatin depuis [le site Karttapullatin](http://www.routegadget.net/karttapullautin/). Télécharger la version 32 ou 64 bits en fonction de votre PC - s'il est récent, ce devrait être un 64 bits.
 - Pas besoin d'installer le lociciel: Déplacez juste le dossier téléchargé et décompréssé ici: *.../tutoriel/karttapullautin_standalone/*
 - Preparer un dossier pour les résultats produits par le logiciel: *.../tutoriel/sortie/hackenberg/*
-- Télécharger et décomppresser [ces programmes issus de lastools](https://github.com/jgaffuri/OriMap/raw/master/docs/tutoriel/las_exe.zip). Placer les fichiers *\*.exe* dans le dossier *.../tutoriel/karttapullautin_standalone/*. Il est aussi possible d'installer le programme libLAS ([voir ici](https://liblas.org/osgeo4w.html)).
+- Télécharger et décomppresser [ces programmes issus de lastools](https://github.com/jgaffuri/OriMap/raw/master/docs/tutoriel/las_exe.zip). Placer les fichiers *\*.exe* dans le dossier *.../tutoriel/karttapullautin_standalone/*. Il est visiblement aussi possible d'installer le programme libLAS ([voir ici](https://liblas.org/osgeo4w.html)) mais j'ai pas testé.
 
 ## Paramétrer Karttapullatin
 
-Les paramètres du programme sont spécifiés dans le fichier texte: *.../tutoriel/karttapullautin_standalone/pullauta.ini* file.
+Les paramètres du programme sont spécifiés dans le fichier texte: *.../tutoriel/karttapullautin_standalone/pullauta.ini*.
 
 - Editer le fichier *pullauta.ini* (avec notepad ou n'importe quel programme d'édition de fichier texte) et trouver l'endroit avec ces lignes:
 
@@ -51,6 +51,8 @@ processes=1
 batchoutfolder=../sortie/hackenberg/
 lazfolder=../entree/hackenberg/
 ```
+
+Ca dit au programme de traiter les données du dossier `lazfolder=../entree/hackenberg/`, de traiter tous les fichiers ensemble (`batch=1`) en utilisant un processeur (`processes=1`) et de placer les résultats dans le dossier `batchoutfolder=../sortie/hackenberg/`.
 
 - Si vous connaissez le nombre de processeurs de votre PC, vous pouvez spécifier combien seront utilisés par karttapullautin avec le paramètre `processes=XXX`. Cela permettra d'utiliser plusieurs processeurs en parallèle et donc d'accelerer le processus.
 - **Lancer le programme** en double-cliquant sur: *pullauta.exe*. L'execution peut prendre du temps en fonction du nombre et de la taille des fichiers *\*.laz* en entrée et des capacités de calcul du PC. L'avancée peut être suivie en examinant le contenu du dossier de sortie *.../tutoriel/sortie/hackenberg/*.
@@ -85,7 +87,19 @@ Les images produites peuvent être utlisées comme fond de carte pour être vect
 
 D'autres sources de données géographiques peuvent être utilisées, en particulier pour les objets non naturels (bâtiments, routes, chemins, etc.) qui ne sont pas très bien détectés par karttapullautin. Une bonne source de donnée est la [BD TOPO](https://geoservices.ign.fr/bdtopo) de l'[IGN](https://www.ign.fr/) qui peut être téléchargée par département sur [cette page](https://geoservices.ign.fr/bdtopo). Voir aussi peut-être le contenu de [OpenStreetMap](https://www.openstreetmap.org/) dont des extractions par région sont disponibles [ici](https://download.geofabrik.de/europe/france.html).
 
-Ces sources de données vectorielles peuvent être affichées au-dessus de la carte obtenue par karttapullautin. Voici un exemple pour la zone sélectionée:
+Ces sources de données vectorielles peuvent être affichées au-dessus de la carte obtenue par karttapullautin.
+
+Pour le zone selectionnée, nous avons téléchargé les données [BD TOPO](https://geoservices.ign.fr/bdtopo) sur tout le département de la Moselle, au format GPKG. Les données de la BD TOPO sur les bâtiments, routes, chemins, sentiers, hydrographie, haies, et autres objets topographiques usuels des cartes de CO ont été importées dans le logiciel [QGIS](https://qgis.org/). Ces objets ont été symbolisés conformément aux [specifications] pour une carte à 1:10'000. La carte *merge_depr.png* issue de karttapullautin a été ajoutée comme fond de carte.
+
+![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/qgis.png)
+
+![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/sur.png)
+
+![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/sous.png)
+
+![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/tout.png)
+
+Le résultat final peut être exporté au format PDF, pour une carte à 1:10'000 au format A4:
 
 [![carte course d'orientation hackenberg lidar hd ign karttapullautin](img/hackenberg_out_gis.png)](https://github.com/jgaffuri/OriMap/raw/master/docs/lidaroutputs/hackenberg.pdf)
 
