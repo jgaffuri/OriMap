@@ -89,7 +89,7 @@ D'autres sources de données géographiques peuvent être utilisées, en particu
 
 Ces sources de données vectorielles peuvent être affichées au-dessus de la carte obtenue par karttapullautin.
 
-Pour le zone selectionnée, nous avons téléchargé les données [BD TOPO](https://geoservices.ign.fr/bdtopo) sur tout le département de la Moselle, au format GPKG. Les données de la BD TOPO sur les bâtiments, routes, chemins, sentiers, hydrographie, haies, et autres objets topographiques usuels des cartes de CO ont été importées dans le logiciel [QGIS](https://qgis.org/). Ces objets ont été symbolisés conformément aux [specifications] pour une carte à 1:10'000. La carte *merge_depr.png* issue de karttapullautin a été ajoutée comme fond de carte.
+Pour le zone selectionnée, nous avons téléchargé les données [BD TOPO](https://geoservices.ign.fr/bdtopo) sur tout le département de la Moselle, au format GPKG. Les données de la BD TOPO sur les bâtiments, routes, chemins, sentiers, hydrographie, haies, et autres objets topographiques usuels des cartes de CO ont été importées dans le logiciel [QGIS](https://qgis.org/). Ces objets ont été symbolisés conformément aux [specifications IOF](https://orienteering.sport/iof/mapping/) pour une carte à 1:10'000. La carte *merge_depr.png* issue de karttapullautin a été ajoutée comme fond de carte.
 
 ![carte course d'orientation hackenberg lidar hd ign karttapullautin qgis bdtopo](img/qgis.png)
 
