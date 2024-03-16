@@ -9,7 +9,7 @@ outdirbase="/home/juju/orienteering"
 
 
 #howald
-outdir=$outdirbase/"omap_grunewald_findel/img"
+outdir=$outdirbase/"omap_howald/img"
 xmin_=77500
 ymin_=71000
 nbx=6
