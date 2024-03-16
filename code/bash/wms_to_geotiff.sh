@@ -12,8 +12,8 @@ outdirbase="/home/juju/orienteering"
 outdir=$outdirbase/"omap_howald/img"
 xmin_=77500
 ymin_=71000
-nbx=6
-nby=5
+nbx=6 #79000
+nby=5 #72250
 
 
 
