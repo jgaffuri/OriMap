@@ -1,6 +1,8 @@
 import os
 import requests
 
+#https://github.com/rphlo/karttapullautin
+
 def download_files(file_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
 
@@ -27,4 +29,4 @@ def download_files(file_path, output_folder):
             print(f"Failed to download {url}: {e}")
 
 
-download_files("/home/juju/geodata/lidar/test_1/liste_dalle.txt", "/home/juju/geodata/lidar/test_1/")
+download_files("/home/juju/lidar/liste_dalle_sierck.txt", "/home/juju/lidar/in/sierck/")
