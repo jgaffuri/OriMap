@@ -10,6 +10,8 @@ def download_files(file_path, output_folder):
         url = url.strip()
         if not url: continue
 
+        print("Download from ", url)
+
         try:
             file_name = os.path.basename(url)
             output_path = os.path.join(output_folder, file_name)
