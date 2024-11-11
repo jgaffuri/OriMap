@@ -29,4 +29,4 @@ def download_files(file_path, output_folder):
             print(f"Failed to download {url}: {e}")
 
 
-download_files("/home/juju/lidar/liste_dalle_koenigsmacker.txt", "/home/juju/lidar/in/koenigsmacker/")
+download_files("/home/juju/lidar/liste_dalle_1000_etangs.txt", "/home/juju/lidar/in/1000_etangs/")
