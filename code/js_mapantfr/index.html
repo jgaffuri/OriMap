@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OpenLayers Map with Geolocated PNG</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
+    <style>
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.14.0/proj4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/10.2.1/ol.min.css"></script>
+<script src="https://cdn.jsdelivr.net/npm/ol-proj4@latest/dist/ol-proj4.js"></script>
+
+<body>
+
+    <div id="map"></div>
+
+    <script type="text/javascript">
+
+        proj4.defs("EPSG:2154", "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+        ol.proj.proj4.register(proj4);
+
+        const map = new ol.Map({
+            target: 'map',
+            view: new ol.View({
+                projection: 'EPSG:2154',
+                center: [947984, 6921994],
+                zoom: 4,
+                maxZoom: 18
+            })
+        });
+
+        const imageLayer = new ol.layer.Image({
+            source: new ol.source.ImageStatic({
+                url: '../omaps/hackenberg_merged_depr.png',
+                projection: 'EPSG:2154',
+                imageExtent: [xmin, ymin, xmax, ymax]
+            })
+        });
+
+        map.addLayer(imageLayer);
+
+        // Optionally add an OSM layer as a basemap in EPSG:3857
+        const osmLayer = new ol.layer.Tile({
+            source: new ol.source.OSM()
+        });
+        map.addLayer(osmLayer);
+    </script>
+
+</body>
+
+</html>
