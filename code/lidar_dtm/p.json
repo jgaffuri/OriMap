@@ -1,7 +1,7 @@
 [
   {
     "type": "readers.las",
-    "filename": "/home/juju/lidar/in/ND/*.laz"
+    "filename": "/home/juju/lidar/in/hesse/*.laz"
   },
   {
     "limits": "Classification![7:7]",
