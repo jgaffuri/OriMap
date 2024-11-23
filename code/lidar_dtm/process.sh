@@ -14,7 +14,7 @@ gdaldem aspect "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/aspect.t
 #-zero_for_flat
 
 
-gdal_translate -tr 0.25 0.25 -of PNG "${FOLDER_PATH}pdal_out/hillshade.tif" "${FOLDER_PATH}pdal_out/hillshade.png"
-gdal_translate -tr 0.25 0.25 -of PNG "${FOLDER_PATH}pdal_out/slope.tif" "${FOLDER_PATH}pdal_out/slope.png"
-gdal_translate -tr 0.25 0.25 -of PNG "${FOLDER_PATH}pdal_out/aspect.tif" "${FOLDER_PATH}pdal_out/aspect.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/hillshade.tif" "${FOLDER_PATH}pdal_out/hillshade.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/slope.tif" "${FOLDER_PATH}pdal_out/slope.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/aspect.tif" "${FOLDER_PATH}pdal_out/aspect.png"
 
