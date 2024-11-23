@@ -21,7 +21,7 @@
   },
   {
     "type": "writers.gdal",
-    "filename": "/home/juju/Bureau/lidar_test/pdal_out/dtm_4.tif",
+    "filename": "/home/juju/Bureau/lidar_test/pdal_out/dtm.tif",
     "resolution": 0.25,
     "output_type": "mean"
   }
