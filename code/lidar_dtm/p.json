@@ -1,7 +1,7 @@
 [
   {
     "type": "readers.las",
-    "filename": "/home/juju/Bureau/lidar_test/tiles/*.laz"
+    "filename": "/home/juju/lidar/in/ND/*.laz"
   },
   {
     "limits": "Classification![7:7]",
