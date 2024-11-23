@@ -1,3 +1,5 @@
+cd /home/juju/Bureau/lidar_test/
+
 echo "1"
 pdal pipeline p1.json
 echo "2"
