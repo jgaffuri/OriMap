@@ -1,0 +1,40 @@
+[
+    {
+        "type": "readers.las",
+        "filename": "tiles/*.laz"
+    },
+        {
+            "limits": "Classification![7:7]",
+            "type": "filters.range",
+            "tag": "nonoise"
+        },
+    {
+      "type":"filters.assign",
+      "value":"Classification = 0"
+    },
+    {
+      "type":"filters.elm"
+    },
+    {
+      "type":"filters.outlier"
+    },
+    {
+      "type":"filters.smrf",
+      "returns":"last",
+      "where":"!(Classification == 7)",
+      "slope":0.2,
+      "window":16,
+      "threshold":0.45,
+      "scalar":1.2
+    },
+    {
+      "type":"filters.expression",
+      "expression":"Classification == 2"
+    },
+  {
+    "type": "writers.gdal",
+    "filename": "pdal_out/dtm_3.tif",
+    "resolution": 0.25,
+    "output_type": "min"
+  }
+]

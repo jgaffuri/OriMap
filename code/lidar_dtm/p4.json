@@ -1,0 +1,28 @@
+[
+    {
+        "type": "readers.las",
+        "filename": "tiles/*.laz"
+    },
+        {
+            "limits": "Classification![7:7]",
+            "type": "filters.range",
+            "tag": "nonoise"
+        },
+    {
+      "type":"filters.assign",
+      "value":"Classification = 0"
+    },
+    {
+      "type":"filters.csf"
+    },
+    {
+      "type":"filters.expression",
+      "expression":"Classification == 2"
+    },
+  {
+    "type": "writers.gdal",
+    "filename": "pdal_out/dtm_4.tif",
+    "resolution": 0.25,
+    "output_type": "min"
+  }
+]

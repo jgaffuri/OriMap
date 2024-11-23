@@ -1,0 +1,20 @@
+[
+    {
+        "type": "readers.las",
+        "filename": "tiles/*.laz"
+    },
+    {
+        "type": "filters.range",
+        "limits": "Classification[2:2]"
+    },
+   {
+    "type": "filters.ferry",
+    "dimensions": "Z=>elevation"
+  },
+  {
+    "type": "writers.gdal",
+    "filename": "pdal_out/dtm_1.tif",
+    "resolution": 0.25,
+    "output_type": "min"
+  }
+]

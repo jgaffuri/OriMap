@@ -1,0 +1,78 @@
+target scale: 1:1000
+
+https://github.com/rphlo/karttapullautin
+lasground
+
+https://pdal.io/en/2.4.3/workshop/agenda.html
+https://paulojraposo.github.io/pages/PDAL_tutorial.html
+examples of pipelines:
+https://pdal.io/en/2.8.1/tutorial/iowa-entwine.html
+
+https://pdal.io/en/2.8.1/tutorial/ground-filters.html
+https://pdal.io/en/2.4.3/stages/filters.html#ground-unclassified
+
+
+* activate/deactive pdal from conda environment
+conda deactivate
+conda activate myenv
+
+* info from a lidar file
+pdal info input.laz
+
+0: Never Classified
+1: Unclassified
+2: Ground
+3: Low Vegetation
+4: Medium Vegetation
+5: High Vegetation
+6: Buildings
+7: Low Noise
+9: Water
+10: Rail
+13: Bridges
+17: Bridge Decks
+
+
+* decompress laz to las
+pdal translate input.laz output.las
+
+* execute process specified on json file
+pdal pipeline filter_ground.json
+
+read file(s)
+    {
+        "type": "readers.las",
+        "filename": "tiles/*.laz"
+    },
+filter
+    {
+        "type": "filters.range",
+        "limits": "Classification[2:2]"
+    },
+make DEM
+   {
+    "type": "filters.ferry",
+    "dimensions": "Z=>elevation"
+  },
+  {
+    "type": "writers.gdal",
+    "filename": "pdal_out/dtm.tif",
+    "resolution": 1.0,
+    "output_type": "idw"
+  }
+
+
+gdal_fillnodata.py tofill.tif filled.tif -md 10 -b 1 -of GTiff
+b: band
+md: maximum distance, in pix
+
+
+* hillshading
+gdaldem hillshade dtm.tif hillshade.tif -z 1 -s 1 -az 315 -alt 45
+
+* slope in degrees
+gdaldem slope dtm.tif slope.tif -s 1
+
+* color DEM - see example https://pdal.io/en/2.8.1/tutorial/iowa-entwine.html
+gdaldem color-relief iowa.tif dem-colors.txt iowa-color.png
+
