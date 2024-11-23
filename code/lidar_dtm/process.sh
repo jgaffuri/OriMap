@@ -4,13 +4,13 @@ echo "pipeline"
 pdal pipeline p.json
 
 echo "hillshading" 
-gdaldem hillshade "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/hillshade.tiff" -z 1 -s 1 -az 315 -alt 45
+gdaldem hillshade "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/hillshade.tif" -z 1 -s 1 -az 315 -alt 45
 
 echo "slope"
-gdaldem slope "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/slope.tiff" -s 1
+gdaldem slope "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/slope.tif" -s 1
 
 echo "aspect"
-gdaldem aspect "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/aspect.tiff"
+gdaldem aspect "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/aspect.tif"
 #-zero_for_flat
 
 
