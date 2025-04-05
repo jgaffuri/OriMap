@@ -9,20 +9,20 @@ outdirbase="/home/juju/orienteering"
 
 
 #howald
-outdir=$outdirbase/"omap_howald/img"
-xmin_=77500
-ymin_=71000
-nbx=6 #79000
-nby=5 #72250
+#outdir=$outdirbase/"omap_howald/img"
+#xmin_=77500
+#ymin_=71000
+#nbx=6 #79000
+#nby=5 #72250
 
 
 
 #niederanven
-#outdir=$outdirbase/"omap_niederanven/img"
-#xmin_=81000
-#ymin_=78500
-#nbx=20
-#nby=16
+outdir=$outdirbase/"omap_niederanven/img"
+xmin_=81000
+ymin_=78500
+nbx=21
+nby=16
 
 #grunewald findel
 #outdir=$outdirbase/"omap_grunewald_findel/img"
@@ -103,6 +103,14 @@ crs=EPSG:2169
 
 #mkdir $outdir
 
+
+#ortho2023_IR
+#https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=ortho2023_IR&CRS=EPSG%3A3857&STYLES=&WIDTH=400&HEIGHT=637&BBOX=691466.2127913245%2C6385079.161174728%2C694332.6013520187%2C6385839.948471878
+#act_mnt_hillshade_combi_2024
+#act_mns_hillshade_combi_2024
+#https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=act_mnt_hillshade_combi_2024&CRS=EPSG%3A3857&STYLES=&WIDTH=400&HEIGHT=637&BBOX=691466.2127913245%2C6385079.161174728%2C694332.6013520187%2C6385839.948471878
+
+
 #https://map.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
 #https://map.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap
 #&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=ortho2022_IR&CRS=EPSG%3A3857&STYLES=&WIDTH=2400
@@ -111,7 +119,9 @@ crs=EPSG:2169
 #for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mnt_public lidar_2019_mns_public ortho_2019_winter ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
 #for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
-for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest
+#for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest
+#for layer in ortho_latest
+for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR ortho_2023
 do
 
 mkdir $outdir/$layer
@@ -127,7 +137,9 @@ do
 		name=$layer"_"$xmin"_"$ymin
 		echo $name
 
-		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		#echo $url
+		#url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		curl -o $outdir/$layer/$name.png $url
 		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
 		rm $outdir/$layer/$name.png
