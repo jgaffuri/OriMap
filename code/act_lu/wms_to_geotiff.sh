@@ -16,7 +16,6 @@ outdirbase="/home/juju/orienteering"
 #nby=5 #72250
 
 
-
 #niederanven
 outdir=$outdirbase/"omap_niederanven/img"
 xmin_=81000
@@ -121,7 +120,9 @@ crs=EPSG:2169
 #for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
 #for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest
 #for layer in ortho_latest
-for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR ortho_2023
+
+#for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR
+for layer in ortho_2023
 do
 
 mkdir $outdir/$layer
@@ -137,9 +138,9 @@ do
 		name=$layer"_"$xmin"_"$ymin
 		echo $name
 
-		url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
-		#echo $url
-		#url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		#url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		echo $url
 		curl -o $outdir/$layer/$name.png $url
 		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
 		rm $outdir/$layer/$name.png
