@@ -15,7 +15,6 @@ outdirbase="/home/juju/orienteering"
 #nbx=6 #79000
 #nby=5 #72250
 
-
 #niederanven
 outdir=$outdirbase/"omap_niederanven/img"
 xmin_=81000
