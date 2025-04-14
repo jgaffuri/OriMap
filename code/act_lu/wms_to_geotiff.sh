@@ -114,14 +114,9 @@ crs=EPSG:2169
 #&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=ortho2022_IR&CRS=EPSG%3A3857&STYLES=&WIDTH=2400
 #&HEIGHT=288&BBOX=689329.5099787628%2C6384219.519667824%2C690762.7042591099%2C6384391.502981466
 
-#for layer in ortho_latest ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-#for layer in lidar_2019_mnt_public lidar_2019_mns_public ortho_2019_winter ortho_latest #ortho_2019_winter topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-#for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest ortho_irc topo_5k
-#for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest
-#for layer in ortho_latest
-
-for layer in act_mnt_hillshade_combi_2019 act_mns_hillshade_combi_2019 act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho_2023 ortho2023_IR ortho_2019_winter
-#for layer in 
+#for layer in ortho_latest topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
+for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2023 ortho_2019_winter
+#for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR
 do
 
 mkdir $outdir/$layer
@@ -137,8 +132,8 @@ do
 		name=$layer"_"$xmin"_"$ymin
 		echo $name
 
-		#url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		#url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		echo $url
 		curl -o $outdir/$layer/$name.png $url
 		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
