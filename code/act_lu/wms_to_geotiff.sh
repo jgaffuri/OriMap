@@ -120,8 +120,8 @@ crs=EPSG:2169
 #for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2019_winter ortho_latest
 #for layer in ortho_latest
 
-#for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR
-for layer in ortho_2023
+for layer in act_mnt_hillshade_combi_2019 act_mns_hillshade_combi_2019 act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho_2023 ortho2023_IR ortho_2019_winter
+#for layer in 
 do
 
 mkdir $outdir/$layer
