@@ -16,18 +16,18 @@ outdirbase="/home/juju/orienteering"
 #nby=5 #72250
 
 #niederanven
-outdir=$outdirbase/"omap_niederanven/img"
-xmin_=81000
-ymin_=78500
-nbx=21
-nby=16
+#outdir=$outdirbase/"omap_niederanven/img"
+#xmin_=81000
+#ymin_=78500
+#nbx=21
+#nby=16
 
 #grunewald findel
-#outdir=$outdirbase/"omap_grunewald_findel/img"
-#xmin_=80500
-#ymin_=76500
-#nbx=9
-#nby=9
+outdir=$outdirbase/"omap_grunewald_findel/img"
+xmin_=80500
+ymin_=76500
+nbx=9
+nby=9
 
 #outdir=$outdirbase/"omap_bambesch/img"
 #X: 73880 - 76380 Y: 76900 - 79350
