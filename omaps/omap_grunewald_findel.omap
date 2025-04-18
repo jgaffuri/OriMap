@@ -2011,7 +2011,7 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 <object type="1" symbol="77"><coords count="10">8045101 -7832754;8045050 -7831947;8045702 -7831329;8045891 -7830951;8046440 -7831020;8046646 -7831174;8046406 -7832153;8046200 -7832737;8045513 -7833252;8045101 -7832754 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="77"><coords count="23">8053839 -7824823;8052843 -7824479;8053135 -7823398;8053667 -7822214;8054045 -7821699;8054251 -7821372;8054199 -7820154;8054611 -7820085;8054766 -7821166;8055367 -7821561;8055590 -7821853;8056311 -7822008;8056740 -7822643;8056448 -7822608;8055710 -7822162;8055521 -7821956;8054508 -7821905;8054165 -7822299;8054182 -7823415;8054337 -7823844;8054680 -7824222;8054302 -7824617;8053839 -7824823 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="77"><coords count="9">8064396 -7823244;8063263 -7823399;8062782 -7823021;8062731 -7822163;8062971 -7821785;8063692 -7821819;8064138 -7822455;8064465 -7822712;8064396 -7823244 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
-<object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8013270 -7909678;</coords><text>X</text></object>
+<object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8035217 -7903560;</coords><text>X</text></object>
 <object type="1" symbol="115"><coords count="3">8075574 -7825152;8078973 -7826920;8080586 -7827881;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="77"><coords count="6">8078010 -7831557;8078096 -7830269;8078010 -7829686;8078783 -7829411;8079504 -7829823;8078010 -7831557 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="77"><coords count="5">8080036 -7828879;8079676 -7827900;8079830 -7827145;8080980 -7827111;8080036 -7828879 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
@@ -2049,7 +2049,7 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 <object type="0" symbol="14"><coords count="1">8020467 -7822433;</coords></object>
 <object type="0" symbol="14"><coords count="1">8021788 -7820940;</coords></object>
 <object type="0" symbol="14"><coords count="1">8021136 -7821249;</coords></object>
-<object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8025757 -7893639;</coords><text>X</text></object>
+<object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8027408 -7912381;</coords><text>X</text></object>
 <object type="1" symbol="26"><coords count="3">7999086 -7797252;7999923 -7797240;8000967 -7797459;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="0" symbol="14"><coords count="1">8011272 -7808758;</coords></object>
 <object type="0" symbol="14"><coords count="1">8012291 -7807665;</coords></object>
@@ -2193,15 +2193,12 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 </templates>
 <view>
 <grid color="#646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="500" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="3.28307" position_x="8048078" position_y="-7911119"><map opacity="0.55" visible="true"/><templates count="9"><ref template="7" opacity="1"/><ref template="8" opacity="1"/><ref template="2" visible="true" opacity="1"/><ref template="3" visible="true" opacity="1"/><ref template="5" visible="true" opacity="1"/><ref template="6" visible="true" opacity="1"/><ref template="1" visible="true" opacity="1"/><ref template="0" visible="true" opacity="1"/><ref template="4" visible="true" opacity="1"/></templates></map_view>
+<map_view zoom="3.28307" position_x="8058225" position_y="-7917674"><map opacity="0.55" visible="true"/><templates count="9"><ref template="7" opacity="1"/><ref template="8" opacity="1"/><ref template="2" opacity="1"/><ref template="3" opacity="1"/><ref template="5" opacity="1"/><ref template="6" opacity="1"/><ref template="1" opacity="1"/><ref template="0" visible="true" opacity="1"/><ref template="4" opacity="1"/></templates></map_view>
 </view>
 <print scale="10000" resolution="600" templates_visible="true" mode="raster"><page_format paper_size="A4" orientation="landscape" h_overlap="5" v_overlap="5"><dimensions width="297" height="210"/><page_rect left="0" top="0" width="297" height="210"/></page_format><print_area left="7920.648" top="-7977.738" width="297" height="210" single_page="true"/></print>
 </barrier>
 <barrier version="6" required="0.6.0">
 <undo>
-<step type="0"><affected_objects part="0"><ref object="1398"/></affected_objects><contained_objects count="1"><object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8043196 -7871740;</coords><text>X</text></object></contained_objects></step>
-<step type="1"><affected_objects part="0"><ref object="1475"/></affected_objects></step>
-<step type="1"><affected_objects part="0"><ref object="1476"/></affected_objects></step>
 <step type="1"><affected_objects part="0"><ref object="1477"/></affected_objects></step>
 <step type="1"><affected_objects part="0"><ref object="1478"/></affected_objects></step>
 <step type="1"><affected_objects part="0"><ref object="1479"/></affected_objects></step>
@@ -2327,6 +2324,9 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 <step type="2"><affected_objects part="0"><ref object="1522"/></affected_objects><contained_objects count="1"><object type="1" symbol="115"><coords count="3">8037434 -7922654;8039362 -7917920;8039956 -7914412;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object></contained_objects></step>
 <step type="1"><affected_objects part="0"><ref object="1522"/></affected_objects></step>
 <step type="1"><affected_objects part="0"><ref object="1523"/></affected_objects></step>
+<step type="0"><affected_objects part="0"><ref object="1372"/></affected_objects><contained_objects count="1"><object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8013270 -7909678;</coords><text>X</text></object></contained_objects></step>
+<step type="0"><affected_objects part="0"><ref object="1410"/></affected_objects><contained_objects count="1"><object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8025757 -7893639;</coords><text>X</text></object></contained_objects></step>
+<step type="0"><affected_objects part="0"><ref object="1410"/></affected_objects><contained_objects count="1"><object type="4" symbol="166" h_align="1" v_align="2"><coords count="1">8028573 -7912041;</coords><text>X</text></object></contained_objects></step>
 </undo>
 <redo>
 </redo>
