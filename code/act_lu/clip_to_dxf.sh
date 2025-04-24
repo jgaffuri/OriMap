@@ -34,7 +34,7 @@ ymax=82500
 
 mkdir $outdir
 
-#clip contry wide dtm
+#clip country wide dtm
 gdal_translate -projwin $xmin $ymax $xmax $ymin -of GTiff $outdirbase/"omap_luxembourg_shp/dtm/dtm.tif" $outdir"dtm.tif"
 #create contour as shp
 gdal_contour -a ELEV_DM -i 500.0 $outdir"dtm.tif" $outdir"contour_5m.shp"
