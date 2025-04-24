@@ -57,3 +57,4 @@ ogr2ogr -overwrite -f "ESRI Shapefile" \
 #shp to dxf
 ogr2ogr -overwrite -f "DXF" $outdir$layer".dxf" $outdir$layer".shp"
 done
+:
