@@ -1,23 +1,19 @@
 [
   {
     "type": "readers.las",
-    "filename": "/home/juju/geodata/lidar/wam2025/*.laz"
+    "filename": "/home/juju/geodata/lidar/niederanven_grunewald/*.laz"
   },
   {
-    "limits": "Classification![7:7]",
     "type": "filters.range",
-    "tag": "nonoise"
+    "limits": "Classification![7:7],ReturnNumber[1:],NumberOfReturns[1:]"
   },
   {
     "type": "filters.assign",
     "value": "Classification = 0"
   },
   {
-    "type": "filters.range",
-    "limits": "ReturnNumber[1:],NumberOfReturns[1:]"
-  },
-  {
-    "type": "filters.csf"
+    "type": "filters.csf",
+    "ignore": "Classification[7:7]"
   },
   {
     "type": "filters.expression",
@@ -25,7 +21,7 @@
   },
   {
     "type": "writers.gdal",
-    "filename": "/home/juju/orienteering/omap_wam2025/dtm.tif",
+    "filename": "/home/juju/orienteering/omap_niederanven/dtm.tif",
     "resolution": 0.25,
     "output_type": "mean"
   }
