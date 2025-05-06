@@ -1,7 +1,7 @@
 [
   {
     "type": "readers.las",
-    "filename": "/home/juju/lidar/in/arzviller/*.laz"
+    "filename": "/home/juju/geodata/lidar/wam2025/*.laz"
   },
   {
     "limits": "Classification![7:7]",
@@ -21,7 +21,7 @@
   },
   {
     "type": "writers.gdal",
-    "filename": "/home/juju/Bureau/lidar_test/pdal_out/dtm.tif",
+    "filename": "/home/juju/orienteering/omap_wam2025/dtm.tif",
     "resolution": 0.25,
     "output_type": "mean"
   }

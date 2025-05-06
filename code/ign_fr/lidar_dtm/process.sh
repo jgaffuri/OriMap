@@ -1,20 +1,20 @@
-FOLDER_PATH="/home/juju/Bureau/lidar_test/"
+FOLDER_PATH="/home/juju/orienteering/omap_wam2025/"
 
 echo "pipeline"
 pdal pipeline p.json
 
 echo "hillshading" 
-gdaldem hillshade "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/hillshade.tif" -z 1 -s 1 -az 315 -alt 45
+gdaldem hillshade "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}hillshade.tif" -z 1 -s 1 -az 315 -alt 45
 
 echo "slope"
-gdaldem slope "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/slope.tif" -s 1
+gdaldem slope "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}slope.tif" -s 1
 
 echo "aspect"
-gdaldem aspect "${FOLDER_PATH}pdal_out/dtm.tif" "${FOLDER_PATH}pdal_out/aspect.tif"
+gdaldem aspect "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}aspect.tif"
 #-zero_for_flat
 
 
-gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/hillshade.tif" "${FOLDER_PATH}pdal_out/hillshade.png"
-gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/slope.tif" "${FOLDER_PATH}pdal_out/slope.png"
-gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}pdal_out/aspect.tif" "${FOLDER_PATH}pdal_out/aspect.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}hillshade.tif" "${FOLDER_PATH}hillshade.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}slope.tif" "${FOLDER_PATH}slope.png"
+gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}aspect.tif" "${FOLDER_PATH}aspect.png"
 
