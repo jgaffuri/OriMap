@@ -13,6 +13,10 @@
     "value": "Classification = 0"
   },
   {
+    "type": "filters.range",
+    "limits": "ReturnNumber[1:],NumberOfReturns[1:]"
+  },
+  {
     "type": "filters.csf"
   },
   {
