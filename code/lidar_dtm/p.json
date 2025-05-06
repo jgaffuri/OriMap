@@ -1,7 +1,7 @@
 [
   {
     "type": "readers.las",
-    "filename": "/home/juju/geodata/lidar/niederanven_grunewald/*.laz"
+    "filename": "/home/juju/geodata/lidar/grunewald_findel/*.laz"
   },
   {
     "type": "filters.range",
@@ -21,7 +21,7 @@
   },
   {
     "type": "writers.gdal",
-    "filename": "/home/juju/orienteering/omap_niederanven/dtm.tif",
+    "filename": "/home/juju/orienteering/omap_grunewald_findel/dtm.tif",
     "resolution": 0.25,
     "output_type": "mean"
   }
