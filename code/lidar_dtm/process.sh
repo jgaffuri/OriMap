@@ -1,4 +1,4 @@
-FOLDER_PATH="/home/juju/orienteering/omap_niederanven/"
+FOLDER_PATH="/home/juju/orienteering/wam_2025/"
 
 echo "pipeline"
 pdal pipeline p.json
