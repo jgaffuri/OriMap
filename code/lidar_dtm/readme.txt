@@ -1,3 +1,6 @@
+This process lidar data to produce hillshaded dtm, slope and aspect.
+
+
 * activate pdal:
 conda deactivate
 conda activate pdal
@@ -10,4 +13,9 @@ conda activate pdal
 
 * run "bash process.sh" command
 
+
+
+TODO:
+* move to python (see cartoHD process as an example)
+* Do the same for DSM ?
 
