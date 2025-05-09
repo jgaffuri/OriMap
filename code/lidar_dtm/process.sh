@@ -32,3 +32,4 @@ rm "${FOLDER_PATH}slope.tif"
 rm "${FOLDER_PATH}slope_255.tif"
 #rm "${FOLDER_PATH}slope_color.tif"
 rm "${FOLDER_PATH}aspect.tif"
+
