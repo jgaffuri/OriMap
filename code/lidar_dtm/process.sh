@@ -1,7 +1,7 @@
-FOLDER_PATH="/home/juju/orienteering/omap_wam2025/"
+FOLDER_PATH="/home/juju/orienteering/zoufftgen/"
 
-echo "pipeline"
-pdal pipeline p.json
+#echo "pipeline"
+#pdal pipeline p.json
 
 echo "hillshading" 
 gdaldem hillshade "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}hillshade.tif" -z 1 -s 1 -az 315 -alt 45
@@ -26,7 +26,7 @@ gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}slope_255.
 gdal_translate -tr 0.25 0.25 -of PNG -co WORLDFILE=YES "${FOLDER_PATH}aspect.tif" "${FOLDER_PATH}aspect.png"
 
 echo "clean"
-rm "${FOLDER_PATH}dtm.tif"
+#rm "${FOLDER_PATH}dtm.tif"
 rm "${FOLDER_PATH}hillshade.tif"
 rm "${FOLDER_PATH}slope.tif"
 rm "${FOLDER_PATH}slope_255.tif"
