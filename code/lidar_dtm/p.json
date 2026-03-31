@@ -10,11 +10,11 @@
     {
         "type": "writers.gdal",
         "filename": "/home/juju/orienteering/hauterives/dtm.tif",
-        "output_type": "min",
         "resolution": 0.25,
+        "output_type": "idw",
+        "radius": 1.0,
         "data_type": "float32",
         "gdaldriver": "GTiff",
-        //"window_size": 1,
-        "radius": 0.30
+        "window_size": 10
     }
 ]
