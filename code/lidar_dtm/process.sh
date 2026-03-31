@@ -1,7 +1,7 @@
 FOLDER_PATH="/home/juju/orienteering/hauterives/"
 
-#echo "pipeline"
-#pdal pipeline p.json
+echo "pipeline"
+pdal pipeline p.json
 
 echo "hillshading" 
 gdaldem hillshade "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}hillshade.tif" -z 1 -s 1 -az 315 -alt 45
