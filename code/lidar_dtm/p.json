@@ -4,6 +4,10 @@
         "filename": "/home/juju/geodata/lidar/hauterives/*.laz"
     },
     {
+        "type": "filters.range",
+        "limits": "Classification[2:2]"
+    },
+    {
         "type": "writers.gdal",
         "filename": "/home/juju/orienteering/hauterives/dtm.tif",
         "output_type": "min",
