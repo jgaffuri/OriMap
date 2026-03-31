@@ -1,4 +1,4 @@
-FOLDER_PATH="/home/juju/orienteering/zoufftgen/"
+FOLDER_PATH="/home/juju/orienteering/hauterives/"
 
 #echo "pipeline"
 #pdal pipeline p.json
