@@ -1,13 +1,19 @@
 FOLDER_PATH="/home/juju/orienteering/hauterives/"
 
-echo "pipeline"
-pdal pipeline p.json
+mkdir -p "${FOLDER_PATH}"
+
+#echo "pipeline"
+#pdal pipeline p.json
+
+echo "fill no data" 
+gdal_fillnodata.py "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}dtm_.tif"
+
 
 echo "hillshading" 
-gdaldem hillshade "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}hillshade.tif" -z 1 -s 1 -az 315 -alt 45
+gdaldem hillshade "${FOLDER_PATH}dtm_.tif" "${FOLDER_PATH}hillshade.tif" -z 1 -s 1 -az 315 -alt 45
 
 echo "slope"
-gdaldem slope "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}slope.tif" -s 1
+gdaldem slope "${FOLDER_PATH}dtm_.tif" "${FOLDER_PATH}slope.tif" -s 1
 echo "slope calc"
 gdal_calc.py -A "${FOLDER_PATH}slope.tif" --outfile="${FOLDER_PATH}slope_255.tif" --calc="((1-(A/90))**3)*255"
 #echo "slope 90 to 255"
@@ -16,7 +22,7 @@ gdal_calc.py -A "${FOLDER_PATH}slope.tif" --outfile="${FOLDER_PATH}slope_255.tif
 #gdaldem color-relief "${FOLDER_PATH}slope_255.tif" slope_color.txt "${FOLDER_PATH}slope_color.tif" -alpha
 
 #echo "aspect"
-gdaldem aspect "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}aspect.tif"
+gdaldem aspect "${FOLDER_PATH}dtm_.tif" "${FOLDER_PATH}aspect.tif"
 #-zero_for_flat
 
 echo "convert to png"
