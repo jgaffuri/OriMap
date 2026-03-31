@@ -14,7 +14,7 @@
         "resolution": 0.25,
         "data_type": "float32",
         "gdaldriver": "GTiff",
-        "window_size": 1,
-        "radius": 0.25
+        //"window_size": 1,
+        "radius": 0.30
     }
 ]
