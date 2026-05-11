@@ -1,9 +1,9 @@
-FOLDER_PATH="/home/juju/orienteering/hauterives/"
+FOLDER_PATH="/home/juju/orienteering/bellebouche/"
 
 mkdir -p "${FOLDER_PATH}"
 
-#echo "pipeline"
-#pdal pipeline p.json
+echo "pipeline"
+pdal pipeline p.json
 
 echo "fill no data" 
 gdal_fillnodata.py "${FOLDER_PATH}dtm.tif" "${FOLDER_PATH}dtm_.tif"
