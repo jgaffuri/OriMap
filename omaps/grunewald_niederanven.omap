@@ -18947,7 +18947,7 @@ The purple line will extend a bit into the finish symbol. This is a shortcoming 
 </templates>
 <view>
 <grid color="#646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="500" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="5.65682" position_x="8103835" position_y="-8028436"><map opacity="1" visible="true"/><templates count="12"><ref template="1" opacity="1"/><ref template="6" opacity="1"/><ref template="3" opacity="1"/><ref template="5" opacity="1"/><ref template="2" opacity="1"/><ref template="7" opacity="1"/><ref template="4" opacity="1"/><ref template="10" opacity="1"/><ref template="11" opacity="1"/><ref template="9" opacity="1"/><ref template="8" visible="true" opacity="1"/><ref template="0" opacity="1"/></templates></map_view>
+<map_view zoom="5.65682" position_x="8103835" position_y="-8028436"><map opacity="1" visible="true"/><templates count="12"><ref template="1" opacity="1"/><ref template="6" opacity="1"/><ref template="3" opacity="1"/><ref template="5" opacity="1"/><ref template="2" opacity="1"/><ref template="7" opacity="1"/><ref template="4" opacity="1"/><ref template="10" opacity="1"/><ref template="11" visible="true" opacity="1"/><ref template="9" opacity="1"/><ref template="8" opacity="1"/><ref template="0" opacity="1"/></templates></map_view>
 </view>
 <print scale="10000" resolution="600" templates_visible="true" mode="raster"><page_format paper_size="A3" orientation="landscape" h_overlap="5" v_overlap="5"><dimensions width="420" height="297"/><page_rect left="0" top="0" width="420" height="297"/></page_format><print_area left="8009.736" top="-8258.911" width="420" height="297" single_page="true"/></print>
 </barrier>
