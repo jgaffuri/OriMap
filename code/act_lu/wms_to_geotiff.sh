@@ -1,47 +1,27 @@
 #!/bin/bash
 #resolution=10cm - max image size is 2500px -> 250m*250m
-#http://wmts1.geoportail.lu/opendata/service?REQUEST=GetCapabilities
+#https://wmts1.geoportail.lu/opendata/service?request=GetCapabilities&service=WMS&version=1.3.0
+
+#https://wms.geoportail.lu/public_map_layers/service?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.3.0
+#2980 lidar 2024 MNT
+#2979 lidar 2024 MNS
+#3207 Orthophoto 2025 (été)
+#3035 Orthophoto 2025 (hiver)
+#3208 Orthophoto 2025 (été) infre
+#3044 Orthophoto 2025 (hiver) infra
+
+
 
 outdirbase="/home/juju/orienteering"
 
 #each tile is 250m large
 
-
-
-#howald
-#outdir=$outdirbase/"omap_howald/img"
-#xmin_=77500
-#ymin_=71000
-#nbx=6 #79000
-#nby=5 #72250
-
-#niederanven
-#outdir=$outdirbase/"omap_niederanven/img"
-#xmin_=81000
-#ymin_=78500
-#nbx=21
-#nby=16
-
-#grunewald findel
-outdir=$outdirbase/"omap_grunewald_findel/img"
-xmin_=80500
-ymin_=76500
-nbx=9
-nby=9
-
-#outdir=$outdirbase/"omap_bambesch/img"
-#X: 73880 - 76380 Y: 76900 - 79350
-#xmin_=73750
-#ymin_=76750
-#nbx=11
-#nby=11
-
-
-#outdir=$outdirbase/"omap_sandweiler/img"
-#xmin_=82500
-#ymin_=74750
-#nbx=9
-#nby=8
+#kirchberg
+outdir=$outdirbase/"omap_kirchberg_merge/img"
+xmin_=78500
+ymin_=76250
+nbx=10
+nby=8
 
 #kirchberg coque
 #outdir=$outdirbase/"omap_kirchberg_merge/img_coque"
@@ -63,6 +43,45 @@ nby=9
 #ymin_=77000
 #nbx=6
 #nby=4
+
+
+
+
+#howald
+#outdir=$outdirbase/"omap_howald/img"
+#xmin_=77500
+#ymin_=71000
+#nbx=6 #79000
+#nby=5 #72250
+
+#niederanven
+#outdir=$outdirbase/"omap_niederanven/img"
+#xmin_=81000
+#ymin_=78500
+#nbx=21
+#nby=16
+
+#grunewald findel
+#outdir=$outdirbase/"omap_grunewald_findel/img"
+#xmin_=80500
+#ymin_=76500
+#nbx=9
+#nby=9
+
+#outdir=$outdirbase/"omap_bambesch/img"
+#X: 73880 - 76380 Y: 76900 - 79350
+#xmin_=73750
+#ymin_=76750
+#nbx=11
+#nby=11
+
+
+#outdir=$outdirbase/"omap_sandweiler/img"
+#xmin_=82500
+#ymin_=74750
+#nbx=9
+#nby=8
+
 
 
 #outdir="img_schetterhaard"
@@ -115,8 +134,10 @@ crs=EPSG:2169
 #&HEIGHT=288&BBOX=689329.5099787628%2C6384219.519667824%2C690762.7042591099%2C6384391.502981466
 
 #for layer in ortho_latest topo_5k ortho_irc TOPO_CARTESHISTO_1989 cadastre
-for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2023 ortho_2019_winter
+#for layer in lidar_2019_mns_public lidar_2019_mnt_public ortho_2023 ortho_2019_winter
 #for layer in act_mnt_hillshade_combi_2024 act_mns_hillshade_combi_2024 ortho2023_IR
+
+for layer in 2980 2979 3207 3035 3208 3044
 do
 
 mkdir $outdir/$layer
@@ -132,7 +153,8 @@ do
 		name=$layer"_"$xmin"_"$ymin
 		echo $name
 
-		url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		url="https://wms.geoportail.lu/public_map_layers/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
+		#url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		#url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		echo $url
 		curl -o $outdir/$layer/$name.png $url
