@@ -154,8 +154,6 @@ do
 		echo $name
 
 		url="https://wms.geoportail.lu/public_map_layers/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
-		#url="http://wmts1.geoportail.lu/opendata/service?REQUEST=GetMap&version=1.1.1&layers=$layer&srs=$crs&format=image/png&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
-		#url="https://wmsproxy.geoportail.lu/ogcproxywms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&layers=$layer&srs=$crs&bbox=$xmin,$ymin,$xmax,$ymax&width=2500&height=2500&styles="
 		echo $url
 		curl -o $outdir/$layer/$name.png $url
 		gdal_translate -a_srs ${crs} -a_ullr $xmin $ymax $xmax $ymin $outdir/$layer/$name.png $outdir/$layer/$name.tif
