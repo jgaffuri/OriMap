@@ -4,7 +4,7 @@ from osgeo import gdal
 gdal.UseExceptions()
 
 
-# merge all GeoTIFF files in a folder into a single GeoTIFF file and convert to png
+# merge all GeoTIFF files in a folder into a single GeoTIFF file (and convert to png)
 
 
 
@@ -12,7 +12,7 @@ path = "/home/juju/orienteering/omap_kirchberg_merge/img/"
 layers = ["2979", "2980", "3207", "3044"]
 
 
-
+'''
 def geotiff_to_png(src, dst, scale=True, worldfile=True):
     options = gdal.TranslateOptions(
         format="PNG",
@@ -21,7 +21,7 @@ def geotiff_to_png(src, dst, scale=True, worldfile=True):
         creationOptions=["ZLEVEL=9"] + (["WORLDFILE=YES"] if worldfile else []),
     )
     gdal.Translate(dst, src, options=options)
-
+'''
 
 
 
@@ -47,6 +47,6 @@ for layer in layers:
     #], check=True)
 
     # convert to png with world file
-    print(f"Converting GeoTIFF to PNG for layer {layer}...")
-    geotiff_to_png(path + f"{layer}.tif", path + f"{layer}.png")
+    #print(f"Converting GeoTIFF to PNG for layer {layer}...")
+    #geotiff_to_png(path + f"{layer}.tif", path + f"{layer}.png")
         
