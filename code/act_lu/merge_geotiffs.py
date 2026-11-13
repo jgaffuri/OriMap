@@ -50,5 +50,6 @@ for layer in layers:
     #], check=True)
 
     # convert to png with world file
+    print(f"Converting GeoTIFF to PNG for layer {layer}...")
     geotiff_to_png(path + f"{layer}.tif", path + f"{layer}.png")
         
