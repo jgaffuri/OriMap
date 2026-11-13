@@ -1,8 +1,5 @@
 import subprocess
 from pathlib import Path
-import numpy as np
-import rasterio
-from PIL import Image
 from osgeo import gdal
 gdal.UseExceptions()
 
