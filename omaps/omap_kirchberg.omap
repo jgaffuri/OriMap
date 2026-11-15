@@ -677,7 +677,7 @@ Competitors violating this rule will be disqualified.&lt;/span&gt;</description>
 Competitors violating this rule will be disqualified.&lt;/span&gt;</description><area_symbol inner_color="33" min_area="500" patterns="0"/></symbol>
 </symbols>
 <parts count="1" current="0">
-<part name="partie par défaut"><objects count="11865">
+<part name="partie par défaut"><objects count="11863">
 <object type="0" symbol="-2"><tags><t k="name">0</t></tags><coords count="1">-232563 -19090;</coords></object>
 <object type="0" symbol="227"><tags><t k="name">0</t></tags><coords count="1">-200878 136873;</coords></object>
 <object type="0" symbol="226"><tags><t k="name">0</t></tags><coords count="1">-191746 130532;</coords></object>
@@ -1420,7 +1420,6 @@ Competitors violating this rule will be disqualified.&lt;/span&gt;</description>
 <object type="0" symbol="185"><coords count="1">-101450 111007;</coords></object>
 <object type="1" symbol="186"><coords count="7">-92818 123661;-92827 123829;-94033 124838;-94877 123840;-94838 123735;-93694 122792;-92818 123661 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="186"><coords count="9">-94087 117381;-93849 117775;-95155 118731;-95139 118457;-95092 118242;-94783 116820;-94487 116592;-94426 116617;-94087 117381 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
-<object type="1" symbol="231"><coords count="9">-97445 118817;-100221 121091;-101145 120074;-101111 119986;-97251 116815;-97136 116901;-97068 117750;-97175 118461;-97445 118817 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="211"><coords count="8">-94309 114898;-95987 116283;-96199 116057;-96196 115949;-89065 110092;-88975 110069;-88738 110297;-94309 114898 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="0" symbol="227"><coords count="1">-101176 67595;</coords></object>
 <object type="0" symbol="185"><coords count="1">-100095 70545;</coords></object>
@@ -8212,7 +8211,6 @@ Competitors violating this rule will be disqualified.&lt;/span&gt;</description>
 <object type="0" symbol="226"><coords count="1">-108138 105913;</coords></object>
 <object type="1" symbol="212"><coords count="13">-113591 134169;-114732 135151;-115863 136058;-116693 136710;-117472 137220;-118182 137402;-119148 137386;-119729 137340;-118869 136931;-117232 136025;-115434 134574;-114136 133577;-113591 134169 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="211"><coords count="5">-97911 121340;-98804 122170;-97997 123043;-97138 122375;-97911 121340 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
-<object type="1" symbol="231"><coords count="7">-105639 123798;-104560 125062;-104546 125387;-112000 131555;-113137 130145;-109432 126917;-105639 123798 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="213"><coords count="5">-125306 148426 32;-121584 145573 32;-121032 146293 32;-124754 149146 32;-125306 148426 50;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="169"><coords count="11">-120649 138798;-120582 138178;-120621 137533;-120702 137128;-120826 136947;-121088 136713;-121818 136002;-122610 135091;-123335 135615;-122906 137877;-120649 138798 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
 <object type="1" symbol="202"><coords count="4">-105933 116693;-106460 116085;-105340 115140;-104773 115761;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object>
@@ -12555,14 +12553,17 @@ Competitors violating this rule will be disqualified.&lt;/span&gt;</description>
 </templates>
 <view>
 <grid color="#646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="500" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
-<map_view zoom="5.65685" position_x="1718" position_y="-81318"><map opacity="0.75" visible="true"/><templates count="4"><ref template="1" visible="true" opacity="1"/><ref template="0" opacity="1"/><ref template="3" opacity="1"/><ref template="2" opacity="1"/></templates></map_view>
+<map_view zoom="2" position_x="-88094" position_y="95444"><map opacity="0.75" visible="true"/><templates hidden="true" count="4"><ref template="1" visible="true" opacity="1"/><ref template="0" opacity="1"/><ref template="3" visible="true" opacity="1"/><ref template="2" visible="true" opacity="1"/></templates></map_view>
 </view>
 </barrier>
 <barrier version="6" required="0.6.0">
 <undo>
 <step type="2"><affected_objects part="0"><ref object="11865"/></affected_objects><contained_objects count="1"><object type="0" symbol="149"><coords count="1">-3650 -84291;</coords></object></contained_objects></step>
+<step type="2"><affected_objects part="0"><ref object="7534"/></affected_objects><contained_objects count="1"><object type="1" symbol="231"><coords count="7">-105639 123798;-104560 125062;-104546 125387;-112000 131555;-113137 130145;-109432 126917;-105639 123798 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object></contained_objects></step>
+<step type="2"><affected_objects part="0"><ref object="742"/></affected_objects><contained_objects count="1"><object type="1" symbol="231"><coords count="9">-97445 118817;-100221 121091;-101145 120074;-101111 119986;-97251 116815;-97136 116901;-97068 117750;-97175 118461;-97445 118817 18;</coords><pattern rotation="0"><coord x="0" y="0"/></pattern></object></contained_objects></step>
 </undo>
 <redo>
+<step type="1"><affected_objects part="0"><ref object="7742"/></affected_objects></step>
 </redo>
 </barrier>
 </map>
